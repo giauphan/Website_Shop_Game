@@ -1,0 +1,4 @@
+[23-Nov-2022 03:02:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function get_all_user() in /home/taikho11/public_html/duan/model/xulydangky.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/taikho11/public_html/duan/model/xulydangky.php on line 10

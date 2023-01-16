@@ -16,16 +16,16 @@ use App\Models\database as DB;
    }
 
 
-   public function sl_loai($ma_loai)
+   public function sl_loai()
    {
-      $showsl = "SELECT loai.ma_loai,ten_loai, COUNT(sp.ma_loai) as 'so_luong' FROM `loai` LEFT JOIN `sp` on `sp`.ma_loai = `loai`.ma_loai where loai.ma_loai = ? GROUP BY loai.ma_loai ORDER by COUNT(sp.ma_loai); ";
-      return $this->db->pdo_query($showsl, $ma_loai);
+      $showsl = "SELECT loai.ma_loai,ten_loai, COUNT(sp.ma_loai) as 'so_luong' FROM `loai` LEFT JOIN `sp` on `sp`.ma_loai = `loai`.ma_loai  GROUP BY loai.ma_loai ORDER by COUNT(sp.ma_loai); ";
+      return $this->db->pdo_query($showsl);
    }
 
-   public function sl_pay($ma_loai)
+   public function sl_pay()
    {
-      $sql = "SELECT COUNT(trang_thai_sp) as 'sl_ttsp' FROM `sp` WHERE `trang_thai_sp` >= 1 and ma_loai = ?";
-      return $this->db->pdo_query($sql, $ma_loai);
+      $sql = "SELECT COUNT(trang_thai_sp) as 'sl_ttsp',ma_loai FROM `sp` WHERE `trang_thai_sp` >= 1 ";
+      return $this->db->pdo_query($sql);
    }
 
 
@@ -43,8 +43,6 @@ use App\Models\database as DB;
 
    public function product_new()
    {
-
-
       $query = "SELECT * FROM `sp`  join sp_lq on sp.ma_sp = sp_lq.ma_sp_ where trang_thai_sp = 0  ORDER by sp.ma_sp DESC";
 
       return $this->db->pdo_query($query);

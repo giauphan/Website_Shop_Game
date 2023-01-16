@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/wit/header.php';
 ?>
-
 <!-- END: LAYOUT/HEADERS/HEADER-1 -->
 <!-- BEGIN: PAGE CONTAINER -->
 <div class="c-layout-page">
@@ -256,12 +255,12 @@ require_once __DIR__ . '/wit/header.php';
             <div class="item">
                <div class="nav_item">
                   <a href="/?act=#" class="col1_nav">
-                     <img src="/admin/view/upload/vHPm7XyQah_1623147701.jpg" alt="Trang cá nhân nickvn" />
+                     <img src="/assets/upload/vHPm7XyQah_1623147701.jpg" alt="Trang cá nhân nickvn" />
                   </a>
                </div>
                <div class="nav_item">
                   <a href="/?act=napthe" class="col1_nav">
-                     <img src="/Controller/img/NapThe.png" alt="Trang cá nhân nickvn" />
+                     <img src="/assets/img/NapThe.png" alt="Trang cá nhân nickvn" />
                   </a>
                </div>
                <?php
@@ -270,7 +269,7 @@ require_once __DIR__ . '/wit/header.php';
 
                ?>
                   <div class="nav_item">
-                     <a href="/?act=profile" class="col1_nav"><img src="/Controller/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
+                     <a href="/?act=profile" class="col1_nav"><img src="/assets/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
                      </a>
                   </div>
                <?php
@@ -279,7 +278,7 @@ require_once __DIR__ . '/wit/header.php';
                ?>
 
                   <div class="nav_item">
-                     <a href="#" class="col1_nav"><img src="/Controller/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
+                     <a href="#" class="col1_nav"><img src="/assets/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
                      </a>
                   </div>
 
@@ -287,7 +286,7 @@ require_once __DIR__ . '/wit/header.php';
                }
                ?>
                <div class="nav_item">
-                  <a href="#" class="col1_nav"><img src="/Controller/img/NickRandom.png" alt="dịch vụ nickvn" /></a>
+                  <a href="#" class="col1_nav"><img src="/assets/img/NickRandom.png" alt="dịch vụ nickvn" /></a>
                   </a>
                </div>
 
@@ -317,68 +316,71 @@ require_once __DIR__ . '/wit/header.php';
 
 
                   <?php
-                  $i = 0;
 
-                  foreach ($pro_sale as $row) {
+                  if (is_array($pro_sale) && count($pro_sale) > 0) {
+                     $i = 0;
 
-                     if ($row['giam_gia'] > 0) {
-                        $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
-                        echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">  <div class="classWithPad">
-               <div class="image">
-                <a href="?act=acc&id=' . $row['ma_sp'] . '">
-    
-                <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
-                   <span class="ms">MS: ' . $row['ma_sp'] . '</span>
-                </a>
-               </div>
-               <div class="description">
-               ' . $row['mo_ta'] . '
-               </div>
-               <div class="attribute_info">
-                <div class="row">
-                   <div class="col-xs-6 a_att">
-                      Rank: <b>' . $row['rank'] . '</b>
-                   </div>
-                   <div class="col-xs-6 a_att">
-                      Tướng: <b>' . $row['tuong'] . '</b>
-                   </div>
-                   <div class="col-xs-6 a_att">
-                      Trang Phục: <b>' . $row['trang_phuc'] . '</b>
-                   </div>
-                   <div class="col-xs-6 a_att">
-                      Ngọc 90: <b>' . $retVal . '</b>
-                   </div>
-                </div>
-               </div>
-               <div class="a-more">
-                <div class="row">
-                   <div class="col-xs-6">
-                      <div class="price_item">
-                  <del>    ' . number_format(($row['giasp']), 0, ',', '.') . 'VNĐ</del><br>' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
-                      </div>
-                   </div>
-                   <div class="col-xs-6 ">
-                   <div class="view">
-                      <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
-    
-                   </div>
-                </div>
-    
-                </div>
-               </div>
-               </div>
-               </div>
-               ';
-                        $i++;
-                     }
+                     foreach ($pro_sale as $row) {
+
+                        if ($row['giam_gia'] > 0) {
+                           $retVal = ($row['ngoc'] == 0) ? "có" : "không";
+                           echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
+                     <div class="classWithPad">
+                        <div class="image">
+                           <a href="?act=acc&id=' . $row['ma_sp'] . '">
+
+                              <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
+                              <span class="ms">MS: ' . $row['ma_sp'] . '</span>
+                           </a>
+                        </div>
+                        <div class="description">
+                           ' . $row['mo_ta'] . '
+                        </div>
+                        <div class="attribute_info">
+                           <div class="row">
+                              <div class="col-xs-6 a_att">
+                                 Rank: <b>' . $row['rank'] . '</b>
+                              </div>
+                              <div class="col-xs-6 a_att">
+                                 Tướng: <b>' . $row['tuong'] . '</b>
+                              </div>
+                              <div class="col-xs-6 a_att">
+                                 Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                              </div>
+                              <div class="col-xs-6 a_att">
+                                 Ngọc 90: <b>' . $retVal . '</b>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="a-more">
+                           <div class="row">
+                              <div class="col-xs-6">
+                                 <div class="price_item">
+                                    <del> ' . number_format(($row['giasp']), 0, ',', '.') . 'VNĐ</del><br>' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
+                                 </div>
+                              </div>
+                              <div class="col-xs-6 ">
+                                 <div class="view">
+                                    <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+
+                                 </div>
+                              </div>
+
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  ';
+                           $i++;
+                        }
 
 
 
-                     if ($i >= 4) {
-                        break;
+                        if ($i >= 4) {
+                           break;
+                        }
                      }
                   }
-
                   ?>
 
                </div>
@@ -486,67 +488,70 @@ require_once __DIR__ . '/wit/header.php';
 
 
                   <?php
-                  $i = 0;
-                  foreach ($pro as $row) {
+              
+                  if (is_array($pro) && count($pro) > 0) {
+                     $i = 0;
+                     foreach ($pro as $row) {
 
 
-                     $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
-                     echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">  <div class="classWithPad">
-               <div class="image">
-                <a href="?act=acc&id=' . $row['ma_sp'] . '">
-    
-                <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
-                   <span class="ms">MS: ' . $row['ma_sp'] . '</span>
-                </a>
-               </div>
-               <div class="description">
-               ' . $row['mo_ta'] . '
-               </div>
-               <div class="attribute_info">
-                <div class="row">
-                   <div class="col-xs-6 a_att">
-                      Rank: <b>' . $row['rank'] . '</b>
-                   </div>
-                   <div class="col-xs-6 a_att">
-                      Tướng: <b>' . $row['tuong'] . '</b>
-                   </div>
-                   <div class="col-xs-6 a_att">
-                      Trang Phục: <b>' . $row['trang_phuc'] . '</b>
-                   </div>
-                   <div class="col-xs-6 a_att">
-                      Ngọc 90: <b>' . $retVal . '</b>
-                   </div>
-                </div>
-               </div>
-               <div class="a-more">
-                <div class="row">
-                   <div class="col-xs-6">
-                      <div class="price_item">
-         ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
-                      </div>
-                   </div>
-                   <div class="col-xs-6 ">
-                   <div class="view">
-                      <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
-    
-                   </div>
-                </div>
-    
-                </div>
-               </div>
-               </div>
-               </div>
-               ';
-                     $i++;
+                        $retVal = ($row['ngoc'] == 0) ? "có" : "không";
+                        echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
+                     <div class="classWithPad">
+                        <div class="image">
+                           <a href="?act=acc&id=' . $row['ma_sp'] . '">
+
+                              <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
+                              <span class="ms">MS: ' . $row['ma_sp'] . '</span>
+                           </a>
+                        </div>
+                        <div class="description">
+                           ' . $row['mo_ta'] . '
+                        </div>
+                        <div class="attribute_info">
+                           <div class="row">
+                              <div class="col-xs-6 a_att">
+                                 Rank: <b>' . $row['rank'] . '</b>
+                              </div>
+                              <div class="col-xs-6 a_att">
+                                 Tướng: <b>' . $row['tuong'] . '</b>
+                              </div>
+                              <div class="col-xs-6 a_att">
+                                 Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                              </div>
+                              <div class="col-xs-6 a_att">
+                                 Ngọc 90: <b>' . $retVal . '</b>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="a-more">
+                           <div class="row">
+                              <div class="col-xs-6">
+                                 <div class="price_item">
+                                    ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
+                                 </div>
+                              </div>
+                              <div class="col-xs-6 ">
+                                 <div class="view">
+                                    <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+
+                                 </div>
+                              </div>
+
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  ';
+                        $i++;
 
 
 
 
-                     if ($i >= 4) {
-                        break;
+                        if ($i >= 4) {
+                           break;
+                        }
                      }
                   }
-
                   ?>
 
                </div>
@@ -651,49 +656,50 @@ require_once __DIR__ . '/wit/header.php';
                </div>
                <div class=" row-flex-safari game-list">
                   <?php
-                  $home =  $kq;
 
-                  if (isset($kq) && is_array($kq) > 0) {
+
+                  if (is_array($kq) && count($kq) > 0) {
 
                      foreach ($kq as  $item) {
-                        $sl_pay =   $home->sl_pay($item['ma_loai'] * 1);
-                        foreach ($sl_pay as  $row) {
-                           $sl_pay = $row['sl_ttsp'];
-                        }
-
-
-                        $sl_loai =  $home->sl_loai($item['ma_loai'] * 1);
-                        foreach ($sl_loai as  $rowsl) {
-                           if ($rowsl['ten_loai'] == 'free fire') {
-                              $sl_loai = $rowsl['so_luong'];
-                           } else if ($rowsl['ten_loai'] == 'Ngọc rồng online') {
-                              $sl_loai = $rowsl['so_luong'];
-                           } else  if ($rowsl['ten_loai'] == 'liên minh huyền thoại ') {
-                              $sl_loai = $rowsl['so_luong'];
-                           } else {
-                              $sl_loai = $rowsl['so_luong'];
-                           }
-                        }
+                        $pay_sp = 0;
+                        $sl_sp = 0;
                         echo '  <div class="col-sm-3 col-xs-6 p-5">
                                     <div class="classWithPad">
                                        <div class="news_image">
                                          
                                           <a href="./?act=nick&danhmuc=' . $item['ma_loai'] . '" title="Danh Mục Game ' . $item['ten_loai'] . '" class="">
-                                             <img src="/admin/view/upload/' . $item['hinh_loai'] . '" alt="Danh Mục Game ' . $item['ten_loai'] . '"></a>
+                                             <img src="/assets/upload/' . $item['hinh_loai'] . '" alt="Danh Mục Game ' . $item['ten_loai'] . '"></a>
                                        </div>
                                        <div class="news_title">
                                           <h2 class="categry_tile">
                                              <a href="./?act=nick&danhmuc=' . $item['ma_loai'] . '" class="categry_tile_link" title="Danh Mục Game ' . $item['ten_loai'] . '">Game ' . $item['ten_loai'] . '</a>
                                           </h2>
                                        </div>
-                                       <div class="news_description">
-                                       <p>
-                                       Số tài khoản:  ' . $sl_loai . ' 
-                                    </p>
-                                    <p>
-                                       Đã bán: ' .    $sl_pay . ' 
-                                    </p>
-                                 </div>
+                                       <div class="news_description">';
+
+                        if (is_array($sl_loai) && count($sl_loai) > 0 && is_array($sl_pay) && count($sl_pay) > 0) {
+                           foreach ($sl_loai as $sl) {
+
+                              if ($sl['ma_loai'] == $item['ma_loai']) {
+                                 $sl_sp = $sl['so_luong'];
+                              }
+                           }
+
+                           foreach ($sl_pay as $pay) {
+
+                              if ($pay['ma_loai'] == $item['ma_loai']) {
+                                 $pay_sp = $pay['sl_ttsp'];
+                              }
+                           }
+                        }
+
+                        echo '   <p>   Số tài khoản:  ' . $sl_sp . ' 
+                                 </p>';
+                        echo '   <p>   Số tài khoản:  ' .  $pay_sp . ' 
+                                 </p>';
+
+
+                        echo ' </div>
                                     <div class="row">
                                           <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
                                              <a href="?act=nick&danhmuc=' . $item['ma_loai'] . '" title="">
@@ -1099,7 +1105,9 @@ require_once __DIR__ . '/wit/header.php';
 
    ?>
 
-  
+   </body>
+
+   </html>
    <?php
-require_once __DIR__ . '/wit/header.php';
-?>
+   require_once __DIR__ . '/wit/footer.php';
+   ?>

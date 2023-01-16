@@ -1,0 +1,64 @@
+input.change_pass{
+    padding: .625rem!important;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.14);
+    width: 100%;
+    text-align: left;
+}
+.text_pass{
+color: #757575;
+text-transform: capitalize;
+text-align: left;
+}
+form{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    
+}
+.content .col{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: .9375rem;
+    border-radius: .125rem;
+}
+.text_inp{
+    width: 30%;
+}
+.inp{
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.btn_resetpass{
+    
+    color: #757575;
+    outline: none;
+    border: 0;
+    background-color: #fff;
+}
+.btn_change_pass{
+    color: #fff;
+    position: relative;
+    overflow: visible;
+    outline: 0;
+    background: #ee4d2d;
+    height: 40px;
+    padding: 0 20px;
+    min-width: 70px;
+    max-width: 220px;
+    align-items: center;
+    border: 0;
+    border-radius: 4px;
+    text-transform: capitalize;
+}

@@ -1,422 +1,1105 @@
-<!doctype html>
-<html>
+<?php
+require_once __DIR__ . '/wit/header.php';
+?>
 
-<head>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trang chu</title>
-    <link rel="stylesheet" href="home.css">
-    <meta http-equiv="X-UA-Compatible" content=" ">
-    <meta name="description" content="trang chủ của team 9">
-    <meta name="keywords" content="zzluckyzzking.cf">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<!-- END: LAYOUT/HEADERS/HEADER-1 -->
+<!-- BEGIN: PAGE CONTAINER -->
+<div class="c-layout-page">
+   <!-- BEGIN: PAGE CONTENT -->
 
-<body>
-    <div class="wrapper">
-        <div class="menu">
-            <nav class="navigation">
-                <div class="nav-logo"> <a href="index.html" class="gnb__logo ">
-                        <span class="hidden">Samsung</span>
-                        <div class="gnb__logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 16" focusable="false">
-                                <g fill="none" fill-rule="evenodd">
-                                    <path d="M0.964 0H121.507V32H0.964z" transform="translate(-9 -8)"></path>
-                                    <path fill="#000" fill-rule="nonzero"
-                                        d="M15.937 19.184c.155.363.104.829.026 1.114-.13.492-.466 1.01-1.45 1.01-.931 0-1.5-.544-1.5-1.347v-1.45H9v1.14C9 22.99 11.614 24 14.436 24c2.692 0 4.918-.932 5.28-3.417.181-1.295.052-2.123-.026-2.46-.62-3.133-6.29-4.065-6.73-5.8-.077-.31-.051-.62-.026-.776.104-.466.44-1.01 1.372-1.01.88 0 1.398.544 1.398 1.346v.933h3.728v-1.062C19.432 8.492 16.507 8 14.384 8c-2.666 0-4.815.88-5.229 3.314-.103.673-.13 1.269.026 2.02.673 3.028 5.98 3.909 6.756 5.85zm48.534-.025c.155.362.103.828.026 1.087-.13.492-.466.984-1.45.984-.932 0-1.475-.544-1.475-1.347V18.46h-3.96v1.139c0 3.288 2.588 4.297 5.383 4.297 2.667 0 4.867-.906 5.23-3.391.18-1.269.05-2.123-.027-2.434-.621-3.107-6.238-4.013-6.652-5.747-.078-.311-.052-.622-.026-.777.104-.466.414-.984 1.346-.984.854 0 1.372.544 1.372 1.346v.907h3.701V11.78c0-3.21-2.899-3.728-4.995-3.728-2.615 0-4.763.88-5.177 3.288-.104.647-.13 1.243.026 1.993.673 3.03 5.927 3.91 6.678 5.826zm30.984 1.32l-.207-12.013h3.701v14.757h-5.332l-3.753-12.401.207 12.401h-3.676V8.466h5.54l3.52 12.013zM28.335 9.553l-2.07 13.826h-4.038l2.744-14.913h6.652l2.744 14.913h-4.012l-2.02-13.826zm21.796 0L47.542 23.38h-3.779L41.201 9.553l-.104 13.826H37.37l.31-14.913h6.083l1.89 11.65 1.89-11.65h6.082l.337 14.913h-3.728l-.103-13.826zm26.868 11.6c1.035 0 1.372-.726 1.424-1.088.026-.156.026-.389.026-.57V8.44h3.779V19.16c0 .284-.026.828-.026.983-.259 2.797-2.46 3.703-5.203 3.703-2.744 0-4.944-.906-5.203-3.703-.026-.155-.052-.699-.026-.983V8.44h3.78v11.055c0 .181 0 .414.025.57.078.388.389 1.087 1.424 1.087zm31.165-.156c1.087 0 1.45-.7 1.527-1.088.026-.18.052-.388.026-.57v-2.174h-1.527V14.99h5.28v4.013c0 .285 0 .492-.051.984-.259 2.719-2.615 3.676-5.255 3.676-2.64 0-4.996-.957-5.254-3.676-.052-.492-.052-.699-.052-.984v-6.291c0-.259.026-.725.052-.984.336-2.796 2.588-3.676 5.254-3.676 2.64 0 4.97.88 5.229 3.676.052.466.026.984.026.984v.492h-3.78v-.829s0-.362-.051-.57c-.078-.336-.362-1.087-1.501-1.087-1.088 0-1.398.725-1.476 1.088-.052.207-.052.466-.052.699v6.835c0 .181 0 .388.026.57.104.414.492 1.087 1.58 1.087z"
-                                        transform="translate(-9 -8)"></path>
-                                </g>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="pages/shop.html">Sản phẩm</a></li>
-                    <li><a href="pages/lienhe.html">Liên hệ</a></li>
-                    <li><a href="pages/about.html">Giới thiệu</a></li>
-                </ul>
-                <div class="gnb__sub">
-                    <ul class="gnb__utility">
-                        <li class="gnb__search">
-                            <a class="gnb__search-btn gnb__search-btn-js" href="javascript:void(0)" role="button"
-                                an-tr="nv00_gnb--text-depth1" an-ca="navigation" an-ac="gnb" an-la="search">
-                                <span class="hidden">Search</span>
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
-                                    <path
-                                        d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.325 36.325 0 01-7.963 22.733l22.8 22.948-5.674 5.639-22.767-22.913a36.327 36.327 0 01-22.896 8.093c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5zm0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5z">
-                                    </path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="gnb__cart">
-                            <a href="Page-1.html"  class="gnb__cart-btn js-gp-cart-btn" role="link"
-                                an-tr="nv00_gnb--cart-depth1" an-ca="navigation" an-ac="gnb" an-la="cart">
-                                <span class="hidden">Cart</span>
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
-                                    <path
-                                        d="M72.848 70.25c6.075 0 11 4.925 11 11s-4.925 11-11 11-11-4.925-11-11 4.925-11 11-11zm-35 0c6.075 0 11 4.925 11 11s-4.925 11-11 11-11-4.925-11-11c0-6.074 4.926-11 11-11zm35 7a4 4 0 10.002 8.001 4 4 0 00-.002-8.001zm-35 0a4 4 0 100 8 4 4 0 000-8zM13.892 3.75c2.287 0 4.376 1.55 5.058 3.72l.064.22 2.97 11.187h68.128a4.727 4.727 0 014.661 5.786l-.048.2-9.559 36.291c-.583 2.216-2.618 3.842-4.894 3.944l-.228.005H30.06c-2.287 0-4.377-1.55-5.06-3.72l-.063-.219-13.124-49.413-10.7.006-.004-8 12.782-.007zm72.03 23.127H24.108l8.027 30.226H77.96l7.962-30.226z">
-                                    </path>
-                                </svg>
-                                <span class="gnb__cart-in-number gnb-cart-count" aria-live="polite"
-                                    style="display:none;"><span class="hidden">Number of Products : </span>0</span>
-                            </a>
-    
-                        </li>
-    
-    
-                        <li class="gnb__login before-login-context">
-                            <a class="gnb__login-btn" href="dangnhap.html" role="button" aria-label="Log-In"
-                                aria-expanded="false">
-                                <span class="hidden">Log-In</span>
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
-                                    <path
-                                        d="M48 50c17.346 0 32 14.221 32 31.054V89c0 2.757-2.243 5-5 5H21c-2.757 0-5-2.243-5-5v-7.946C16 64.221 30.654 50 48 50zm0 8c-12.785 0-24 10.773-24 23.054V86h48v-4.946C72 68.773 60.785 58 48 58zm-.002-56c12.133 0 22.003 9.87 22.003 22.001C70 36.131 60.13 46 47.998 46c-12.13 0-21.997-9.869-21.997-21.999C26 11.87 35.867 2 47.998 2zm0 8c-7.718 0-13.997 6.281-13.997 14.001C34 31.72 40.28 38 47.998 38 55.718 38 62 31.72 62 24.001 62 16.281 55.719 10 47.998 10z">
-                                    </path>
-                                </svg>
-                            </a>
-                            <div class="gnb__login-layer">
-                                <ul class="gnb__utility-menu">
-                                    <li>
-                                        <a href="dangnhap.html"
-                                            data-linkinfo="https://account.samsung.com/accounts/v1/DCGLIN/signInGate"
-                                            class="gnb__utility-link loginBtn" an-tr="nv00_gnb--text-depth2" an-ca="account"
-                                            an-ac="gnb" an-la="login">Log-In/Sign-Up
-                                            <span class="icon-wrap">
-                                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"
-                                                    focusable="false">
-                                                    <path
-                                                        d="M48 50c17.346 0 32 14.221 32 31.054V89c0 2.757-2.243 5-5 5H21c-2.757 0-5-2.243-5-5v-7.946C16 64.221 30.654 50 48 50zm0 8c-12.785 0-24 10.773-24 23.054V86h48v-4.946C72 68.773 60.785 58 48 58zm-.002-56c12.133 0 22.003 9.87 22.003 22.001C70 36.131 60.13 46 47.998 46c-12.13 0-21.997-9.869-21.997-21.999C26 11.87 35.867 2 47.998 2zm0 8c-7.718 0-13.997 6.281-13.997 14.001C34 31.72 40.28 38 47.998 38 55.718 38 62 31.72 62 24.001 62 16.281 55.719 10 47.998 10z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </li>
-    
-    
-                                </ul>
-                            </div>
-                        </li>
-    
-                       
-                    </ul>
-    
-                </div>
-                <div class="nav-toggle">
-                    <i class="fa fa-list-ul" aria-hidden="true"></i>
-                </div>
-            </nav>
-            <div class="nav-overlay"></div>
+   <script>
+      //   Swal.fire({
+      //   title: '<h1>THÔNG BÁO</h1>',
+      //   html: '<h2><b>Nhân Dịp Black Friday <a href="/" ><b style="color:#5E70B3;">TAIKHOANGAME</b></a>  Sale 50% </b></h2>',
+      //   imageUrl: '/duan/Controller/img/banner_sale.jpg',
+      //   imageWidth: 800,
+      //   imageHeight: 300,
+      //   imageAlt: 'Custom image',
+      // });
+      <?php $thongbao ?>
+   </script>
+   <style>
+      .swal2-image {
+         max-width: 100%;
+         margin: 0 !important;
+      }
 
-        
+      .swal2-container.swal2-center>.swal2-popup {
+         width: 500px !important;
+      }
+   </style>
+   <!-- begin   thongbao -->
 
-        </div>
-
-        <div class="header">
-            <div>
-              <section class="container">
-                <section class="showcase">
-                  <div class="video-container">
-                  <video class="slide" muted=" true" autoplay=" true" loop= "false " idx="0" >
-                    <source   src="//images.samsung.com/is/content/samsung/assets/id/2202/home/Home_B0_KV_Main-KV_1440x640_pc.mp4" type="video/mp4">
-                </video>
-                  </div>
-              </section>
-              <section class="showcase">
-                <div class="video-container">
-                    <picture>
-                        <source media="(max-width:767px)" srcset="../img/2022_Home_Main_KV_Neo_QLED_sound_MO_aem_720x1080.webp 1.5x">
-
-                        <source media="(min-width:768px) and (max-width:1365px)" srcset="../img/2022_Home_Main_KV_Neo_QLED_sound_PC_aem_1440x640.webp 1.5x">
-
-                        <source media="(min-width:1366px)" srcset="../img/2022_Home_Main_KV_Neo_QLED_sound_PC_aem_1440x640.webp 1.5x">
-                            
-                            <img src="../img/2022_Home_Main_KV_Neo_QLED_sound_PC_aem_1440x640.webp"  idx="1" class="slide">
-                        
-                        
-                    </picture>
-                </div>
+   <!-- <div class="thongbao">
+         <div class="thongbao_img" style="text-align: center"><img src="/Controller/img/banner_sale.jpg" style="width: 50px;height: 50px;" alt="png-image"></div> -->
+   <!-- <div class="modal-content">
+       <img src="/Cintroller/img/banner_sale.jpg" alt="">
              
-            </section>
-            <section class="showcase">
-              <div class="video-container">
-                <picture>
-                    <source media="(max-width:767px)" srcset="../img/01_GW_MainKV_Ecosystem_M_notext.webp 1.5x">
-                        <source media="(min-width:768px) and (max-width:1365px)" srcset="../img/01_GW_MainKV_Ecosystem_PC_notext.jpg 1.5x">
-                        <source media="(min-width:1366px)" srcset="../img/01_GW_MainKV_Ecosystem_PC_notext.jpg 1.5x">
-                        
-                        <img src="../img/01_GW_MainKV_Ecosystem_PC_notext.jpg"  idx="2" class="slide">
-                    
-                    
-                </picture>
-              </div>
            
-          </section>
-              </section>
-             <p class="btn-change" id="next"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" focusable="false" aria-hidden="true">
-              <g fill="none" fill-rule="evenodd">
-                  <g>
-                      <circle style="fill: #000;" cx="20" cy="20" r="20"></circle>
-                      <g style="fill:#fff;" fill-rule="nonzero">
-                        <path d="M7.957 4.077L8.821 3.173 18.043 12 8.821 20.827 7.957 19.923 16.235 12z" transform="translate(8 8)"></path>
-                      </g>
-                  </g>
-              </g>
-          </svg></p>
-             <p class="btn-change" id="prev">  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" focusable="false" aria-hidden="true">
-              <g fill="none" fill-rule="evenodd">
-                  <g>
-                      <circle style="fill: #000;" cx="20" cy="20" r="20"></circle>
-                      <g style="fill: #fff;" fill-rule="nonzero">
-                          <path d="M15.179 3.173L16.043 4.077 7.765 12 16.043 19.923 15.179 20.827 5.957 12z" transform="translate(8 8)"></path>
-                      </g>
-                  </g>
-              </g>
-          </svg></p>
-            
-              <section class="change-img">
-                <button class="active" idx="0"></button>
-                <button idx="1"></button>
-                <button idx="2"></button>
-              </section>
-            </div>
-          
-      
-              <div class="text" idx="0" >
-                  <h2>Galaxy S22 Ultra</h2>
-                  <p class="mota">Thu cũ đổi mới giá chỉ từ 13,130,300đ.
-                  </p>
-  
-                  <div class="cta-wrap">
-  
-                      <a class="cta cta--underline cta--black" href="Page-1.html">
-                         Tìm hiểu thêm
-                      </a>
-  
-  
-                      <a class="container-cta--black" href="#">
-                         Mua ngay
-                      </a>
-  
+           
+
+         </div> -->
+
+</div>
+
+<!-- end thongbao -->
+
+<div class="c-content-box c-size-md c-bg-white">
+   <!-- banner  Begin: Title 1 component -->
+   <div class="container main-content" style="margin-bottom: 50px;">
+      <div class="c-content-client-logos-slider-1  c-bordered">
+         <div class="owl-carousel owl-theme c-owl-theme bordered1 c-owl-nav-center owl-loaded owl-drag">
+            <!-- end box1 -->
+            <div class="owl-stage-outer">
+               <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2280px;">
+                  <div class="owl-item active" style="width: 1140px;">
+                     <div class="item_video">
+
+                        <div class="nav_item">
+
+                           <a href="/?act=#">
+
+                              <video class="slide" muted=" true" autoplay=" true" loop="false " idx="0">
+
+                                 <source src="https://taikhoangame.site/img/sale_black_friday.mp4" type="video/mp4">
+
+                                 <!-- <source src="//images.samsung.com/is/content/samsung/assets/vn/home/2022/Home_Q4_KV_Main-KV_1440x640_pc.mp4" type="video/mp4"> -->
+                              </video>
+                           </a>
+                        </div>
+                        <div class="text">
+                           <a href="/?act=nick&amp;danhmuc=1" class="full-home-banners__right-banner_top ">
+
+                              <div class="box_right_top" style="background-image: url(/duan/Controller/img/banner_sale.jpg); background-size: 100% 100%; background-repeat: no-repeat;">
+                              </div>
+                           </a>
+                           <a href="/?act=nick&amp;danhmuc=3" class="full-home-banners__right-banner">
+                              <div class="box_right_bottom" style=" margin-top: .3125rem;background-image: url(/duan/Controller/img/sale_m12.jpg); background-size: 100% 100%;background-repeat: no-repeat;">
+                              </div>
+                           </a>
+                        </div>
+                        <style>
+                           .item_video {
+
+                              position: relative;
+
+                              display: flex;
+
+                              flex-grow: 2;
+
+                              flex-wrap: wrap;
+
+                              height: 489px;
+
+                           }
+
+
+
+                           audio,
+
+                           canvas,
+
+                           progress,
+
+                           video {
+
+                              display: inline-block;
+
+                              vertical-align: baseline;
+
+                              height: 100%;
+
+                              width: 100%;
+
+
+                           }
+
+
+
+                           .full-home-banners__right-banner_top:first-child {
+
+                              border-top-right-radius: 2px;
+
+                              overflow: hidden;
+
+                              height: 50%;
+
+                           }
+
+
+
+                           .full-home-banners__right-banner {
+
+                              border-top-right-radius: 2px;
+
+                              overflow: hidden;
+
+                              height: 50%;
+
+                           }
+
+
+
+
+
+                           .box_right_top {
+
+                              width: 100%;
+
+                              height: 100%;
+
+                           }
+
+
+
+                           .box_right_bottom {
+
+                              width: 100%;
+
+                              height: 100%;
+
+                           }
+
+
+
+
+
+                           .text {
+
+                              max-width: 100%;
+
+                              flex-grow: 1;
+
+                              flex-shrink: 1;
+
+                              flex-basis: 0;
+
+                              border-top-right-radius: 2px;
+
+                              border-bottom-right-radius: 2px;
+
+                              display: flex;
+
+                              flex-direction: column;
+
+                              margin-left: 5px;
+
+                           }
+
+
+
+                           iframe {
+
+                              /* width: 70%; */
+
+                              height: 100%;
+
+                           }
+                        </style>
+
+                     </div>
                   </div>
-              </div>
-  
-              <div class="text doi" idx="1" >
-                <h2 class="text01">Neo QLED 8K</h2>
-                <p  class="mota text01">Vượt đỉnh 8K, vượt xa đa nhiệm
-                </p>
-  
-                <div class="cta-wrap">
-  
-                    <a class="cta cta--underline cta--black text01" href="#">
-                       Tìm hiểu thêm
-                    </a>
-  
-  
-                    <a class="container-cta--black text01" href="#">
-                       Mua ngay
-                    </a>
-  
-                </div>
+                  <div class="owl-item" style="width: 1140px;">
+                     <div class="item_video">
+
+                        <div class="nav_item">
+
+                           <a href="/?act=#">
+
+                              <video class="slide" muted=" true" autoplay=" true" loop="false " idx="0">
+
+                                 <source src="/Controller/video/sieu_sale_50.mp4" type="video/mp4">
+
+                                 <!-- <source src="//images.samsung.com/is/content/samsung/assets/vn/home/2022/Home_Q4_KV_Main-KV_1440x640_pc.mp4" type="video/mp4"> -->
+
+                              </video>
+
+                           </a>
+
+                        </div>
+                        <div class="text">
+                           <a href="/?act=nick&amp;danhmuc=1" class="full-home-banners__right-banner_top ">
+
+                              <div class="box_right_top" style="background-image: url(/duan/Controller/img/sale_nro.jpg);background-size: 100% 100%; background-repeat: no-repeat;">
+                              </div>
+                           </a>
+                           <a href="/?act=nick&amp;danhmuc=3" class="full-home-banners__right-banner">
+
+                              <div class="box_right_bottom" style=" margin-top: .3125rem;background-image: url(/duan/Controller/img/sale_ff.jpg); background-size: 100% 100%;background-repeat: no-repeat;">
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-  
-            <div class="text doi01" idx="2" >
-              <h2 class="text02">Siêu sale đốn tim<br>Đón tuần lễ Galaxy</h2>
-              <p class="mota" class="text02">Ưu đãi đến <strong>50%</strong>, thu cũ đổi mới, trả góp <strong>0%</strong><br/>Từ <strong>20.06</strong> đến <strong>30.06.2022</strong>
-              </p>
-  
-              <div class="cta-wrap">
-                  <a class="container-cta--black" href="#">
-                     Mua ngay
+            <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+            <div class="owl-dots disabled"></div>
+         </div>
+
+      </div>
+
+   </div>
+
+   <!-- end banner -->
+
+
+   <div class="container">
+      <!-- Begin: Testimonals 1 component -->
+      <div class="c-content-client-logos-slider-1  c-bordered">
+         <!-- Begin: Title 1 component -->
+         <div class="c-content-title-1">
+            <h3 class="c-center c-font-uppercase c-font-bold">MENU GIAO DỊCH</h3>
+            <div class="c-line-center c-theme-bg"></div>
+         </div>
+         <div class="carousel theme c-theme bordered1 c-nav-center">
+            <div class="item">
+               <div class="nav_item">
+                  <a href="/?act=#" class="col1_nav">
+                     <img src="/admin/view/upload/vHPm7XyQah_1623147701.jpg" alt="Trang cá nhân nickvn" />
                   </a>
-  
-              </div>
-          </div>
-  
-  
-          </div>
+               </div>
+               <div class="nav_item">
+                  <a href="/?act=napthe" class="col1_nav">
+                     <img src="/Controller/img/NapThe.png" alt="Trang cá nhân nickvn" />
+                  </a>
+               </div>
+               <?php
 
-    <div class="main">
+               if (isset($_SESSION['ma_user'])) {
 
-        <div class="cm-g-text-block-container aem-GridColumn aem-GridColumn--default--12">
+               ?>
+                  <div class="nav_item">
+                     <a href="/?act=profile" class="col1_nav"><img src="/Controller/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
+                     </a>
+                  </div>
+               <?php
+               } else {
 
-            <section class="text-block-container   text-color--black " style="background: #FFFFFF">
-                <div class="text-block-container__title-wrap">
-                    <div class="text-block-container__headline-wrap">
+               ?>
 
-                        <h2 class="text-block-container__headline">Sản Phẩm Nổi Bật</h2>
-                    </div>
+                  <div class="nav_item">
+                     <a href="#" class="col1_nav"><img src="/Controller/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
+                     </a>
+                  </div>
 
-                </div>
-
-            </section>
-            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-
+               <?php
+               }
+               ?>
+               <div class="nav_item">
+                  <a href="#" class="col1_nav"><img src="/Controller/img/NickRandom.png" alt="dịch vụ nickvn" /></a>
+                  </a>
+               </div>
 
 
             </div>
+            <!-- End-->
+         </div>
+         <!-- End-->
+      </div>
+   </div>
 
-        </div>
-
-        <div class="sidebar">
-            <ul class="list-sidebar">
-                <li><a href="#">Ưu đãi</a></li>
-                <li><a href="#">điện thoại</a></li>
-                <li><a href="#">Ti vi</a></li>
-                <li><a href="#">Laptop</a></li>
-                <li><a href="#">Galaxy</a></li>
-            </ul>
-        </div>
+   <div class="c-content-box c-size-md c-bg-white">
 
 
+      <!-- product sale -->
+      <div class="c-content-box c-size-md c-bg-white">
+         <div class="container">
+            <!-- Begin: Testimonals 1 component -->
+            <div class="c-content-client-logos-slider-1  c-bordered" data-slider="owl">
+               <!-- Begin: Title 1 component -->
+               <div class="c-content-title-1">
+                  <h3 class="c-center c-font-uppercase c-font-bold">Sản phẩm sale</h3>
+                  <div class="c-line-center c-theme-bg"></div>
+               </div>
+               <div class="row row-flex  item-list">
 
 
 
-        <div class="maincontent">
+                  <?php
+                  $i = 0;
 
+                  foreach ($pro_sale as $row) {
 
-            <div class="mobile">
-
-                <div class="mobile-product-left">
-
-                    <div class="mobile-product">
-                        <a href="#" class="mobile-product">
-                            <div class="image">
-                                <img src="https://images.samsung.com/is/image/samsung/assets/vn/home/2022/OB_684x684_PC_0530.jpg?$684_684_JPG$"
-                                    alt="">
-                            </div>
-                        </a>
-
-                    </div>
-
+                     if ($row['giam_gia'] > 0) {
+                        $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
+                        echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">  <div class="classWithPad">
+               <div class="image">
+                <a href="?act=acc&id=' . $row['ma_sp'] . '">
+    
+                <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                   <span class="ms">MS: ' . $row['ma_sp'] . '</span>
+                </a>
+               </div>
+               <div class="description">
+               ' . $row['mo_ta'] . '
+               </div>
+               <div class="attribute_info">
+                <div class="row">
+                   <div class="col-xs-6 a_att">
+                      Rank: <b>' . $row['rank'] . '</b>
+                   </div>
+                   <div class="col-xs-6 a_att">
+                      Tướng: <b>' . $row['tuong'] . '</b>
+                   </div>
+                   <div class="col-xs-6 a_att">
+                      Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                   </div>
+                   <div class="col-xs-6 a_att">
+                      Ngọc 90: <b>' . $retVal . '</b>
+                   </div>
                 </div>
-
-
-
-
-
-
-                <div class="mobile-right">
-
-
-
-                    <div class="mobile-product-right">
-                        <a href="#">
-                            <div class="image">
-                                <img src="https://images.samsung.com/is/image/samsung/assets/vn/home/2022/PC_small_banner_1.jpg?$330_330_JPG$"
-                                    alt="">
-                            </div>
-                        </a>
-
-                    </div>
-
-
-                    <div class="mobile-product-right">
-                        <a href="#">
-                            <div class="image">
-                                <img src="https://images.samsung.com/is/image/samsung/assets/vn/home/2022/6_1PC.png?$330_330_PNG$"
-                                    alt="">
-                            </div>
-                        </a>
-
-                    </div>
-
-
-                    <!-- mobile bottom -->
-
-                    <div class="mobile-product-right-bottom">
-                        <a href="#">
-                            <div class="image">
-                                <img src="https://images.samsung.com/is/image/samsung/assets/vn/home/2022/PC_copy.jpg?$330_330_JPG$"
-                                    alt="">
-                            </div>
-                        </a>
-
-                    </div>
-
-                    <div class="mobile-product-right-bottom">
-                        <a href="#">
-                            <div class="image">
-                                <img src="https://images.samsung.com/is/image/samsung/assets/vn/home/2022/dotcom_PC.jpg?$330_330_JPG$"
-                                    alt="">
-                            </div>
-                        </a>
-
-                    </div>
-
-
-
+               </div>
+               <div class="a-more">
+                <div class="row">
+                   <div class="col-xs-6">
+                      <div class="price_item">
+                  <del>    ' . number_format(($row['giasp']), 0, ',', '.') . 'VNĐ</del><br>' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
+                      </div>
+                   </div>
+                   <div class="col-xs-6 ">
+                   <div class="view">
+                      <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+    
+                   </div>
                 </div>
+    
+                </div>
+               </div>
+               </div>
+               </div>
+               ';
+                        $i++;
+                     }
 
+
+
+                     if ($i >= 4) {
+                        break;
+                     }
+                  }
+
+                  ?>
+
+               </div>
+               <!-- End-->
             </div>
+         </div>
+         <style type="text/css">
+            .news_image,
+            .image,
+            .news_title,
+            .a-more,
+            .news_description {
+               position: relative;
+               z-index: 200;
+            }
+
+            span.sale {
+               position: absolute;
+               z-index: 1000;
+               right: -1px;
+               top: -1px;
+               background: rgba(255, 212, 36, .9);
+               padding: 5px;
+               text-align: center;
+               color: #ee4d2d;
+               width: 50px;
+               font-weight: 700;
+               font-size: 15px;
+            }
+
+            .sale:after {
+               content: "";
+               width: 0;
+               height: 0;
+               left: 0;
+               bottom: -4px;
+               position: absolute;
+               border-color: transparent rgba(255, 212, 36, .9);
+               border-style: solid;
+               border-width: 0 25px 4px;
+            }
+
+            .outPrice {
+               padding-top: 20px;
+               text-align: center;
+               width: 100px;
+               margin: 0 auto;
+               margin-top: 10px;
+               display: flex;
+               justify-content: center;
+            }
+
+            .oldPrice {
+               text-decoration: line-through;
+               color: #3f0;
+               border: 2px solid;
+               padding: 5px 15px;
+               border-radius: 5px;
+               font-size: 14px;
+               font-weight: bold;
+            }
+
+            .newPrice {
+               border: 2px solid red;
+               padding: 5px 15px;
+               color: red;
+               display: inline;
+               border-radius: 5px;
+               margin-left: 10px;
+               font-size: 14px;
+               font-weight: bold;
+               margin-bottom: 10px;
+            }
+
+            .game-list .a-more .view {
+               margin-top: 20px;
+            }
+
+            @media (max-width: 550px) {
+               .outPrice {
+                  flex-direction: column;
+               }
+
+               .newPrice {
+                  margin-left: 0;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+               }
+            }
+         </style>
+         <!-- END: PAGE CONTENT -->
+      </div>
+      <!-- product new -->
+      <div class="c-content-box c-size-md c-bg-white">
+         <div class="container">
+            <!-- Begin: Testimonals 1 component -->
+            <div class="c-content-client-logos-slider-1  c-bordered" data-slider="owl">
+               <!-- Begin: Title 1 component -->
+               <div class="c-content-title-1">
+                  <h3 class="c-center c-font-uppercase c-font-bold">Sản phẩm mới</h3>
+                  <div class="c-line-center c-theme-bg"></div>
+               </div>
+               <div class="row row-flex  item-list">
 
 
-        </div>
-    </div>
+
+                  <?php
+                  $i = 0;
+                  foreach ($pro as $row) {
 
 
-    <!-- footer -->
-    <div class="clear"></div>
-    <div class="footer">
-        <div id="footer1">
-            <h2> Product & Service</h2>
-            <P>
-                Smartphones
-                Tablets
-                Audio Sound
-                Watches
-                Smart Switch
-                Mobile Accessories
-                TVs
-                Sound Devices
-                Refrigerators
-                Laundry
-                Air Solutions
-                Cooking Appliances
-                Monitors
-                Memory Storage
-            </P>
-        </div>
-        <div id="footer2">
-            <h3>
-                Sản phẩm
-            </h3>
-            <P>
-                Cancellation & Return Policy
-                Track Order Status
-                20K Advantage
+                     $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
+                     echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">  <div class="classWithPad">
+               <div class="image">
+                <a href="?act=acc&id=' . $row['ma_sp'] . '">
+    
+                <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                   <span class="ms">MS: ' . $row['ma_sp'] . '</span>
+                </a>
+               </div>
+               <div class="description">
+               ' . $row['mo_ta'] . '
+               </div>
+               <div class="attribute_info">
+                <div class="row">
+                   <div class="col-xs-6 a_att">
+                      Rank: <b>' . $row['rank'] . '</b>
+                   </div>
+                   <div class="col-xs-6 a_att">
+                      Tướng: <b>' . $row['tuong'] . '</b>
+                   </div>
+                   <div class="col-xs-6 a_att">
+                      Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                   </div>
+                   <div class="col-xs-6 a_att">
+                      Ngọc 90: <b>' . $retVal . '</b>
+                   </div>
+                </div>
+               </div>
+               <div class="a-more">
+                <div class="row">
+                   <div class="col-xs-6">
+                      <div class="price_item">
+         ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
+                      </div>
+                   </div>
+                   <div class="col-xs-6 ">
+                   <div class="view">
+                      <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+    
+                   </div>
+                </div>
+    
+                </div>
+               </div>
+               </div>
+               </div>
+               ';
+                     $i++;
 
-            </P>
-        </div>
-        <div id="footer3">
 
 
 
+                     if ($i >= 4) {
+                        break;
+                     }
+                  }
 
-            <p>
-                Phương thức thanh toán
-            </p>
-            <div class="thanhtoan">
-                <img src="../img/visa.png" alt="">
-                <img src="../img/visa.png" alt="">
+                  ?>
+
+               </div>
+               <!-- End-->
             </div>
+         </div>
+         <style type="text/css">
+            .news_image,
+            .image,
+            .news_title,
+            .a-more,
+            .news_description {
+               position: relative;
+               z-index: 200;
+            }
+
+            span.sale {
+               position: absolute;
+               z-index: 1000;
+               right: -1px;
+               top: -1px;
+               background: rgba(255, 212, 36, .9);
+               padding: 5px;
+               text-align: center;
+               color: #ee4d2d;
+               width: 50px;
+               font-weight: 700;
+               font-size: 15px;
+            }
+
+            .sale:after {
+               content: "";
+               width: 0;
+               height: 0;
+               left: 0;
+               bottom: -4px;
+               position: absolute;
+               border-color: transparent rgba(255, 212, 36, .9);
+               border-style: solid;
+               border-width: 0 25px 4px;
+            }
+
+            .outPrice {
+               padding-top: 20px;
+               text-align: center;
+               width: 100px;
+               margin: 0 auto;
+               margin-top: 10px;
+               display: flex;
+               justify-content: center;
+            }
+
+            .oldPrice {
+               text-decoration: line-through;
+               color: #3f0;
+               border: 2px solid;
+               padding: 5px 15px;
+               border-radius: 5px;
+               font-size: 14px;
+               font-weight: bold;
+            }
+
+            .newPrice {
+               border: 2px solid red;
+               padding: 5px 15px;
+               color: red;
+               display: inline;
+               border-radius: 5px;
+               margin-left: 10px;
+               font-size: 14px;
+               font-weight: bold;
+               margin-bottom: 10px;
+            }
+
+            .game-list .a-more .view {
+               margin-top: 20px;
+            }
+
+            @media (max-width: 550px) {
+               .outPrice {
+                  flex-direction: column;
+               }
+
+               .newPrice {
+                  margin-left: 0;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+               }
+            }
+         </style>
+         <!-- END: PAGE CONTENT -->
+      </div>
+      <!-- end product new -->
+      <div class="c-content-box c-size-md c-bg-white">
+         <div class="container">
+            <!-- Begin: Testimonals 1 component -->
+            <div class="c-content-client-logos-slider-1  c-bordered" data-slider="owl">
+               <!-- Begin: Title 1 component -->
+               <div class="c-content-title-1">
+                  <h3 class="c-center c-font-uppercase c-font-bold" style="text-align:left">GAME ONLINE</h3>
+                  <div class="c-line-center c-theme-bg"></div>
+               </div>
+               <div class=" row-flex-safari game-list">
+                  <?php
+                  $home =  $kq;
+
+                  if (isset($kq) && is_array($kq) > 0) {
+
+                     foreach ($kq as  $item) {
+                        $sl_pay =   $home->sl_pay($item['ma_loai'] * 1);
+                        foreach ($sl_pay as  $row) {
+                           $sl_pay = $row['sl_ttsp'];
+                        }
 
 
-        </div>
+                        $sl_loai =  $home->sl_loai($item['ma_loai'] * 1);
+                        foreach ($sl_loai as  $rowsl) {
+                           if ($rowsl['ten_loai'] == 'free fire') {
+                              $sl_loai = $rowsl['so_luong'];
+                           } else if ($rowsl['ten_loai'] == 'Ngọc rồng online') {
+                              $sl_loai = $rowsl['so_luong'];
+                           } else  if ($rowsl['ten_loai'] == 'liên minh huyền thoại ') {
+                              $sl_loai = $rowsl['so_luong'];
+                           } else {
+                              $sl_loai = $rowsl['so_luong'];
+                           }
+                        }
+                        echo '  <div class="col-sm-3 col-xs-6 p-5">
+                                    <div class="classWithPad">
+                                       <div class="news_image">
+                                         
+                                          <a href="./?act=nick&danhmuc=' . $item['ma_loai'] . '" title="Danh Mục Game ' . $item['ten_loai'] . '" class="">
+                                             <img src="/admin/view/upload/' . $item['hinh_loai'] . '" alt="Danh Mục Game ' . $item['ten_loai'] . '"></a>
+                                       </div>
+                                       <div class="news_title">
+                                          <h2 class="categry_tile">
+                                             <a href="./?act=nick&danhmuc=' . $item['ma_loai'] . '" class="categry_tile_link" title="Danh Mục Game ' . $item['ten_loai'] . '">Game ' . $item['ten_loai'] . '</a>
+                                          </h2>
+                                       </div>
+                                       <div class="news_description">
+                                       <p>
+                                       Số tài khoản:  ' . $sl_loai . ' 
+                                    </p>
+                                    <p>
+                                       Đã bán: ' .    $sl_pay . ' 
+                                    </p>
+                                 </div>
+                                    <div class="row">
+                                          <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+                                             <a href="?act=nick&danhmuc=' . $item['ma_loai'] . '" title="">
+                                                <div class="view">
+                                                   XEM THÊM
+                                                </div>
+                                             </a>
+                                          </div>
+                                       </div>
+                               
+                                    </div>
+                                 </div>';
+                     }
+                  }
+                  ?>
 
 
 
-    </div>
+
+               </div>
+               <!-- End-->
+            </div>
+         </div>
+         <style type="text/css">
+            .news_image,
+            .image,
+            .news_title,
+            .a-more,
+            .news_description {
+               position: relative;
+               z-index: 200;
+            }
+
+            span.sale {
+               position: absolute;
+               z-index: 1000;
+               right: -1px;
+               top: -1px;
+               background: rgba(255, 212, 36, .9);
+               padding: 5px;
+               text-align: center;
+               color: #ee4d2d;
+               width: 50px;
+               font-weight: 700;
+               font-size: 15px;
+            }
+
+            .sale:after {
+               content: "";
+               width: 0;
+               height: 0;
+               left: 0;
+               bottom: -4px;
+               position: absolute;
+               border-color: transparent rgba(255, 212, 36, .9);
+               border-style: solid;
+               border-width: 0 25px 4px;
+            }
+
+            .outPrice {
+               padding-top: 20px;
+               text-align: center;
+               width: 100px;
+               margin: 0 auto;
+               margin-top: 10px;
+               display: flex;
+               justify-content: center;
+            }
+
+            .oldPrice {
+               text-decoration: line-through;
+               color: #3f0;
+               border: 2px solid;
+               padding: 5px 15px;
+               border-radius: 5px;
+               font-size: 14px;
+               font-weight: bold;
+            }
+
+            .newPrice {
+               border: 2px solid red;
+               padding: 5px 15px;
+               color: red;
+               display: inline;
+               border-radius: 5px;
+               margin-left: 10px;
+               font-size: 14px;
+               font-weight: bold;
+               margin-bottom: 10px;
+            }
+
+            .game-list .a-more .view {
+               margin-top: 20px;
+            }
+
+            @media (max-width: 550px) {
+               .outPrice {
+                  flex-direction: column;
+               }
+
+               .newPrice {
+                  margin-left: 0;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+               }
+            }
+         </style>
+         <!-- END: PAGE CONTENT -->
+      </div>
 
 
 
-</body>
+      <div class="c-content-box c-size-md c-bg-white">
+         <div class="container">
+            <!-- Begin: Testimonals 1 component -->
+            <div class="c-content-client-logos-slider-1  c-bordered" data-slider="owl">
+               <!-- Begin: Title 1 component -->
+               <div class="c-content-title-1">
+                  <h3 class="c-center c-font-uppercase c-font-bold" style="text-align:left">DỊCH VỤ GAME</h3>
+                  <div class="c-line-center c-theme-bg"></div>
+               </div>
+               <div class="    row-flex-safari game-list">
+                  <div class="col-sm-3 col-xs-6 p-5">
+                     <div class="classWithPad">
+                        <div class="news_image">
 
-</html>
+                           <a href="" title="Danh Mục Game Free Fire" class="">
+                              <img src="https://taikhoangame.site/duan/Controller/img/NRO_USMDT.png" alt="Danh Mục Game Free Fire"></a>
+                        </div>
+                        <div class="news_title">
+                           <h2>
+                              <a href="" title="ÚP Đệ TỬ">ÚP Đệ TỬ</a>
+                           </h2>
+                        </div>
+                        <div class="news_description">
+                           <p>
+                              Số Giao dịch:
+                           </p>
+                           <p>
+                              Đã bán: 198
+                           </p>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+                              <a href="?act=dich_vu&service=1" title="">
+                                 <div class="view">
+                                    XEM THÊM
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-3 col-xs-6 p-5">
+                     <div class="classWithPad">
+                        <div class="news_image">
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="../js/nicepage.js"></script>
+                           <a href="?act=dich_vu&service=1" title="Danh Mục Game Free Fire" class="">
+                              <img src="https://taikhoangame.site/duan/Controller/img/NRO_SDT.png" alt="Danh Mục Game Free Fire"></a>
+                        </div>
+                        <div class="news_title">
+                           <h2>
+                              <a href="?act=dich_vu&service=1" title="Danh Mục Game Free Fire">SĂN ĐỆ TỬ</a>
+                           </h2>
+                        </div>
+                        <div class="news_description">
+                           <p>
+                              Số tài khoản: 23,490
+                           </p>
+                           <p>
+                              Đã bán: 198
+                           </p>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+                              <a href="?act=dich_vu&service=1" title="">
+                                 <div class="view">
+                                    XEM THÊM
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-3 col-xs-6 p-5">
+                     <div class="classWithPad">
+                        <div class="news_image">
+
+                           <a href="#" title="Danh Mục Game Free Fire" class="">
+                              <img src="https://taikhoangame.site/duan/Controller/img/NRO_LNV.png" alt="Danh Mục Game Free Fire"></a>
+                        </div>
+                        <div class="news_title">
+                           <h2>
+                              <a href="#" title="Danh Mục Game Liên Minh">LÀM NHIỆM VỤ</a>
+                           </h2>
+                        </div>
+                        <div class="news_description">
+                           <p>
+                              Số Giao dịch:
+                           </p>
+                           <p>
+                              Đã bán: 198
+                           </p>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+                              <a href="?act=dich_vu&service=1" title="">
+                                 <div class="view">
+                                    XEM THÊM
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-3 col-xs-6 p-5">
+                     <div class="classWithPad">
+                        <div class="news_image">
+
+                           <a href="#" title="Danh Mục Game Free Fire" class="">
+                              <img src="https://taikhoangame.site/duan/Controller/img/NRO_UBK.png" alt="Danh Mục Game Free Fire"></a>
+                        </div>
+                        <div class="news_title">
+                           <h2>
+                              <a href="#" title="Danh Mục Game Ngọc Rồng">ÚP BÍ KIẾP</a>
+                           </h2>
+                        </div>
+                        <div class="news_description">
+                           <p>
+                              Số Giao dịch:
+                           </p>
+                           <p>
+                              Đã bán: 198
+                           </p>
+                        </div>
+                        <div class="a-more">
+                           <div class="row">
+                              <div class="col-xs-12">
+                                 <div class="custom76">
+                                    <a href="?act=dich_vu&service=1" class="service" title="Danh Mục Game Ngọc Rồng">
+                                       <div class="view">
+                                          XEM THÊM
+                                       </div>
+                                       <!-- <style type="text/css">
+                                          .custom76 {
+                                             border: none !important;
+                                             padding: 0;
+                                          }
+
+                                          .custom76 a {
+                                             background-size: 136px 35px;
+                                             background-repeat: no-repeat;
+                                             border: none;
+                                             margin: 0 auto;
+                                             width: 136px;
+                                             height: 35px;
+                                             background: url();
+                                          }
+
+                                          .custom76 a:hover {
+                                             background-size: 136px 35px;
+                                             background-repeat: no-repeat;
+                                             border: none;
+                                             margin: 0 auto;
+                                             width: 136px;
+                                             height: 35px;
+                                             background: url();
+                                             filter: saturate(2);
+                                             filter: brightness(130%);
+                                          }
+                                       </style> -->
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- End-->
+               </div>
+               <!-- End-->
+            </div>
+         </div>
+         <style type="text/css">
+            .news_image,
+            .image,
+            .news_title,
+            .a-more,
+            .news_description {
+               position: relative;
+               z-index: 200;
+            }
+
+            span.sale {
+               position: absolute;
+               z-index: 1000;
+               right: -1px;
+               top: -1px;
+               background: rgba(255, 212, 36, .9);
+               padding: 5px;
+               text-align: center;
+               color: #ee4d2d;
+               width: 50px;
+               font-weight: 700;
+               font-size: 15px;
+            }
+
+            .sale:after {
+               content: "";
+               width: 0;
+               height: 0;
+               left: 0;
+               bottom: -4px;
+               position: absolute;
+               border-color: transparent rgba(255, 212, 36, .9);
+               border-style: solid;
+               border-width: 0 25px 4px;
+            }
+
+            .outPrice {
+               padding-top: 20px;
+               text-align: center;
+               width: 100px;
+               margin: 0 auto;
+               margin-top: 10px;
+               display: flex;
+               justify-content: center;
+            }
+
+            .oldPrice {
+               text-decoration: line-through;
+               color: #3f0;
+               border: 2px solid;
+               padding: 5px 15px;
+               border-radius: 5px;
+               font-size: 14px;
+               font-weight: bold;
+            }
+
+            .newPrice {
+               border: 2px solid red;
+               padding: 5px 15px;
+               color: red;
+               display: inline;
+               border-radius: 5px;
+               margin-left: 10px;
+               font-size: 14px;
+               font-weight: bold;
+               margin-bottom: 10px;
+            }
+
+            .game-list .a-more .view {
+               margin-top: 0px !important;
+            }
+
+            @media (max-width: 550px) {
+               .outPrice {
+                  flex-direction: column;
+               }
+
+               .newPrice {
+                  margin-left: 0;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+               }
+            }
+         </style>
+         <!-- END: PAGE CONTENT -->
+      </div>
+
+
+
+      <div class="modal fade" id="noticeModal" role="dialog" style="display: none;" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="loader" style="text-align: center"><img src="/admin/view/upload/2.jpg" style="width: 50px;height: 50px;display: none"></div>
+            <div class="modal-content">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="LoadModal" role="dialog" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="loader" style="text-align: center"><img src="/admin/view/upload/2.jpg" style="width: 50px;height: 50px;display: none"></div>
+         <div class="modal-content">
+         </div>
+      </div>
+   </div>
+   <script>
+      $(document).ready(function() {
+         $('.load-modal').each(function(index, elem) {
+            $(elem).unbind().click(function(e) {
+               e.preventDefault();
+               e.preventDefault();
+               var curModal = $('#LoadModal');
+               curModal.find('.modal-content').html("<div class=\"loader\" style=\"text-align: center\"><img src=\"/admin/view/upload/\" style=\"width: 50px;height: 50px;\"></div>");
+               curModal.modal('show').find('.modal-content').load($(elem).attr('rel'));
+            });
+         });
+      });
+   </script>
+   <?php
+
+   ?>
+
+  
+   <?php
+require_once __DIR__ . '/wit/header.php';
+?>

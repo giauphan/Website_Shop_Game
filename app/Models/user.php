@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models\user;
+namespace App\Models;
 
-use account;
+use App\Models\account;
 
 class user extends account
 {
@@ -79,5 +79,32 @@ class user extends account
         } else {
             return false;
         }
+    }
+
+
+    public function danhmuc()
+
+    {
+ 
+       $sql = 'SELECT * FROM `loai`';
+ 
+       return $this->db->pdo_query($sql);
+    }
+ 
+ 
+ 
+    public function product_new()
+    {
+ 
+ 
+       $query = "SELECT * FROM `sp`  join sp_lq on sp.ma_sp = sp_lq.ma_sp_ where trang_thai_sp = 0  ORDER by sp.ma_sp DESC";
+ 
+       return $this->db->pdo_query($query);
+    }
+    public function showproductSALE()
+    {
+       $query = "SELECT * FROM `sp` join sp_lq on sp.ma_sp = sp_lq.ma_sp_  where trang_thai_sp = 0  and giam_gia >0";
+ 
+       return $this->db->pdo_query($query);
     }
 }

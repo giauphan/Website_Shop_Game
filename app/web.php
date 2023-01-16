@@ -4,7 +4,5 @@ use Core\Route;
 
 
 
-Route::GET('/',function(){
-    echo 'hoem';
-});
+Route::GET('/',[home::class, 'index']);
 Route::GET('/contact', [home::class, 'index']);

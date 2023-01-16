@@ -1,14 +1,15 @@
 <?php
-namespace App\Models\account;
+namespace App\Models; 
 
-use App\Model\Model;
-
+use App\Models\Model;
+use PDO;
+use PDOException;
 class database extends Model
 {
-    private  $host = DB_HOST;
-    private  $user = DB_USER;
-    private  $password = DB_PASSWORD;
-    private  $dbname = DB_NAME;
+    protected  $host = DB_HOST;
+    protected  $user = DB_USER;
+    protected  $password = DB_PASSWORD;
+    protected  $dbname = DB_NAME;
     public $erro;
     
     public function __construct()
@@ -16,25 +17,25 @@ class database extends Model
         $this->pdo_get_connection();
  
     }
-    public function connect()
-    {
-        $conn = new mysqli($this->host, $this->user, $this->password, $this->dbname);
+    // public function connect()
+    // {
+    //     $conn = new mysqli($this->host, $this->user, $this->password, $this->dbname);
 
-        mysqli_set_charset($conn, 'UTF8');
+    //     mysqli_set_charset($conn, 'UTF8');
 
-        // Check connection
+    //     // Check connection
 
-        if ($conn->connect_errno) {
-            $this->erro =  "Failed to connect to MySQL: " . $conn->connect_error;
+    //     if ($conn->connect_errno) {
+    //         $this->erro =  "Failed to connect to MySQL: " . $conn->connect_error;
 
-            exit();
-        } else {
+    //         exit();
+    //     } else {
 
-            $this->erro  = "";
-        }
+    //         $this->erro  = "";
+    //     }
 
-        return $conn;
-    }
+    //     return $conn;
+    // }
     /**
 
      * Mở kết nối đến CSDL sử dụng PDO

@@ -1,6 +1,7 @@
 <?php
-namespace App\Models\account;
+namespace App\Models;
 
+use App\Models\database ;
 use App\Models\Model;
 
  abstract class account  extends Model
@@ -9,6 +10,7 @@ use App\Models\Model;
  
      public function __construct()
      {
+        
          $this->db = new database;
      }
    abstract  public function get_money();

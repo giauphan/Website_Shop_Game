@@ -73,23 +73,23 @@
  <!--[if lt IE 9]>
       <![endif]-->
 
- <script src="asset/js//jquery.easing.min.js" type="text/javascript"></script>
- <script src="asset/js//wow.js" type="text/javascript"></script>
- <script src="asset/js//reveal-animate.js" type="text/javascript"></script>
+ <script src="assets/js/jquery.easing.min.js" type="text/javascript"></script>
+ <script src="assets/js/wow.js" type="text/javascript"></script>
+ <script src="assets/js/reveal-animate.js" type="text/javascript"></script>
  <!-- END: CORE PLUGINS -->
  <!-- BEGIN: LAYOUT PLUGINS -->
- <script src="asset/js//magnific.js" type="text/javascript"></script>
- <script src="asset/js//jquery.cubeportfolio.min.js" type="text/javascript"></script>
- <script src="asset/js//jquery.counterup.min.js" type="text/javascript"></script>
- <script src="asset/js//jquery.waypoints.min.js" type="text/javascript"></script>
- <script src="asset/js//jquery.fancybox.min.js"></script>
- <script src="asset/js//jquery.smooth-scroll.js" type="text/javascript"></script>
- <script src="asset/js//js.cookie.js" type="text/javascript"></script>
+ <script src="assets/js/magnific.js" type="text/javascript"></script>
+ <script src="assets/js/jquery.cubeportfolio.min.js" type="text/javascript"></script>
+ <script src="assets/js/jquery.counterup.min.js" type="text/javascript"></script>
+ <script src="assets/js/jquery.waypoints.min.js" type="text/javascript"></script>
+ <script src="assets/js/jquery.fancybox.min.js"></script>
+ <script src="assets/js/jquery.smooth-scroll.js" type="text/javascript"></script>
+ <script src="assets/js/js.cookie.js" type="text/javascript"></script>
  <!-- END: LAYOUT PLUGINS -->
  <!-- BEGIN: THEME SCRIPTS -->
- <script src="asset/js//components.js" type="text/javascript"></script>
- <script src="asset/js//app.js" type="text/javascript"></script>
- <script src="asset/js//bootbox.min.js" type="text/javascript"></script>
+ <script src="assets/js/components.js" type="text/javascript"></script>
+ <script src="assets/js/app.js" type="text/javascript"></script>
+ <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
  <script>
     $(document).ready(function() {
        App.init(); // init core
@@ -138,14 +138,14 @@
  
  <!-- end: chat -->
  <!-- BEGIN: PAGE SCRIPTS -->
- <script src="asset/js//moment.min.js"></script>
- <script src="asset/js//daterangepicker.min.js"></script>
- <script src="asset/js//bootstrap-datepicker.min.js" type="text/javascript"></script>
- <script src="asset/js//bootstrap-timepicker.min.js" type="text/javascript"></script>
- <script src="asset/js//bootstrap-datetimepicker.min.js" type="text/javascript"></script>
- <script src="asset/js//datepicker.js" type="text/javascript"></script>
- <script src="asset/js//jquery.mask.min.js" type="text/javascript"></script>
- <script src="asset/js//common.js" type="text/javascript"></script>
+ <script src="assets/js/moment.min.js"></script>
+ <script src="assets/js/daterangepicker.min.js"></script>
+ <script src="assets/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+ <script src="assets/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+ <script src="assets/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+ <script src="assets/js/datepicker.js" type="text/javascript"></script>
+ <script src="assets/js/jquery.mask.min.js" type="text/javascript"></script>
+ <script src="assets/js/common.js" type="text/javascript"></script>
  <!-- Load Facebook SDK for JavaScript -->
  </body>
  </html>

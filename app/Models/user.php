@@ -10,7 +10,7 @@ class user extends account
 
     public function login($user, $pass)
     {
-        $sql_login = "SELECT * FROM `user` WHERE email = ? || username = ? and password = ?";
+        $sql_login = "SELECT * FROM `user` WHERE (email = ? or username = ?) and password = ?";
         return   $this->db->pdo_query($sql_login, $user, $user, $pass);
     }
 
@@ -82,29 +82,4 @@ class user extends account
     }
 
 
-    public function danhmuc()
-
-    {
- 
-       $sql = 'SELECT * FROM `loai`';
- 
-       return $this->db->pdo_query($sql);
-    }
- 
- 
- 
-    public function product_new()
-    {
- 
- 
-       $query = "SELECT * FROM `sp`  join sp_lq on sp.ma_sp = sp_lq.ma_sp_ where trang_thai_sp = 0  ORDER by sp.ma_sp DESC";
- 
-       return $this->db->pdo_query($query);
-    }
-    public function showproductSALE()
-    {
-       $query = "SELECT * FROM `sp` join sp_lq on sp.ma_sp = sp_lq.ma_sp_  where trang_thai_sp = 0  and giam_gia >0";
- 
-       return $this->db->pdo_query($query);
-    }
 }

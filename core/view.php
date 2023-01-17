@@ -10,6 +10,7 @@ class View
         {
             extract($data);
             ob_start();
+         
             include_once __DIR__ . "/../app/views/$view.php";
             $content = ob_get_contents();
             ob_end_clean();

@@ -4,22 +4,22 @@ namespace App\Controllers\user;
 
 use App\Controllers\Controller;
 use Core\View;
-use  App\Models\user\user;
+use  App\Models\user;
 
 class login extends Controller
 {
+
     public function index()
     {
-        return View::render('login');
-    }
-    public function login()
-    {
+        $tien = new user();
+        $thongbao = "";
         if (isset($_POST['dangnhap'])) {
             $user = $_POST['username'];
             $pass = $_POST['password'];
             $login = new user();
             $kt  = $login->login($user, $pass);
             $check = false;
+
             if (is_array($kt) > 0) {
 
                 foreach ($kt as $row) {
@@ -37,30 +37,85 @@ class login extends Controller
             }
             if ($check == true) {
                 if ($_SESSION['trang_thai'] == 0) {
-                    header("location: /?act=dangnhap&status=0");
+                    header("location: /login?status=0");
                 } else {
                     // header("location: /?check=" . $_SESSION['trang_thai'] . "");
                 }
             } else {
-                header("location: /?act=dangnhap&check=0");
+                header("location: /login?check=0");
             }
         }
+
         if (isset($_GET['status'])) {
             if ($_GET['status'] == 0) {
-                echo '<script> swal("tài khoản đã bị khóa")</script>';
+                $thongbao = '<script> swal("tài khoản đã bị khóa")</script>';
             }
         }
         if (isset($_GET['check'])) {
             if ($_GET['check'] == 0) {
-                echo '<script> swal("tài khoản mật khẩu không chính xác")</script>';
+                $thongbao = '<script> swal("tài khoản mật khẩu không chính xác")</script>';
             }
         }
 
         if (isset($_SESSION['ma_user'])) {
             header("location: /");
         }
-        // $tien = get_money();
-        $home = ['items' => ['item 1', 'item 2', 'item 3']];
-        return View::render('home', $home);
+        $tien =     $tien->get_money();
+        return View::render('dangnhap', [
+
+            'tien' => $tien,
+            'thongbao' => $thongbao
+        ]);
+    }
+    public function sigin()
+    {
+        $sign = new user();
+        $thongbao = "";
+        if (isset($_POST['dangky'])) {
+            $username_show = $_POST['username_show'];
+
+            $username = $_POST['username'];
+
+            $pass = $_POST['password'];
+
+            $email = $_POST['email'];
+
+            $phone = $_POST['phone'];
+
+            $check = $sign->check_email($username, $email);
+            if ($check  == 1) {
+                $_SESSION['code_email'] =  sendmail_sign($email);
+                $_SESSION['email_sign']  = $email;
+                $sign->sign($username, $username_show, $pass, $email,  $phone);
+                // header("location: /?act=dangnhap");
+            } else {
+                header("location: /?act=dangky&coincide=0");
+            }
+        }
+        if (isset($_POST['sumbit_code'])) {
+            $code = $_POST['code_email'];
+            $email =  $_SESSION['email_sign'];
+            if ($_SESSION['code_email'] == $code) {
+                $sign->action_email($email);
+                header("location: /?act=dangnhap");
+            } else {
+                $check = 1;
+                $thongbao = '<script> swal("Sai mã xác minh ")</script>';
+            }
+        }
+        if (isset($_GET['coincide'])) {
+            if ($_GET['coincide'] == 0) {
+                $thongbao = '<script> swal("user đã tồn tại")</script>';
+            }
+        }
+        if (isset($_SESSION['ma_user'])) {
+            header("location: /");
+        }
+        $tien =     $sign->get_money();
+        return View::render('dangky', [
+
+            'tien' => $tien,
+            'thongbao' => $thongbao
+        ]);
     }
 }

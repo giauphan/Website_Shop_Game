@@ -36,13 +36,15 @@ class home extends Controller
         $pro =   $home->product_new();
         $kq = $home->danhmuc();
         $tien =     $tien->get_money();
+        $thongbao = "";
         return View::render('home', [
             'kq' => $kq,
             'pro' => $pro,
             'pro_sale' => $pro_sale,
             'tien' => $tien,
             'sl_loai' => $sl_loai,
-            'sl_pay' => $sl_pay
+            'sl_pay' => $sl_pay,
+            'thongbao' => $thongbao
         ]);
     }
 }

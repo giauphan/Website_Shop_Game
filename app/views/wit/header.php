@@ -602,7 +602,7 @@ $tien =     $tien;
                         </svg>
                         <!-- <img width="150px" height="50px" src=" /Controller/img/logo_TKG.png" alt="" class="c-desktop-logo"> -->
                         <!-- <img height="29px" src=" /admin/view/upload/1.jpg" alt="" class="c-desktop-logo-inverse"> -->
-                        <img height="35px" src=" /Controller/img/logo_TKG.png" alt="" class="c-mobile-logo">
+                        <img height="35px" src="assets/img/logo_TKG.png" alt="" class="c-mobile-logo">
                      </a>
                   </div>
                   <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
@@ -744,7 +744,7 @@ $tien =     $tien;
                         ?>
 
                         <li>
-                           <a href="?act=dangnhap" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                           <a href="/login" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
                               <i class="icon-user"></i> Đăng nhập</a>
                         </li>
 
@@ -787,8 +787,6 @@ $tien =     $tien;
                      <?php
                      if (isset($_SESSION['ma_user']) && isset($_SESSION['vai_tro'])) {
                         if ($_SESSION['vai_tro'] == 'ctv' || $_SESSION['vai_tro'] == 'admin') {
-
-
                      ?>
                            <li>
                               <a href="#" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
@@ -828,28 +826,17 @@ $tien =     $tien;
                      ?>
 
                         <li>
-                           <a href="?act=dangnhap" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                           <a href="/login" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
                               <i class="icon-user"></i> Đăng nhập</a>
                         </li>
-                     <?php
-                     }
-                     ?>
+                
 
-
-                     <?php
-                     if (isset($_SESSION['ma_user'])) {
-                     ?>
-
-                     <?php
-                     } else {
-
-                     ?>
-
-                        <li><a href="?act=dangnhap" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                        <li><a href="/sigin" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
                               <i class="icon-key icons"></i> Đăng ký</a>
                         </li>
                      <?php
                      }
+                
                      ?>
 
 
@@ -867,3 +854,6 @@ $tien =     $tien;
       </div>
    </header>
    <!-- END: HEADER -->
+   <?php
+echo $thongbao;
+   ?>

@@ -69,11 +69,11 @@ require_once __DIR__ . '/wit/header.php';
                         <div class="text">
                            <a href="/?act=nick&amp;danhmuc=1" class="full-home-banners__right-banner_top ">
 
-                              <div class="box_right_top" style="background-image: url(/duan/Controller/img/banner_sale.jpg); background-size: 100% 100%; background-repeat: no-repeat;">
+                              <div class="box_right_top" style="background-image: url(assets/img/banner_sale.jpg); background-size: 100% 100%; background-repeat: no-repeat;">
                               </div>
                            </a>
                            <a href="/?act=nick&amp;danhmuc=3" class="full-home-banners__right-banner">
-                              <div class="box_right_bottom" style=" margin-top: .3125rem;background-image: url(/duan/Controller/img/sale_m12.jpg); background-size: 100% 100%;background-repeat: no-repeat;">
+                              <div class="box_right_bottom" style=" margin-top: .3125rem;background-image: url(assets/img/sale_m12.jpg); background-size: 100% 100%;background-repeat: no-repeat;">
                               </div>
                            </a>
                         </div>
@@ -207,7 +207,7 @@ require_once __DIR__ . '/wit/header.php';
 
                               <video class="slide" muted=" true" autoplay=" true" loop="false " idx="0">
 
-                                 <source src="/Controller/video/sieu_sale_50.mp4" type="video/mp4">
+                                 <source src="assets/video/sieu_sale_50.mp4" type="video/mp4">
 
                                  <!-- <source src="//images.samsung.com/is/content/samsung/assets/vn/home/2022/Home_Q4_KV_Main-KV_1440x640_pc.mp4" type="video/mp4"> -->
 
@@ -219,12 +219,12 @@ require_once __DIR__ . '/wit/header.php';
                         <div class="text">
                            <a href="/?act=nick&amp;danhmuc=1" class="full-home-banners__right-banner_top ">
 
-                              <div class="box_right_top" style="background-image: url(/duan/Controller/img/sale_nro.jpg);background-size: 100% 100%; background-repeat: no-repeat;">
+                              <div class="box_right_top" style="background-image: url(assets/img/sale_nro.jpg);background-size: 100% 100%; background-repeat: no-repeat;">
                               </div>
                            </a>
                            <a href="/?act=nick&amp;danhmuc=3" class="full-home-banners__right-banner">
 
-                              <div class="box_right_bottom" style=" margin-top: .3125rem;background-image: url(/duan/Controller/img/sale_ff.jpg); background-size: 100% 100%;background-repeat: no-repeat;">
+                              <div class="box_right_bottom" style=" margin-top: .3125rem;background-image: url(assets/img/sale_ff.jpg); background-size: 100% 100%;background-repeat: no-repeat;">
                               </div>
                            </a>
                         </div>
@@ -1075,7 +1075,7 @@ require_once __DIR__ . '/wit/header.php';
 
       <div class="modal fade" id="noticeModal" role="dialog" style="display: none;" aria-hidden="true">
          <div class="modal-dialog" role="document">
-            <div class="loader" style="text-align: center"><img src="/admin/view/upload/2.jpg" style="width: 50px;height: 50px;display: none"></div>
+            <div class="loader" style="text-align: center"><img src="assets/upload/2.jpg" style="width: 50px;height: 50px;display: none"></div>
             <div class="modal-content">
             </div>
          </div>
@@ -1083,7 +1083,7 @@ require_once __DIR__ . '/wit/header.php';
    </div>
    <div class="modal fade" id="LoadModal" role="dialog" style="display: none;" aria-hidden="true">
       <div class="modal-dialog" role="document">
-         <div class="loader" style="text-align: center"><img src="/admin/view/upload/2.jpg" style="width: 50px;height: 50px;display: none"></div>
+         <div class="loader" style="text-align: center"><img src="assets/upload/2.jpg" style="width: 50px;height: 50px;display: none"></div>
          <div class="modal-content">
          </div>
       </div>
@@ -1105,9 +1105,6 @@ require_once __DIR__ . '/wit/header.php';
 
    ?>
 
-   </body>
-
-   </html>
    <?php
    require_once __DIR__ . '/wit/footer.php';
    ?>

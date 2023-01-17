@@ -21,7 +21,7 @@ require_once __DIR__ . '/wit/header.php';
                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-               <input type="password" class="form-control" name="password" placeholder="Mật khẩu" required minlength="8" maxlength="32">
+               <input type="password" class="form-control" name="password" placeholder="Mật khẩu" required >
                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">

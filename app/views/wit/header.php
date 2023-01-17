@@ -264,10 +264,10 @@ $tien =     $tien;
 
       }
 
-      /* .c-layout-header.c-layout-header-4 {
-    background: #fff!important;
-    border-bottom: 1px solid #e6eff3!important;
+      /* .c-content-box.c-size-md {
+         padding: 0 !important;
       } */
+
       :root {
          --primary-color: #006699;
          --secondary-color: #03dac6;
@@ -660,7 +660,7 @@ $tien =     $tien;
 
                         <ul id="children-of-41" class="dropdown-menu c-menu-type-classic c-pull-left ">
                            <?php
-                     
+
 
                            foreach ($kq as $row) {
                               echo '  <li class="c-menu-type-classic">    <a href="./?act=nick&danhmuc=' . $row['ma_loai'] . '" title="Danh Mục Game ' . $row['ten_loai'] . '" class="">' . $row['ten_loai'] . '</a></li>';
@@ -713,7 +713,7 @@ $tien =     $tien;
                                  ?>
                                  <?= '<li class="c-menu-type-classic"><a rel="" href=" /admin/?ma_user=' . $_SESSION["ma_user"] . '& vai_tro=' . $_SESSION['vai_tro'] . ' " class="">vào trang quản trị</a></li>';
                                  } ?>
-                                 <li class="c-menu-type-classic"><a href=" /model/outlogin.php">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php
@@ -734,7 +734,7 @@ $tien =     $tien;
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                                 <li class="c-menu-type-classic"><a href=" /model/outlogin.php">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a href=" /outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php
@@ -800,7 +800,7 @@ $tien =     $tien;
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=napthe" class="">lịch sử nạp thẻ</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
                                  <?= '<li class="c-menu-type-classic"><a rel="" href=" /admin/?ma_user=' . $_SESSION["ma_user"] . ' " class="">vào trang quản trị</a></li>'; ?>
-                                 <li class="c-menu-type-classic"><a href=" /model/outlogin.php">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php  }
@@ -817,7 +817,7 @@ $tien =     $tien;
                               <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
                               <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
                               <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                              <li class="c-menu-type-classic"><a href=" /model/outlogin.php">Đăng xuất </a></li>
+                              <li class="c-menu-type-classic"><a href=" /outlogin">Đăng xuất </a></li>
                            </ul>
                         </li>
                      <?php
@@ -829,14 +829,14 @@ $tien =     $tien;
                            <a href="/login" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
                               <i class="icon-user"></i> Đăng nhập</a>
                         </li>
-                
+
 
                         <li><a href="/sigin" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
                               <i class="icon-key icons"></i> Đăng ký</a>
                         </li>
                      <?php
                      }
-                
+
                      ?>
 
 
@@ -855,5 +855,5 @@ $tien =     $tien;
    </header>
    <!-- END: HEADER -->
    <?php
-echo $thongbao;
+   echo $thongbao;
    ?>

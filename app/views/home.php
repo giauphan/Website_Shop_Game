@@ -43,7 +43,7 @@ require_once __DIR__ . '/wit/header.php';
 
 <!-- end thongbao -->
 
-<div class="c-content-box c-size-md c-bg-white">
+<div class="c-content-box c-size-md c-bg-white" style="    padding: 0!important;">
    <!-- banner  Begin: Title 1 component -->
    <div class="container main-content" style="margin-bottom: 50px;">
       <div class="c-content-client-logos-slider-1  c-bordered">
@@ -54,7 +54,7 @@ require_once __DIR__ . '/wit/header.php';
                   <div class="owl-item active" style="width: 1140px;">
                      <div class="item_video">
 
-                        <div class="nav_item">
+                        <div class="nav_item" style="    height: 100%;">
 
                            <a href="/?act=#">
 
@@ -488,7 +488,7 @@ require_once __DIR__ . '/wit/header.php';
 
 
                   <?php
-              
+
                   if (is_array($pro) && count($pro) > 0) {
                      $i = 0;
                      foreach ($pro as $row) {

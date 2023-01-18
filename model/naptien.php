@@ -6,15 +6,7 @@ class naptien
    {
       $this->db = new database;
    }
-   function lichsunap($conn, $loai_the, $menh_gia, $mathe, $seri, $trang_thai)
-   {
-      date_default_timezone_set("Asia/Ho_Chi_Minh");
-      $mydate = getdate(date("U"));
-      $time = "$mydate[year]/$mydate[mon]/$mydate[mday]  $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
-
-      $sql_nap = "INSERT INTO `lich_su_nap`( `loai_the`, `menh_gia`,`ma_the`, `seri`, `trang_thai`,`time_submit`, `id_user`) VALUES ('" . $loai_the . "','" . $menh_gia . "','" . $mathe . "','" . $seri . "','" . $trang_thai . "','" . $time . "','" . $_SESSION['ma_user'] . "')";
-      $this->db->pdo_execute( $sql_nap);
-   }
+  
    function thongbao($msg)
    {
       echo '<script>swal("' . $msg . '");</script>';
@@ -23,7 +15,7 @@ class naptien
    function pay_the()
    {
 
-      $conn = po_con();
+    
       if (isset($_POST['submit_nap']) && isset($_SESSION['ma_user'])) {
          if (!isset($_POST['telco']) || !isset($_POST['amount']) || !isset($_POST['serial']) || !isset($_POST['code'])) {
             $err = 'Bạn cần nhập đầy đủ thông tin';
@@ -72,7 +64,7 @@ class naptien
                // print_r($obj);
                // echo '</pre>';
                thongbao('Gửi thẻ thành công, đợi duyệt');
-               lichsunap($conn, $dataPost['telco'],  $dataPost['amount'], $dataPost['code'], $dataPost['serial'], 1);
+               $this->lichsunap( $dataPost['telco'],  $dataPost['amount'], $dataPost['code'], $dataPost['serial'], 1);
                $sql_addtien = "UPDATE `user` SET `tien`='" . $dataPost['amount'] . "' WHERE  ma_kh = " . $_SESSION['ma_user'] . "";
                $runsql_addtien = mysqli_query($conn, $sql_addtien);
             } elseif ($obj->status == 1) {
@@ -81,7 +73,7 @@ class naptien
                // echo '<pre>';
                // print_r($obj);
                // echo '</pre>';
-               lichsunap($conn, $dataPost['telco'],  $dataPost['amount'], $dataPost['code'], $dataPost['serial'], 1);
+               $this->lichsunap( $dataPost['telco'],  $dataPost['amount'], $dataPost['code'], $dataPost['serial'], 1);
                $sql_addtien = "UPDATE `user` SET `tien`=? WHERE  ma_kh = ?";
                pdo_execute($sql_addtien, $dataPost['amount'], $_SESSION['ma_user']);
             } elseif ($obj->status == 2) {
@@ -90,7 +82,7 @@ class naptien
                // echo '<pre>';
                // print_r($obj);
                // echo '</pre>';
-               lichsunap($conn, $dataPost['telco'],  $dataPost['amount'], $dataPost['code'], $dataPost['serial'], 1);
+               $this->lichsunap( $dataPost['telco'],  $dataPost['amount'], $dataPost['code'], $dataPost['serial'], 1);
                $sql_addtien = "UPDATE `user` SET `tien`=? WHERE  ma_kh = ?";
                pdo_execute($sql_addtien, (($dataPost['amount']) * 0.5), $_SESSION['ma_user']);
             } elseif ($obj->status == 3) {
@@ -117,5 +109,14 @@ class naptien
             }
          }
       }
+   }
+   function lichsunap( $loai_the, $menh_gia, $mathe, $seri, $trang_thai)
+   {
+      date_default_timezone_set("Asia/Ho_Chi_Minh");
+      $mydate = getdate(date("U"));
+      $time = "$mydate[year]/$mydate[mon]/$mydate[mday]  $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
+
+      $sql_nap = "INSERT INTO `lich_su_nap`( `loai_the`, `menh_gia`,`ma_the`, `seri`, `trang_thai`,`time_submit`, `id_user`) VALUES ('" . $loai_the . "','" . $menh_gia . "','" . $mathe . "','" . $seri . "','" . $trang_thai . "','" . $time . "','" . $_SESSION['ma_user'] . "')";
+      $this->db->pdo_execute( $sql_nap);
    }
 }

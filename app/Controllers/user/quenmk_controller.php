@@ -11,6 +11,7 @@ use  App\Models\Page_home;
 class quenmk_controller extends Controller
 {
     public function index() {
+        $thongbao = '';
         $tien = new user();
         $home = new Page_home();
         $kq = $home->danhmuc();
@@ -30,15 +31,15 @@ class quenmk_controller extends Controller
         }
         if (isset($_GET['check']) && isset($_GET['email'])) {
             if ($_GET['check'] == 1) {
-                echo '<script> swal("Mã xác minh đã được gửi đến địa chỉ ' . $_GET['email'] . '");</script>';
+                $thongbao = '<script> swal("Mã xác minh đã được gửi đến địa chỉ ' . $_GET['email'] . '");</script>';
             } else {
-                echo '<script> swal("Không tìm thấy tài khoản");</script>';
+                $thongbao = '<script> swal("Không tìm thấy tài khoản");</script>';
             }
         }
         return View::render('napthe', [
             'kq' => $kq,
             'tien' => $tien,
-            'thongbao' => ''
+            'thongbao' => $thongbao,
         ]);
     }
 }

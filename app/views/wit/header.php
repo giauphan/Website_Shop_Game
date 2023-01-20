@@ -705,7 +705,7 @@
                                  ?>
                               </a>
                               <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thôn tin tài khoản</a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thông tin tài khoản</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
                                  <?php

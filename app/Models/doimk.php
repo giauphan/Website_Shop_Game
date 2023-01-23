@@ -12,7 +12,7 @@ class doimk extends ModelsModel
    }
 
     public function checkuser($user,$pass) {
-        $sql ="select * from user where user='".$user."' AND pass='".$pass."'";
+        $sql ="select * from user where username='".$user."' AND password='".$pass."'";
         $tk = $this->db->pdo_query_one($sql);
         return $tk;
     }

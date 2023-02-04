@@ -10,6 +10,7 @@ class adminController extends Controller
 {
     public function index()
     {
+        
         $home =  new HomeModels;
         // check admin
         if ( isset($_SESSION['ma_user'])) {

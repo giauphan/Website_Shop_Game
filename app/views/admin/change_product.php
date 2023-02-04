@@ -1,9 +1,6 @@
-
-
-
-
-
-       
+<?php
+require_once __DIR__ . '/wit/head.php';
+?>
         <div class="container-fluid al">
             <div id="clock">
 

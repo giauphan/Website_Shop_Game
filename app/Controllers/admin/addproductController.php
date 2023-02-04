@@ -6,7 +6,9 @@ use Core\View;
 
 class addproductController extends Controller{
 
+
     public function index(){ 
+        
         $add = new add_product();
           $count = count($_POST);
           $check_add =0;

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta charset="UTF-8">
@@ -11,6 +10,7 @@
 
   <meta name="author" content="Bin-It">
 
+  
   <meta property="og:url" />
 
   <meta property="og:type" content="truongbinit" />

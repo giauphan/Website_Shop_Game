@@ -1,26 +1,33 @@
 <?php
 
-use App\Controllers\admin\adminController;
-use App\Controllers\admin\addproductController;
-
+use App\Controllers\user\doimk_controller;
 use App\Controllers\user\home;
 use App\Controllers\user\login;
+use App\Controllers\user\napthe_controller;
+use App\Controllers\user\profile_controller;
+use App\Controllers\user\quenmk_controller;
 use Core\Route;
 
-Route::GET('/', [home::class, 'index']);
+
+
+Route::GET('/',[home::class, 'index']);
 // /account
 Route::GET('/login', [login::class, 'index']);
 Route::POST('/login', [login::class, 'index']);
 
-Route::GET('/sigin', [login::class, 'sigin']);
-  
+Route::GET('/dangky', [login::class, 'sigin']);
 
-Route::GET('/outlogin', function () {
-    session_start();
-    session_unset();
-    header("location: /");
-});
-//product
+// /napthe
+Route::GET('/napthe', [napthe_controller::class, 'index']);
+
+// /quenmk
+Route::GET('/quenmk', [quenmk_controller::class, 'index']);
+
+// /doimk
+Route::GET('/doimk', [doimk_controller::class, 'index']);
+
+// /profile
+Route::GET('/profile', [profile_controller::class, 'index']);
 
 
 // admin

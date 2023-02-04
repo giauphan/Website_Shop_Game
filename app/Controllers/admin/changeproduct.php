@@ -24,6 +24,7 @@ class changeproduct extends Controller
            
               $hinh_ct .= "|".$_FILES['fileUpload_'.($i+1).'']['name'];
             }
+            
             $giasp = $_POST['giasp'];
             $tuong = $_POST['tuong'];
             $rank = $_POST['rank'];

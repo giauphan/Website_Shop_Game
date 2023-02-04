@@ -43,7 +43,7 @@ require_once __DIR__ . '/wit/header.php';
 
 <!-- end thongbao -->
 
-<div class="c-content-box c-size-md c-bg-white" style="    padding: 0!important;">
+<div class="c-content-box c-size-md c-bg-white">
    <!-- banner  Begin: Title 1 component -->
    <div class="container main-content" style="margin-bottom: 50px;">
       <div class="c-content-client-logos-slider-1  c-bordered">
@@ -54,7 +54,7 @@ require_once __DIR__ . '/wit/header.php';
                   <div class="owl-item active" style="width: 1140px;">
                      <div class="item_video">
 
-                        <div class="nav_item" style="    height: 100%;">
+                        <div class="nav_item">
 
                            <a href="/?act=#">
 
@@ -105,8 +105,6 @@ require_once __DIR__ . '/wit/header.php';
                               display: inline-block;
 
                               vertical-align: baseline;
-
-                              height: 100%;
 
                               width: 100%;
 
@@ -269,7 +267,7 @@ require_once __DIR__ . '/wit/header.php';
 
                ?>
                   <div class="nav_item">
-                     <a href="/?act=profile" class="col1_nav"><img src="/assets/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
+                     <a href="/profile" class="col1_nav"><img src="/assets/img/TaiKhoan.png" alt="dịch vụ nickvn" /></a>
                      </a>
                   </div>
                <?php
@@ -323,7 +321,7 @@ require_once __DIR__ . '/wit/header.php';
                      foreach ($pro_sale as $row) {
 
                         if ($row['giam_gia'] > 0) {
-                           $retVal = ($row['field4'] == 0) ? "có" : "không";
+                           $retVal = ($row['ngoc'] == 0) ? "có" : "không";
                            echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                         <div class="image">
@@ -339,13 +337,13 @@ require_once __DIR__ . '/wit/header.php';
                         <div class="attribute_info">
                            <div class="row">
                               <div class="col-xs-6 a_att">
-                                 Rank: <b>' . $row['field2'] . '</b>
+                                 Rank: <b>' . $row['rank'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
-                                 Tướng: <b>' . $row['field1'] . '</b>
+                                 Tướng: <b>' . $row['tuong'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
-                                 Trang Phục: <b>' . $row['field3'] . '</b>
+                                 Trang Phục: <b>' . $row['trang_phuc'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
                                  Ngọc 90: <b>' . $retVal . '</b>
@@ -488,13 +486,13 @@ require_once __DIR__ . '/wit/header.php';
 
 
                   <?php
-
+              
                   if (is_array($pro) && count($pro) > 0) {
                      $i = 0;
                      foreach ($pro as $row) {
 
 
-                        $retVal = ($row['field4'] == 0) ? "có" : "không";
+                        $retVal = ($row['ngoc'] == 0) ? "có" : "không";
                         echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                         <div class="image">
@@ -510,13 +508,13 @@ require_once __DIR__ . '/wit/header.php';
                         <div class="attribute_info">
                            <div class="row">
                               <div class="col-xs-6 a_att">
-                                 Rank: <b>' . $row['field2'] . '</b>
+                                 Rank: <b>' . $row['rank'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
-                                 Tướng: <b>' . $row['field1'] . '</b>
+                                 Tướng: <b>' . $row['tuong'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
-                                 Trang Phục: <b>' . $row['field3'] . '</b>
+                                 Trang Phục: <b>' . $row['trang_phuc'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
                                  Ngọc 90: <b>' . $retVal . '</b>

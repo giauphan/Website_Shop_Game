@@ -1,12 +1,11 @@
  <!-- END: PAGE CONTAINER -->
- <a name="footer"></a>span
+ <a name="footer"></a>
  <footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
     <div class="c-prefooter">
        <div class="container">
           <div class="row">
              <div class="col-md-4">
                 <div class="c-container c-first">
-
                    <!-- <p><span style="color:#ffffff"><span style="font-size:22px"><strong>&nbsp;</strong></span></span><span style="color:#16a085"><span style="font-size:22px"><strong> </strong></span></span>&nbsp; &nbsp;
                    </p> -->
                    

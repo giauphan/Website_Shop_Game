@@ -43,13 +43,13 @@ use App\Models\database as DB;
 
    public function product_new()
    {
-      $query = "SELECT * FROM `sp`  join sp_lq on sp.ma_sp = sp_lq.ma_sp_ where trang_thai_sp = 0  ORDER by sp.ma_sp DESC";
+      $query = "SELECT * FROM `sp`   where trang_thai_sp = 0  ORDER by sp.ma_sp DESC";
 
       return $this->db->pdo_query($query);
    }
    public function showproductSALE()
    {
-      $query = "SELECT * FROM `sp` join sp_lq on sp.ma_sp = sp_lq.ma_sp_  where trang_thai_sp = 0  and giam_gia >0";
+      $query = "SELECT * FROM `sp`  where trang_thai_sp = 0  and giam_gia >0";
 
       return $this->db->pdo_query($query);
    }

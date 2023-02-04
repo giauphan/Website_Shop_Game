@@ -118,4 +118,5 @@ class login extends Controller
             'thongbao' => $thongbao
         ]);
     }
+   
 }

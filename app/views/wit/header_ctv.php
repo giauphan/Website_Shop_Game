@@ -157,8 +157,7 @@
 
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="/assets/css/tesf.css">
-
-
+   <link rel="stylesheet" href="/assets/css/style_admin.css" type="text/css">
    <!-- end swal js -->
 
    <!-- css nick  -->
@@ -245,31 +244,7 @@
    <!-- end plusion -->
 
    <link href="assets/css/magnific.css" rel="stylesheet" type="text/css" />
-
-   <link rel="stylesheet" href="/assets/css/ctv.css" type="text/css">
-   <script src="/assets/js/chart.js"></script>
    <style>
-      /* ql sp */
-      #myTable th,
-      #myTable td {
-         text-align: left;
-      }
-
-      table.table tr th,
-      table.table tr td {
-         border-color: #e9e9e9;
-      }
-
-      img {
-         vertical-align: middle;
-      }
-
-      img {
-         border: 0;
-      }
-
-
-      /* end ql sp */
       .item-list .a-more .price_item {
 
          text-align: center;
@@ -282,88 +257,6 @@
 
       }
 
-      /* form */
-      input:hover,
-      input:focus {
-         outline: none;
-      }
-
-      input:hover,
-      input:focus {
-         outline: none;
-      }
-
-      form input {
-         width: 100%;
-         padding: 12px 20px;
-         margin: 8px 0;
-         display: inline-block;
-         border: 1px solid #ccc;
-         box-sizing: border-box;
-         border-radius: 30px;
-         height: 40px;
-      }
-
-      button,
-      input,
-      select,
-      textarea {
-         font-family: inherit;
-         font-size: inherit;
-         line-height: inherit;
-      }
-
-      .inp {
-         width: 100%;
-         box-sizing: border-box;
-         padding-left: 0 !important;
-         padding-right: 0 !important;
-      }
-
-      .col_btn .btn button {
-         border: 1px solid orange;
-         padding: 10px 50px;
-         border-radius: 5px;
-         background-color: #27C46B;
-      }
-
-      button,
-      input,
-      select,
-      textarea {
-         font-family: inherit;
-         font-size: inherit;
-         line-height: inherit;
-      }
-
-      button,
-      html input[type=button],
-      input[type=reset],
-      input[type=submit] {
-         -webkit-appearance: button;
-         cursor: pointer;
-      }
-
-      button,
-      select {
-         text-transform: none;
-      }
-
-      button {
-         overflow: visible;
-      }
-
-      button,
-      input,
-      optgroup,
-      select,
-      textarea {
-         color: inherit;
-         font: inherit;
-         margin: 0;
-      }
-
-      /* end form */
       /* .c-layout-header.c-layout-header-4 {
     background: #fff!important;
     border-bottom: 1px solid #e6eff3!important;
@@ -622,145 +515,7 @@
          }
       }
    </style>
-   <script type="text/javascript">
-      //PhÃ¢n Trang Cho Table
 
-      function Pager(tableName, itemsPerPage) {
-
-         this.tableName = tableName;
-
-         this.itemsPerPage = itemsPerPage;
-
-         this.currentPage = 1;
-
-         this.pages = 0;
-
-         this.inited = false;
-
-
-
-         this.showRecords = function(from, to) {
-
-            var rows = document.getElementById(tableName).rows;
-
-            for (var i = 1; i < rows.length; i++) {
-
-               if (i < from || i > to)
-
-                  rows[i].style.display = 'none';
-
-               else
-
-                  rows[i].style.display = '';
-
-            }
-
-         }
-
-
-
-         this.showPage = function(pageNumber) {
-
-            if (!this.inited) {
-
-               alert("not inited");
-
-               return;
-
-            }
-
-            var oldPageAnchor = document.getElementById('pg' + this.currentPage);
-
-            oldPageAnchor.className = 'pg-normal';
-
-
-
-            this.currentPage = pageNumber;
-
-            var newPageAnchor = document.getElementById('pg' + this.currentPage);
-
-            newPageAnchor.className = 'pg-selected';
-
-
-
-            var from = (pageNumber - 1) * itemsPerPage + 1;
-
-            var to = from + itemsPerPage - 1;
-
-            this.showRecords(from, to);
-
-         }
-
-
-
-         this.prev = function() {
-
-            if (this.currentPage > 1)
-
-               this.showPage(this.currentPage - 1);
-
-         }
-
-
-
-         this.next = function() {
-
-            if (this.currentPage < this.pages) {
-
-               this.showPage(this.currentPage + 1);
-
-            }
-
-         }
-
-
-
-         this.init = function() {
-
-            var rows = document.getElementById(tableName).rows;
-
-            var records = (rows.length - 1);
-
-            this.pages = Math.ceil(records / itemsPerPage);
-
-            this.inited = true;
-
-         }
-
-         this.showPageNav = function(pagerName, positionId) {
-
-            if (!this.inited) {
-
-               alert("not inited");
-
-               return;
-
-            }
-
-            var element = document.getElementById(positionId);
-
-
-
-            var pagerHtml = '<span onclick="' + pagerName +
-
-               '.prev();" class="pg-normal">&#171</span> | ';
-
-            for (var page = 1; page <= this.pages; page++)
-
-               pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + pagerName +
-
-               '.showPage(' + page + ');">' + page + '</span> | ';
-
-            pagerHtml += '<span onclick="' + pagerName + '.next();" class="pg-normal">&#187;</span>';
-
-
-
-            element.innerHTML = pagerHtml;
-
-         }
-
-      }
-   </script>
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-topbar c-layout-header-topbar-collapse">
@@ -928,7 +683,7 @@
                      </li>
                      <?php
                      if (isset($_SESSION['ma_user']) && isset($_SESSION['vai_tro'])) {
-                        if ($_SESSION['vai_tro'] == 'admin') {
+                        if ($_SESSION['vai_tro'] == 'ctv' || $_SESSION['vai_tro'] == 'admin') {
 
                      ?>
                            <li>
@@ -936,7 +691,6 @@
                                  <i class="icon-user"></i>
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
-
                                  ?>
 
                                  <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b> <span class="c-arrow c-toggler"></span>';
@@ -952,33 +706,7 @@
                                  ?>
                                  <?= '<li class="c-menu-type-classic"><a rel="" href=" /wp-admin?ma_user=' . $_SESSION["ma_user"] . '& vai_tro=' . $_SESSION['vai_tro'] . ' " class="">vào trang quản trị</a></li>';
                                  } ?>
-                                 <li class="c-menu-type-classic"><a href="outlogin">Đăng xuất </a></li>
-                              </ul>
-                           </li>
-                        <?php
-
-                        } else  if ($_SESSION['vai_tro'] == 'ctv') {
-
-                        ?>
-                           <li>
-                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
-                                 <i class="icon-user"></i>
-                                 <?php
-                                 if (isset($_SESSION["username_show"])) {
-
-                                 ?>
-
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b> <span class="c-arrow c-toggler"></span>';
-                                 }
-                                 ?>
-                              </a>
-                              <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thôn tin tài khoản</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /ql-san-pham" class="">Quản lý sản phẩm</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /ql-code-sale" class="">Quản lý mã giảm gái</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /ql-bill" class="">Quản lý đơn hàng</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /history_bill" class="">tài khoản đã mua</a></li>
-                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a href=" outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php
@@ -999,7 +727,7 @@
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                                 <li class="c-menu-type-classic"><a href="outlogin">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a href=" outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php
@@ -1064,68 +792,67 @@
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=napthe" class="">lịch sử nạp thẻ</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                                 <?= '<li class="c-menu-type-classic"><a rel="" href=" /wp-admin/?ma_user=' . $_SESSION["ma_user"] . ' " class="">vào trang quản trị</a></li>'; ?>
+                                 <?= '<li class="c-menu-type-classic"><a rel="" href=" /admin/?ma_user=' . $_SESSION["ma_user"] . ' " class="">vào trang quản trị</a></li>'; ?>
                                  <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php  } elseif ($_SESSION['vai_tro'] == 'ctv') {
                         ?>
-                           <li>
-                              <a href="#" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
-                                 <i class="icon-user"></i>
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b>';
-
-                                 ?>
-                              </a>
-                              <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thôn tin tài khoản</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /ql-san-pham" class="">Quản lý sản phẩm</a></li>
-                                 <!-- <li class="c-menu-type-classic"><a rel="" href=" /add-product" class="">tài khoản đã mua</a></li> -->
-                                 <li class="c-menu-type-classic"><a rel="" href=" /ql-code-sale" class="">Quản lý mã giảm gái</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /ql-bill" class="">Quản lý đơn hàng</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
-                              </ul>
-                           </li>
-                        <?php       } else {
-                        ?>
-                           <li>
-                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
-                                 <i class="icon-user"></i>
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b>';
-
-                                 ?>
-                              </a>
-                              <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
-                              </ul>
-                           </li>
-                        <?php
-                        }
-                     } else {
-
-                        ?>
-
                         <li>
-                           <a href="/login" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
-                              <i class="icon-user"></i> Đăng nhập</a>
-                        </li>
+                           <a href="#" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                              <i class="icon-user"></i>
+                              <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b>';
+
+                              ?>
+                           </a>
+                           <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
+                              <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thôn tin tài khoản</a></li>
+                              <li class="c-menu-type-classic"><a rel="" href=" /ql-san-pham" class="">Quản lý sản phẩm</a></li>
+                              <!-- <li class="c-menu-type-classic"><a rel="" href=" /add-product" class="">tài khoản đã mua</a></li> -->
+                              <li class="c-menu-type-classic"><a rel="" href=" /ql-code-sale" class="">Quản lý mã giảm gái</a></li>
+                              <li class="c-menu-type-classic"><a rel="" href=" /ql-bill" class="">Quản lý đơn hàng</a></li>
+                              <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
+                              <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
+                              </ul>
+                           </li>
+
+                           <?php       } else {
+                           ?>
+                              <li>
+                                 <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                                    <i class="icon-user"></i>
+                                    <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b>';
+
+                                    ?>
+                                 </a>
+                                 <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
+                                    <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
+                                    <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
+                                    <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
+                                    <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
+                                 </ul>
+                              </li>
+                           <?php
+                        } }else {
+
+                           ?>
+
+                              <li>
+                                 <a href="/login" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                                    <i class="icon-user"></i> Đăng nhập</a>
+                              </li>
 
 
-                        <li><a href="/sigin" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
-                              <i class="icon-key icons"></i> Đăng ký</a>
-                        </li>
-                     <?php
-                     }
-                     echo $_SESSION['vai_tro'];
-                     ?>
+                              <li><a href="/sigin" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                                    <i class="icon-key icons"></i> Đăng ký</a>
+                              </li>
+                           <?php
+                        }
+
+                           ?>
 
 
-
-                  </ul>
+                           </ul>
                </nav>
                <!-- END: MEGA MENU -->
                <!-- END: LAYOUT/HEADERS/MEGA-MENU -->

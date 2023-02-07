@@ -1,5 +1,5 @@
  <!-- END: PAGE CONTAINER -->
- <a name="footer"></a>span
+ <a name="footer"></a>
  <footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
     <div class="c-prefooter">
        <div class="container">

@@ -53,8 +53,13 @@ class homeModels extends database
 
     function de_sp($id)
     {
-        $sql_sp = 'DELETE FROM `sp` WHERE ma_sp = "' . $id .  '"  ';
-        $this->pdo_execute($sql_sp);
+        $sql_sp = 'DELETE FROM `sp` WHERE ma_sp = ?  ';
+        $this->pdo_execute($sql_sp,$id);
+    }
+    public function check_product()
+    {
+        $sql = 'SELECT * FROM `sp` WHERE ma_sp  IN (SELECT ma_sp FROM donhang WHERE sp.ma_sp = donhang.ma_sp)';
+        return $this->pdo_query($sql);
     }
 
     function get_price($price)

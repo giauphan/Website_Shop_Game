@@ -1,24 +1,145 @@
 <?php
-require_once __DIR__ . '/wit/head.php';
+require_once __DIR__ . '/wit/header.php';
 ?>
 <div class="container-fluid al">
+
     <div id="clock"></div>
-    <Br>
-    <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
+    <br>
+    <div class="chart" style="    width: 500px;height: 50%; margin: 10% 0 0 0 ;">
+        <p class="thongke" style="font-weight: 700;"><b>THỐNG KÊ</b></p>
+
+        <canvas id="thongke" style="width: 400px; height: 200px;"></canvas>
+    </div>
 
 
-    <form action="/?act=search">
-        <input type="text" id="myInput" name="keyword" placeholder="sản phẩm cần tìm...">
-        <button type="sumbit" name="sumbit_search"> Seach</button>
+    <script>
+        var canvas = document.getElementById("thongke");
+        var ctx = canvas.getContext("2d");
 
-    </form>
+        const today = new Date();
+        const year = today.getFullYear();
+
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Yearly Revenue for ' + year + ' by Month',
+                    data: [<?php
+
+                            $m1 = 0;
+                            $m2 = 0;
+                            $m3 = 0;
+                            $m4 = 0;
+                            $m5 = 0;
+                            $m6 = 0;
+                            $m7 = 0;
+                            $m8 = 0;
+                            $m9 = 0;
+                            $m10 = 0;
+                            $m11 = 0;
+                            $m12 = 0;
+                            foreach ($thongke as $row) {
+                                foreach ($page as $thongke) {
+
+                                    if ($row['ma_sp'] == $thongke['ma_sp'] && $thongke['ma_user'] == $_SESSION['ma_user']) {
+                                        $i = $row['ngay_nhap_dh'];
+
+                                        if ($i == 1) {
+                                            $m1 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 2) {
+                                            $m2 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 3) {
+                                            $m3 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 4) {
+                                            $m4 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 5) {
+                                            $m5 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 6) {
+                                            $m6 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 7) {
+                                            $m7 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 8) {
+                                            $m8 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 9) {
+                                            $m9 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 10) {
+                                            $m10 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 11) {
+                                            $m11 +=    $row['gia_dh'];
+                                        }
+                                        if ($i == 12) {
+                                            $m12 +=    $row['gia_dh'];
+                                        }
+                                    }
+                                }
+                            }
+                            echo $m1 . "," . $m2 . "," . $m3 . "," . $m4 . "," . $m5 . "," . $m6 . "," . $m7 . "," . $m8 . "," . $m9 . "," . $m10 . "," . $m11 . "," . $m12   ?>],
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 0.2)",
+                        "rgba(54, 162, 235, 0.2)",
+                        "rgba(255, 206, 86, 0.2)",
+                        "rgba(75, 192, 192, 0.2)",
+                        "rgba(153, 102, 255, 0.2)",
+                        "rgba(255, 159, 64, 0.2)",
+                        "rgba(255, 99, 132, 0.5)",
+                        "rgba(54, 162, 235, 0.5)",
+                        "rgba(255, 206, 86, 0.5)",
+                        "rgba(75, 192, 192, 0.5)",
+                        "rgba(153, 102, 255, 0.5)",
+                        "rgba(255, 159, 64, 0.5)"
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+   <br>
+    <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p>
+
+    <?= $thongbao ?>
 
 
-    <i class="fa fa-search" aria-hidden="true"></i>
+
+   
 
     <div class="row  hidden-xs hidden-sm" style="margin-bottom: 15px">
         <div class="m-l-10 m-r-10">
-        <form action="" method="POST" data-hs-cf-bound="true" class="form-inline m-b-10">
+            <form action="" method="POST" data-hs-cf-bound="true" class="form-inline m-b-10">
                 <div class="col-md-3 col-sm-4 p-5 field-search">
                     <div class="input-group c-square">
                         <span class="input-group-addon">Mã số</span>
@@ -259,15 +380,23 @@ require_once __DIR__ . '/wit/head.php';
     </script>
     <b>CHỨC NĂNG CHÍNH:</b><Br>
     <!-- them san pham-->
-    <a href="?act=add_product&them=1">
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm sản phẩm"><i class="fas fa-user-plus"></i></button></a>
+    <a href="/add-product">
+        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm sản phẩm"><i class="fa fa-user-plus"></i></button></a>
     <!--   end them san pham-->
 
     <div class="table-title">
         <div class="row">
 
         </div>
-
+        <style>
+         
+            th {
+                color: #fff !important;
+            }
+            td{
+              font-size: 14px;
+         }
+        </style>
     </div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-module" id="myTable">
@@ -290,12 +419,13 @@ require_once __DIR__ . '/wit/head.php';
             </thead>
 
             <tbody>
-            <?php
-                foreach ($page as $row) {
+                <?php
+                if (isset($page) && sizeof($page)) {
+                    foreach ($page as $row) {
 
-                if ($_SESSION['ma_user'] == $row['ma_kh'] && $row['ma_kh'] == $row['ma_user']) {
-                $trang_thai = ($row['trang_thai_sp'] == 0) ? "Chưa bán" : "Đã bán";
-                echo ' <tr>
+                        if ($_SESSION['ma_user'] == $row['ma_kh'] && $row['ma_kh'] == $row['ma_user']) {
+                            $trang_thai = ($row['trang_thai_sp'] == 0) ? "Chưa bán" : "Đã bán";
+                            echo ' <tr>
                     <td>' . $row['ma_sp'] . '</td>
                     <td><img src="/assets/upload/' . $row['hinh'] . '" width="100%" heght="auto"></td>
                     <td> ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ</td>
@@ -305,12 +435,24 @@ require_once __DIR__ . '/wit/head.php';
 
                     <td>' . $row['ngay_nhap'] . '</td>
                     <td>' . $row['ten_loai'] . '</td>
-                    <td>
-                        <a class="edit" href="?act=change_product&change=' . $row['ma_sp'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="delete" href="?act=del_sp&de=' . $row['ma_sp'] . '" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <td>';
+                            $check_pro = true;
+
+                            foreach ($check_product as $check) {
+                                if ($check['ma_sp'] == $row['ma_sp']) {
+                                    $check_pro = false;
+                                }
+                            }
+                            if ($check_pro == true) {
+                                echo '
+                        <a class="edit" href="/change-product?change=' . $row['ma_sp'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a class="delete" href="?de=' . $row['ma_sp'] . '" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
+                            }
+                            echo ' 
                     </td>
                 </tr>';
-                }
+                        }
+                    }
                 }
                 ?>
             </tbody>
@@ -327,19 +469,6 @@ require_once __DIR__ . '/wit/head.php';
     </script>
 </div>
 <hr class="hr1">
-<div class="container-fluid end">
-    <div class="row text-center">
-        <div class="col-lg-12 link">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-google"></i>
-        </div>
-        <div class="col-lg-12">
-            2019 CopyRight Phan mem quan ly | Design by <a href="#"></a>
-        </div>
-    </div>
-</div>
 <?php
 require_once __DIR__ . '/wit/footer.php';
 ?>

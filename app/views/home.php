@@ -321,7 +321,7 @@ require_once __DIR__ . '/wit/header.php';
                      foreach ($pro_sale as $row) {
 
                         if ($row['giam_gia'] > 0) {
-                           $retVal = ($row['ngoc'] == 0) ? "có" : "không";
+
                            echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                         <div class="image">
@@ -333,24 +333,79 @@ require_once __DIR__ . '/wit/header.php';
                         </div>
                         <div class="description">
                            ' . $row['mo_ta'] . '
-                        </div>
-                        <div class="attribute_info">
+                        </div>';
+                           if ($row['ma_loai'] == 1) {
+                              $retVal = ($row['field4'] != "") ? ' <div class="col-xs-6 a_att">
+                              Ngọc 90: <b>' . $row['field4'] . '</b>
+                           </div>' : "";
+                              echo ' <div class="attribute_info" id="field">
                            <div class="row">
                               <div class="col-xs-6 a_att">
-                                 Rank: <b>' . $row['rank'] . '</b>
+                                 Rank: <b>' . $row['field2'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
-                                 Tướng: <b>' . $row['tuong'] . '</b>
+                                 Tướng: <b>' . $row['field1'] . '</b>
                               </div>
                               <div class="col-xs-6 a_att">
-                                 Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                                 Trang Phục: <b>' . $row['field3'] . '</b>
                               </div>
-                              <div class="col-xs-6 a_att">
-                                 Ngọc 90: <b>' . $retVal . '</b>
-                              </div>
+                              ' . $retVal . '
                            </div>
+                        </div>';
+                           }
+                           if ($row['ma_loai'] == 2) {
+
+                              echo ' <div class="attribute_info" id="field">
+                        <div class="row">
+                           <div class="col-xs-6 a_att">
+                              Rank: <b>' . $row['field2'] . '</b>
+                           </div>
+                           <div class="col-xs-6 a_att">
+                              Tướng: <b>' . $row['field1'] . '</b>
+                           </div>
+                           <div class="col-xs-6 a_att">
+                              Trang Phục: <b>' . $row['field3'] . '</b>
+                           </div>
+                           ' . $retVal . '
                         </div>
-                        <div class="a-more">
+                     </div>';
+                           }
+                           if ($row['ma_loai'] == 3) {
+                              echo ' <div class="attribute_info" id="field">
+                     <div class="row">
+                        <div class="col-xs-6 a_att">
+                           Hành tinh: <b>' . $row['field2'] . '</b>
+                        </div>
+                        <div class="col-xs-6 a_att">
+                           MÁy chủ: <b>' . $row['field1'] . '</b>
+                        </div>
+                        <div class="col-xs-6 a_att">
+                           Đăng ký: <b>' . $row['field3'] . '</b>
+                        </div>
+                                <div class="col-xs-6 a_att">
+                   Bông tai: <b>' . $row['field4'] . '</b>
+                  </div>
+                     </div>
+                  </div>';
+                           } else if ($row['ma_loai'] == 4) {
+                              echo ' <div class="attribute_info" id="field">
+                  <div class="row">
+                     <div class="col-xs-6 a_att">
+                        Rank: <b>' . $row['field2'] . '</b>
+                     </div>
+                     <div class="col-xs-6 a_att">
+                        Đăng ký: <b>' . $row['field1'] . '</b>
+                     </div>
+                     <div class="col-xs-6 a_att">
+                       Pet: <b>' . $row['field3'] . '</b>
+                     </div>
+                     <div class="col-xs-6 a_att">
+                   Thẻ vô cực: <b>' . $row['field4'] . '</b>
+                  </div>
+                  </div>
+               </div>';
+                           }
+                           echo ' <div class="a-more">
                            <div class="row">
                               <div class="col-xs-6">
                                  <div class="price_item">
@@ -371,8 +426,6 @@ require_once __DIR__ . '/wit/header.php';
                   ';
                            $i++;
                         }
-
-
 
                         if ($i >= 4) {
                            break;
@@ -486,13 +539,15 @@ require_once __DIR__ . '/wit/header.php';
 
 
                   <?php
-              
+
                   if (is_array($pro) && count($pro) > 0) {
                      $i = 0;
                      foreach ($pro as $row) {
 
 
-                        $retVal = ($row['ngoc'] == 0) ? "có" : "không";
+                        $retVal = ($row['field4'] != "") ? ' <div class="col-xs-6 a_att">
+                        Ngọc 90: <b>' . $row['field4'] . '</b>
+                     </div>' : "";
                         echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                         <div class="image">
@@ -504,24 +559,79 @@ require_once __DIR__ . '/wit/header.php';
                         </div>
                         <div class="description">
                            ' . $row['mo_ta'] . '
-                        </div>
-                        <div class="attribute_info">
-                           <div class="row">
-                              <div class="col-xs-6 a_att">
-                                 Rank: <b>' . $row['rank'] . '</b>
-                              </div>
-                              <div class="col-xs-6 a_att">
-                                 Tướng: <b>' . $row['tuong'] . '</b>
-                              </div>
-                              <div class="col-xs-6 a_att">
-                                 Trang Phục: <b>' . $row['trang_phuc'] . '</b>
-                              </div>
-                              <div class="col-xs-6 a_att">
-                                 Ngọc 90: <b>' . $retVal . '</b>
-                              </div>
+                        </div>';
+                        if ($row['ma_loai'] == 1) {
+                           $retVal = ($row['field4'] != "") ? ' <div class="col-xs-6 a_att">
+                           Ngọc 90: <b>' . $row['field4'] . '</b>
+                        </div>' : "";
+                           echo ' <div class="attribute_info" id="field">
+                        <div class="row">
+                           <div class="col-xs-6 a_att">
+                              Rank: <b>' . $row['field2'] . '</b>
                            </div>
+                           <div class="col-xs-6 a_att">
+                              Tướng: <b>' . $row['field1'] . '</b>
+                           </div>
+                           <div class="col-xs-6 a_att">
+                              Trang Phục: <b>' . $row['field3'] . '</b>
+                           </div>
+                           ' . $retVal . '
                         </div>
-                        <div class="a-more">
+                     </div>';
+                        }
+                        if ($row['ma_loai'] == 2) {
+
+                           echo ' <div class="attribute_info" id="field">
+                     <div class="row">
+                        <div class="col-xs-6 a_att">
+                           Rank: <b>' . $row['field2'] . '</b>
+                        </div>
+                        <div class="col-xs-6 a_att">
+                           Tướng: <b>' . $row['field1'] . '</b>
+                        </div>
+                        <div class="col-xs-6 a_att">
+                           Trang Phục: <b>' . $row['field3'] . '</b>
+                        </div>
+                        ' . $retVal . '
+                     </div>
+                  </div>';
+                        }
+                        if ($row['ma_loai'] == 3) {
+                           echo ' <div class="attribute_info" id="field">
+                  <div class="row">
+                     <div class="col-xs-6 a_att">
+                        Hành tinh: <b>' . $row['field2'] . '</b>
+                     </div>
+                     <div class="col-xs-6 a_att">
+                        MÁy chủ: <b>' . $row['field1'] . '</b>
+                     </div>
+                     <div class="col-xs-6 a_att">
+                        Đăng ký: <b>' . $row['field3'] . '</b>
+                     </div>
+                             <div class="col-xs-6 a_att">
+                Bông tai: <b>' . $row['field4'] . '</b>
+               </div>
+                  </div>
+               </div>';
+                        } else if ($row['ma_loai'] == 4) {
+                           echo ' <div class="attribute_info" id="field">
+               <div class="row">
+                  <div class="col-xs-6 a_att">
+                     Rank: <b>' . $row['field2'] . '</b>
+                  </div>
+                  <div class="col-xs-6 a_att">
+                     Đăng ký: <b>' . $row['field1'] . '</b>
+                  </div>
+                  <div class="col-xs-6 a_att">
+                  Pet: <b>' . $row['field3'] . '</b>
+                  </div>
+                  <div class="col-xs-6 a_att">
+                Thẻ vô cực: <b>' . $row['field4'] . '</b>
+               </div>
+               </div>
+            </div>';
+                        }
+                        echo '<div class="a-more">
                            <div class="row">
                               <div class="col-xs-6">
                                  <div class="price_item">

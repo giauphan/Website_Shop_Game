@@ -8,6 +8,7 @@ use App\Models\user;
 use App\Models\napthe;
 use App\Models\Page_home;
 use App\Models\profile;
+use App\Models\phpmailer;
 
 class profile_controller extends Controller
 {
@@ -132,19 +133,20 @@ class profile_controller extends Controller
         $home = new Page_home();
         $napthe = new napthe();
         $doimk = new profile();
+        $mail = new \phpmailer();
         $napthe->pay_the();
         $kq = $home->danhmuc();
-        $tienkq = $tien->get_money();
+        $tien = $tien->get_money();
         $runshowtien = $doimk->check_tien_mail();
         $restpass = $doimk->get_user_doimk();
 
         if (isset($_POST['sendmail'])) {
             $email = $_POST['email'];
-            $check = get_one_email($email);
+            $check = $mail->get_one_email($email);
 
             if (is_array($check) > 1) {
 
-                $_SESSION['code_opt'] =   sendmail($email);
+                $_SESSION['code_opt'] =   $mail->sendmail($email);
                 $_SESSION['email_forget'] =   $email;
                 header("location:/duan/?act=forget_pass&check=1&email=" . $email . "");
             } else {
@@ -162,7 +164,7 @@ class profile_controller extends Controller
 
         return View::render('quenmk', [
             'kq' => $kq,
-            'tienkq' => $tienkq,
+            'tien' => $tien,
             'thongbao' => $thongbao,
         ]);
     }

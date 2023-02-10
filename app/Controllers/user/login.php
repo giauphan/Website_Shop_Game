@@ -5,6 +5,7 @@ namespace App\Controllers\user;
 use App\Controllers\Controller;
 use Core\View;
 use  App\Models\user;
+use  App\Models\phpmailer;
 
 class login extends Controller
 {
@@ -70,6 +71,7 @@ class login extends Controller
     public function sigin()
     {
         $sign = new user();
+        $mail = new \PHPMailer();
         $thongbao = "";
         if (isset($_POST['dangky'])) {
             $username_show = $_POST['username_show'];
@@ -84,7 +86,7 @@ class login extends Controller
 
             $check = $sign->check_email($username, $email);
             if ($check  == 1) {
-                $_SESSION['code_email'] =  sendmail_sign($email);
+                $_SESSION['code_email'] =  $mail->sendmail_sign($email);
                 $_SESSION['email_sign']  = $email;
                 $sign->sign($username, $username_show, $pass, $email,  $phone);
                 // header("location: /?act=dangnhap");

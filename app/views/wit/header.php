@@ -901,7 +901,7 @@
 
 
                            foreach ($kq as $row) {
-                              echo '  <li class="c-menu-type-classic">    <a href="./?act=nick&danhmuc=' . $row['ma_loai'] . '" title="Danh Mục Game ' . $row['ten_loai'] . '" class="">' . $row['ten_loai'] . '</a></li>';
+                              echo '  <li class="c-menu-type-classic">    <a href="./?sanpham&danhmuc=' . $row['ma_loai'] . '" title="Danh Mục Game ' . $row['ten_loai'] . '" class="">' . $row['ten_loai'] . '</a></li>';
                            }
                            ?>
                         </ul>

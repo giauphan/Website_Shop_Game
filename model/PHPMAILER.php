@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\database;
+
+class phpmailer extends database {
 function sendmail($email)
 {
     $mail = new PHPMailer\PHPMailer\PHPMailer(true); //true:enables exceptions 
@@ -81,5 +84,6 @@ function forget_pass($email, $pass)
 function get_one_email($mail){
     $sql = 'SELECT * FROM `user` WHERE  email = ?';
    return pdo_query($sql,$mail);
+}
 }
 

@@ -17,19 +17,19 @@ use App\Controllers\ctv\ql_code_saleController;
 
 //user
 
-use App\Controllers\user\doimk_controller;
-
 use App\Controllers\user\home;
 use App\Controllers\user\login;
 use App\Controllers\user\napthe_controller;
 use App\Controllers\user\profile_controller;
 use App\Controllers\user\quenmk_controller;
+use App\Controllers\user\sanpham_controller;
 
 use Core\Route;
 
 
 
 Route::GET('/', [home::class, 'index']);
+Route::GET('/home', [home::class, 'index']);
 // /account
 Route::GET('/login', [login::class, 'index']);
 Route::POST('/login', [login::class, 'index']);
@@ -42,6 +42,7 @@ Route::GET('/outlogin', function () {
 });
 // /napthe
 Route::GET('/napthe', [napthe_controller::class, 'index']);
+Route::POST('/napthe', [napthe_controller::class, 'index']);
 
 // /muathe
 Route::GET('/muathe', [napthe_controller::class, 'muathe']);
@@ -51,6 +52,7 @@ Route::GET('/quenmk', [quenmk_controller::class, 'index']);
 
 // /doimk
 Route::GET('/doimk', [profile_controller::class, 'doimk']);
+Route::POST('/doimk', [profile_controller::class, 'doimk']);
 
 // /quenmk
 Route::GET('/quenmk', [profile_controller::class, 'quenmk']);
@@ -72,7 +74,8 @@ Route::GET('/lichsumua', [muahang_controller::class, 'lichsumua']);
 // /show sp
 Route::GET('/sanpham', [sanpham_controller::class, 'index']);
 
-
+// /spchitiet
+Route::GET('/chitietsanpham', [sanpham_controller::class, 'chitietsanpham']);
 // ctv
 Route::GET('/ql-san-pham', [adminController::class, 'index']);
 

@@ -42,6 +42,7 @@ Route::GET('/quenmk', [quenmk_controller::class, 'index']);
 
 // /doimk
 Route::GET('/doimk', [profile_controller::class, 'doimk']);
+Route::POST('/doimk', [profile_controller::class, 'doimk']);
 
 // /quenmk
 Route::GET('/quenmk', [profile_controller::class, 'quenmk']);

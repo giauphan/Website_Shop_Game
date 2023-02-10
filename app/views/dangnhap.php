@@ -1,6 +1,13 @@
 <?php
 require_once __DIR__ . '/wit/header.php';
 ?>
+<style>
+   form input {
+    width: auto; 
+   
+    height: auto;
+}
+</style>
 <!-- END: LAYOUT/HEADERS/HEADER-1 -->
 <!-- BEGIN: PAGE CONTAINER -->
 <div class="c-layout-page">

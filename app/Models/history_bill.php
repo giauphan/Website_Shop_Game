@@ -17,4 +17,9 @@ class history_bill extends database
         $run = $this-> pdo_query($sql);
         return $run;
     }
+    public function get_donhang($id){
+        $sql = 'SELECT * FROM `donhang` join user  on user.ma_kh= donhang.ma_kh where user.ma_kh = ?';
+        $run = $this-> pdo_query($sql,$id);
+        return $run;
+    }
 }

@@ -304,10 +304,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Về trang chủ </a></li>
                     <?= '<li  ><a href="/wp-admin?ma_user=' . $_SESSION['ma_user'] . '" data-toggle="tooltip" data-placement="bottom" title="Admin">Tổng quan</a></li>'; ?>
-                    <!-- <li><a href="/wp-admin/ql_category">Quản lý danh mục</a></li>
-                    <li><a href="/wp-admin/ql_user">Quản lý user </a></li> -->
+                    <li><a href="/wp-admin/ql_category">Quản lý danh mục</a></li>
+                    <li><a href="/wp-admin/ql_user">Quản lý user </a></li>
                     <li><a href="/wp-admin/ql-code-sale">Quản lý mã giảm giá</a></li>
-                    <!-- <li><a href="/wp-admin/ql_history_recharge">Quản lý nạp thẻ </a></li> -->
+                    <li><a href="/wp-admin/ql_history_recharge">Quản lý nạp thẻ </a></li>
                     <li><a href="/wp-admin/ql-bill">Quản lý đặt hàng </a></li>
                     <li>
                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="TÀI KHOẢN"><b> <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b>' . number_format($tien, 0, ',', '.') . ' </b>'; ?></b>

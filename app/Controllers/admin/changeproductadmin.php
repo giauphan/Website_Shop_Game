@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Controllers\ctv;
+namespace App\Controllers\admin;
 
 use App\Controllers\Controller;
 use App\Models\admin\change_prodct;
 use App\Models\Page_home;
 use Core\View;
 
-class changeproduct extends Controller
+class changeproductadmin extends Controller
 {
     public function index()
     {
@@ -45,7 +45,7 @@ class changeproduct extends Controller
        
         if (isset($_SESSION['ma_user'])) {
         } else {
-            header("location:/");
+            header("location:/wp-admin");
         }
         $show_change = $change->showchange($_GET['change']);
         foreach($show_change as $row){
@@ -58,7 +58,7 @@ class changeproduct extends Controller
         }
         $danhmuc = $danhmuc -> danhmuc();
         $tien = 0;
-        return View::render('change_product', [
+        return View::render('admin/change_product', [
             'thongbao' => $thongbao,
             'show_change' =>    $show_change,
             'tien' => $tien

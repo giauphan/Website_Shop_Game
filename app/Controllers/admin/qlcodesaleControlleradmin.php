@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\ctv;
+namespace App\Controllers\admin;
 
 use App\Controllers\Controller;
 use App\Models\admin\category;
@@ -10,7 +10,7 @@ use App\Models\Page_home;
 use Core\View;
 use  App\Models\user;
 
-class ql_code_saleController extends Controller
+class qlcodesaleControlleradmin extends Controller
 {
     public function index()
     {
@@ -26,7 +26,7 @@ class ql_code_saleController extends Controller
         }
         
         $danhmuc = $danhmuc -> danhmuc();
-        return view::render("ql_sale", [
+        return view::render("admin/ql_sale", [
             'kq'=>$danhmuc,
             'ql_sale' => $code_sale,
             'thongbao' => $thongbao,
@@ -57,7 +57,7 @@ class ql_code_saleController extends Controller
         $tien = $tien->get_money();
         $kq = $kq->show_category();
         $danhmuc = $danhmuc -> danhmuc();
-        return view::render('add_sale', [
+        return view::render('admin/add_sale', [
             'kq'=>$danhmuc,
             'tien' => $tien,
             'thongbao'=> $thongbao,

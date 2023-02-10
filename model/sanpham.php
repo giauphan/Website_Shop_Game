@@ -7,8 +7,7 @@
 function showproduct2()
 
 {
-$conn = new database ;
-   $conn = $conn->connect();
+
 
    //define total number of results you want per page
 
@@ -78,23 +77,11 @@ $conn = new database ;
 
          $query = "SELECT * FROM `sp` join sp_nro JOIN sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  WHERE trang_thai_sp = 0 and  ma_loai = '" . $_GET['danhmuc'] . "' GROUP by sp.ma_sp   ";
       }
-
-
-      $result = mysqli_query($conn, $query);
-
-
-
-      $number_of_result = mysqli_num_rows($result);
-
-
+ 
+      $result = pdo_query($query);
+      $number_of_result = count($result);
 
       //determine the total number of pages available
-
-
-
-
-
-
 
       $number_of_page = ceil($number_of_result / $results_per_page);
 
@@ -129,7 +116,6 @@ $conn = new database ;
       //retrieve the selected results from database
 
       if (isset($_GET['game_id']) && isset($_GET['trang_thai']) && isset($_GET['moneymin']) && isset($_GET['moneymax']) && isset($_GET['Field01'])  && isset($_GET['Field02'])) {
-
          $query = "SELECT * FROM `sp` join sp_nro JOIN sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_   WHERE  ma_loai = '" . $_GET['danhmuc'] . "' ";
          if ($_GET['game_id'] != "") {
 
@@ -207,17 +193,11 @@ $conn = new database ;
 
          while ($row = mysqli_fetch_array($result)) {
             if ($row['ma_loai'] == 1) {
-
-
                $loai = $row['ma_loai'];
                $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
-
                echo '<div class="col-sm-6 col-md-3">
-
                            <div class="classWithPad">
-
                               <div class="image">
-
                                  <a href="?act=acc&id=' . $row['ma_sp'] . '">
                                  <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
 
@@ -706,3 +686,4 @@ function get_search($ma_sp, $price_min, $trang_thai, $price_max, $rank_seach, $n
 
    header("Location:?act=nick&danhmuc=" . $_GET['danhmuc'] . "&game_id=" . $ma_sp . "&trang_thai=" . $trang_thai . "&moneymin=" . $price_min . "&moneymax=" . $price_max . "&Field01=" . $rank_seach . "&Field02=" . $ngoc_seach . "&Field03=".$Field03."");
 }
+

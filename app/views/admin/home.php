@@ -5,7 +5,7 @@ require_once __DIR__ . '/wit/header.php';
 
     <div id="clock"></div>
     <br>
-    <div class="chart" style="    width: 500px;height: 50%; margin: 10% 0 0 0 ;">
+    <div class="chart" style="    width: 500px;height: 50%; ">
         <p class="thongke" style="font-weight: 700;"><b>THỐNG KÊ</b></p>
 
         <canvas id="thongke" style="width: 400px; height: 200px;"></canvas>
@@ -380,7 +380,7 @@ require_once __DIR__ . '/wit/header.php';
     </script>
     <b>CHỨC NĂNG CHÍNH:</b><Br>
     <!-- them san pham-->
-    <a href="/add-product">
+    <a href="/wp-admin/add-product">
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm sản phẩm"><i class="fa fa-user-plus"></i></button></a>
     <!--   end them san pham-->
 
@@ -445,7 +445,7 @@ require_once __DIR__ . '/wit/header.php';
                             }
                             if ($check_pro == true) {
                                 echo '
-                        <a class="edit" href="/change-product?change=' . $row['ma_sp'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a class="edit" href="/wp-admin/change-product?change=' . $row['ma_sp'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a class="delete" href="?de=' . $row['ma_sp'] . '" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
                             }else{
                                 echo ' <a class="delete" href="?de=' . $row['ma_sp'] . '" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';

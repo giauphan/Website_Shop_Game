@@ -50,11 +50,11 @@ class homeModels extends database
         }
         return $sql;
     }
-
+  
     function de_sp($id)
     {
         $sql_sp = 'DELETE FROM `sp` WHERE ma_sp = ?  ';
-        $this->pdo_execute($sql_sp,$id);
+        $this->pdo_execute($sql_sp, $id);
     }
     public function check_product()
     {

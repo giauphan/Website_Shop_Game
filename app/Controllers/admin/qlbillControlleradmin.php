@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\ctv;
+namespace App\Controllers\admin;
 
 use App\Controllers\Controller;
 use App\Models\admin\homeModels;
@@ -9,7 +9,8 @@ use App\Models\Page_home;
 use App\Models\user;
 use Core\View;
 
-class ql_billController extends Controller
+
+class qlbillControlleradmin extends Controller
 {
     public function index()
     {
@@ -26,7 +27,7 @@ class ql_billController extends Controller
 
         $page  = $page->show_sp_admin();
         $danhmuc = $danhmuc->danhmuc();
-        return view::render("ql_bill", [
+        return view::render("admin/ql_bill", [
             'kq' => $danhmuc,
             'thongbao' => $thongbao,
             "bill" => $bills,

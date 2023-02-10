@@ -3,7 +3,6 @@
 namespace App\Controllers\user;
 
 use App\Controllers\Controller;
-use App\Models\Page_home;
 use Core\View;
 use  App\Models\user;
 
@@ -13,7 +12,6 @@ class login extends Controller
     public function index()
     {
         $tien = new user();
-        $danhmuc = new Page_home();
         $thongbao = "";
         if (isset($_POST['dangnhap'])) {
             $user = $_POST['username'];
@@ -63,9 +61,8 @@ class login extends Controller
             header("location: /");
         }
         $tien =     $tien->get_money();
-        $danhmuc = $danhmuc->danhmuc();
         return View::render('dangnhap', [
-            'kq' => $danhmuc,
+
             'tien' => $tien,
             'thongbao' => $thongbao
         ]);
@@ -73,7 +70,6 @@ class login extends Controller
     public function sigin()
     {
         $sign = new user();
-        $danhmuc = new Page_home();
         $thongbao = "";
         if (isset($_POST['dangky'])) {
             $username_show = $_POST['username_show'];
@@ -113,27 +109,11 @@ class login extends Controller
             }
         }
         if (isset($_SESSION['ma_user'])) {
-            if (isset($_SESSION['ma_user']) && isset($_SESSION['vai_tro'])) {
-                if ($_SESSION['vai_tro'] == 'admin') {
-                    header("location: /wp-amin");
-                } elseif ($_SESSION['vai_tro'] == 'ctv') {
-                    $thongbao =  '<script> swal("'.$_SESSION['vai_tro'].'")</script>';
-                    header("location: /ql-san-pham");
-                } else {
-                     header("location: /");
-                }
-            } else {
-            }
-
-
-
-
-           
+            header("location: /");
         }
         $tien =     $sign->get_money();
-        $danhmuc = $danhmuc->danhmuc();
         return View::render('dangky', [
-            'kq' => $danhmuc,
+
             'tien' => $tien,
             'thongbao' => $thongbao
         ]);

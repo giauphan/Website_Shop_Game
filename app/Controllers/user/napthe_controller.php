@@ -15,11 +15,40 @@ class napthe_controller extends Controller
         $home = new Page_home();
         $napthe = new napthe();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tienkq = $tien->get_money();
         $napthe->pay_the();
         return View::render('napthe', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tienkq' => $tienkq,
+            'thongbao' => ''
+        ]);
+    }
+    public function muathe() {
+        $tien = new user();
+        $home = new Page_home();
+        $muathe = new napthe();
+        $kq = $home->danhmuc();
+        $tienkq = $tien->get_money();
+        $muathe->pay_the();
+        return View::render('muathe', [
+            'kq' => $kq,
+            'tienkq' => $tienkq,
+            'thongbao' => ''
+        ]);
+    }
+    public function lichsunap()
+    {
+        $tien = new user();
+        $home = new Page_home();
+        $lichsunap = new napthe();
+        $kq = $home->danhmuc();
+        $tienkq = $tien->get_money();
+        $lichsunap->pay_the();
+        $result = $lichsunap->showthe();
+        return View::render('lichsunap', [
+            'kq' => $kq,
+            'result' => $result,
+            'tienkq' => $tienkq,
             'thongbao' => ''
         ]);
     }

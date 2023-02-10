@@ -2,7 +2,6 @@
 require_once __DIR__ . '/wit/header.php';
 ?>
 
-
 <!-- END: LAYOUT/HEADERS/HEADER-1 -->
 <!-- BEGIN: PAGE CONTAINER -->
 <div class="c-layout-page">
@@ -90,90 +89,91 @@ require_once __DIR__ . '/wit/header.php';
                <div class="c-line-left"></div>
             </div>
             <div class="col-md-8">
-                    <div class="information-inner">
-                        <div class="card rounded-sm bg-white">
-                            <!-- <div class="card-header bg-transparent rounded-0 border-0">
+               <div class="information-inner">
+                  <div class="card rounded-sm bg-white">
+                     <!-- <div class="card-header bg-transparent rounded-0 border-0">
                                 <div class="heading-m1">
                                     <div class="title">
                                         Thông tin tài khoản
                                     </div>
                                 </div>
                             </div> -->
-                            <style>
-                                /* td {
+                     <style>
+                        /* td {
                                 border-bottom: 1px dashed #5cb85c45;
                             } */
-                                .table>tbody>tr>td,
-                                .table>tbody>tr>th,
-                                .table>tfoot>tr>td,
-                                .table>tfoot>tr>th,
-                                .table>thead>tr>td,
-                                .table>thead>tr>th {
-                                    padding: 8px;
-                                    line-height: 50px !important;
-                                    vertical-align: top;
-                                    border-top: 1px solid #ddd;
-                                }
+                        .table>tbody>tr>td,
+                        .table>tbody>tr>th,
+                        .table>tfoot>tr>td,
+                        .table>tfoot>tr>th,
+                        .table>thead>tr>td,
+                        .table>thead>tr>th {
+                           padding: 8px;
+                           line-height: 50px !important;
+                           vertical-align: top;
+                           border-top: 1px solid #ddd;
+                        }
 
-                                .col-md-8 {
-                                    -ms-flex: 0 0 66.666667%;
-                                    flex: 0 0 66.666667%;
-                                    width: 100% !important;
-                                }
+                        .col-md-8 {
+                           -ms-flex: 0 0 66.666667%;
+                           flex: 0 0 66.666667%;
+                           width: 100% !important;
+                        }
 
-                                .row.no-gutters.pb-3.mb-3 {
-                                    display: flex;
-                                    padding-bottom: 1rem !important;
-                                    margin-bottom: 1rem !important;
-                                    border-bottom: 1px dashed #5cb85c45;
-                                }
+                        .row.no-gutters.pb-3.mb-3 {
+                           display: flex;
+                           padding-bottom: 1rem !important;
+                           margin-bottom: 1rem !important;
+                           border-bottom: 1px dashed #5cb85c45;
+                        }
 
-                                @media screen and (min-width: 991px) {
-                                    .pl-md-8 {
-                                        padding-left: 80px !important;
-                                    }
-                                }
+                        @media screen and (min-width: 991px) {
+                           .pl-md-8 {
+                              padding-left: 80px !important;
+                           }
+                        }
 
-                                @media screen and (min-width: 991px) {
-                                    .pl-md-8 {
-                                        padding-left: 80px !important;
-                                    }
-                                }
+                        @media screen and (min-width: 991px) {
+                           .pl-md-8 {
+                              padding-left: 80px !important;
+                           }
+                        }
 
-                                @media (min-width: 768px) {
-                                    .text-md-left {
-                                        text-align: left !important;
-                                    }
-                                }
+                        @media (min-width: 768px) {
+                           .text-md-left {
+                              text-align: left !important;
+                           }
+                        }
 
-                                .pt-4,
-                                .py-4 {
-                                    padding-top: 1.5rem !important;
-                                }
+                        .pt-4,
+                        .py-4 {
+                           padding-top: 1.5rem !important;
+                        }
 
-                                .mt-5,
-                                .my-5 {
-                                    margin-top: 3rem !important;
-                                }
+                        .mt-5,
+                        .my-5 {
+                           margin-top: 3rem !important;
+                        }
 
-                                .btn-secondary {
-                                    color: #fff;
-                                    background-color: #6c757d;
-                                    border-color: #6c757d;
-                                }
-                            </style>
-                            <?php
-                            foreach ($result as $row) {
-                                echo '   
+                        .btn-secondary {
+                           color: #fff;
+                           background-color: #6c757d;
+                           border-color: #6c757d;
+                        }
+                     </style>
+                     <?php
+                     foreach ($result as $row) {
+                        echo '   
                                     <div class="card-body">
                                         <div class="information-view" id="informationView">
                                             <div class="information-list">
+                                            <form  method="post" enctype="multipart/form-data">
                                                                                     <div class="row no-gutters pb-3 mb-3">
                                                         <div class="col-5 col-md-4">
                                                             Tên đăng nhập
                                                         </div>
                                                         <div class="col-7 text-right text-md-left pl-md-8 col-md-8">
-                                                            <b>' . $row['username'] . '</b>
+                                                        <input type="text" class="form-control" value="' . $row['username'] . '"  readonly>
                                                         </div>
                                                     </div>
                                                                                 <div class="row no-gutters pb-3 mb-3">
@@ -181,7 +181,7 @@ require_once __DIR__ . '/wit/header.php';
                                                       Tên hiển thị
                                                     </div>
                                                     <div class="col-7 text-right text-md-left pl-md-8 col-md-8">
-                                                        <b>' . $row['ten_hien_thi'] . '</b>
+                                                    <input type="text" class="form-control" name="username_show" value="' . $row['ten_hien_thi'] . '">
                                                     </div>
                                                 </div>
                                                 <div class="row no-gutters pb-3 mb-3">
@@ -189,7 +189,7 @@ require_once __DIR__ . '/wit/header.php';
                                                         Email
                                                     </div>
                                                     <div class="col-7 text-right text-md-left pl-md-8 col-md-8">
-                                                        <b>' . $row['email'] . '</b>
+                                                    <input type="email" class="form-control" name="email" value="' . $row['email'] . '">
                                                     </div>
                                                 </div> 
                                                    <div class="row no-gutters pb-3 mb-3">
@@ -197,31 +197,20 @@ require_once __DIR__ . '/wit/header.php';
                                                    Số điện thoại
                                                 </div>
                                                 <div class="col-7 text-right text-md-left pl-md-8 col-md-8">
-                                                    <b> ' . $row['phone'] . ' </b>
+                                                <input type="numeber" class="form-control" name="phone" value="' . $row['phone'] . '">
                                                 </div>
                                             </div>
-                                                <div class="row no-gutters pb-3 mb-3">
-                                                    <div class="col-5 col-md-4">
-                                                        Nhóm
-                                                    </div>
-                                                    <div class="col-7 text-right text-md-left pl-md-8 col-md-8">
-                                                        <b> ' . $row['vai_tro'] . ' </b>
-                                                    </div>
-                                                </div>
-
+                                              
 
                                                
                                            
                                                                                
                                             <div class="mt-5 pt-4 border-top text-center text-md-left">
-                                                <a href="/edit_profile" class="btn btn-success btn-small updateInformation">
-                                                    Sửa thông tin
-                                                </a>
-                                                <a href="/doimk" class="btn btn-secondary btn-small updateInformation">
-                                                    Đổi mật khẩu
-                                                </a>
+                                            <button class="btn btn-success btn-small m-auto d-block" name="ud_infor" style="margin: auto!important;display: block!important;">Cập nhật thông tin
+                                            </button>
                                               
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="loading-pure" style="display: none">
@@ -231,11 +220,12 @@ require_once __DIR__ . '/wit/header.php';
                                         <div></div>
                                     </div>
                                 ';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
+                     }
+                     ?>
+                  </div>
+               </div>
+
+            </div>
             <!-- END: PAGE CONTENT -->
          </div>
       </div>
@@ -330,21 +320,7 @@ require_once __DIR__ . '/wit/header.php';
 </style>
 <!-- END: PAGE CONTENT -->
 </div>
-<!-- <div class="modal fade" id="noticeModal" role="dialog" style="display: none;" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="loader" style="text-align: center"><img src="/assets/frontend/images/loader.gif" style="width: 50px;height: 50px;display: none"></div>
-      <div class="modal-content">
-      </div>
-   </div>
-</div>
-</div>
-<div class="modal fade" id="LoadModal" role="dialog" style="display: none;" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="loader" style="text-align: center"><img src="/assets/frontend/images/loader.gif" style="width: 50px;height: 50px;display: none"></div>
-      <div class="modal-content">
-      </div>
-   </div>
-</div> -->
+
 <script>
    $(document).ready(function() {
       $('.load-modal').each(function(index, elem) {
@@ -361,6 +337,10 @@ require_once __DIR__ . '/wit/header.php';
 <?php
 
 ?>
+</body>
+
+</html>
+
 <?php
 require_once __DIR__ . '/wit/footer.php';
 ?>

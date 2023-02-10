@@ -43,14 +43,34 @@ Route::GET('/outlogin', function () {
 // /napthe
 Route::GET('/napthe', [napthe_controller::class, 'index']);
 
+// /muathe
+Route::GET('/muathe', [napthe_controller::class, 'muathe']);
+
 // /quenmk
 Route::GET('/quenmk', [quenmk_controller::class, 'index']);
 
 // /doimk
-Route::GET('/doimk', [doimk_controller::class, 'index']);
+Route::GET('/doimk', [profile_controller::class, 'doimk']);
+
+// /quenmk
+Route::GET('/quenmk', [profile_controller::class, 'quenmk']);
 
 // /profile
 Route::GET('/profile', [profile_controller::class, 'index']);
+
+// /edit_profile
+Route::GET('/edit_profile', [profile_controller::class, 'edit']);
+Route::POST('/edit_profile', [profile_controller::class, 'edit']);
+
+// /lichsunap
+Route::GET('/lichsunap', [napthe_controller::class, 'lichsunap']);
+Route::POST('/lichsunap', [napthe_controller::class, 'lichsunap']);
+
+// /lichsumuahang
+Route::GET('/lichsumua', [muahang_controller::class, 'lichsumua']);
+
+// /show sp
+Route::GET('/sanpham', [sanpham_controller::class, 'index']);
 
 
 // ctv

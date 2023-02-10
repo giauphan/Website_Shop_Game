@@ -18,6 +18,11 @@ class napthe extends ModelsModel
       $sql_nap = "INSERT INTO `lich_su_nap`( `loai_the`, `menh_gia`,`ma_the`, `seri`, `trang_thai`,`time_submit`, `id_user`) VALUES ('" . $loai_the . "','" . $menh_gia . "','" . $mathe . "','" . $seri . "','" . $trang_thai . "','" . $time . "','" . $_SESSION['ma_user'] . "')";
       $this->db->pdo_execute($sql_nap);
    }
+   public function showthe()
+   {
+      $showtien = 'SELECT * FROM `lich_su_nap` WHERE id_user = "' . $_SESSION['ma_user'] . '" ';
+      return $this->db->pdo_query($showtien);
+   }
    public function thongbao($msg)
    {
       echo '<script>swal("' . $msg . '");</script>';

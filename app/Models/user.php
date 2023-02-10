@@ -6,7 +6,10 @@ use App\Models\account;
 
 class user extends account
 {
-
+    public function __construct()
+    {
+       $this->db = new database;
+    }
 
     public function login($user, $pass)
     {
@@ -18,7 +21,7 @@ class user extends account
     public function get_all_user()
     {
         $sql = 'SELECT * FROM `user` ';
-        $user = pdo_query($sql);
+        $user = $this->db->pdo_query($sql);
         return $user;
     }
 
@@ -35,6 +38,7 @@ class user extends account
         $sql = "UPDATE `user` SET `ten_hien_thi`=?,`email`=?,`phone`=? WHERE ma_kh = ?";
         $this->db->pdo_query($sql, $username_show, $email, $phone, $_SESSION['ma_user']);
         return true;
+
     }
 
     public function get_money()
@@ -57,17 +61,17 @@ class user extends account
     public function sign($username, $username_show, $pass, $email,  $phone)
     {
         $sql_sign = "INSERT INTO `user`(`ten_hien_thi`, `username`, `password`, `email`, `phone`, `trang_thai_kh`, `vai_tro`) VALUES (?,?,?,?,?,?,?)";
-        pdo_execute($sql_sign, $username_show, $username, $pass, $email, $phone, '0', 'thành viên');
+        $this->db->pdo_execute($sql_sign, $username_show, $username, $pass, $email, $phone, '0', 'thành viên');
     }
     public function action_email($email)
     {
         $sql = "UPDATE `user` SET `trang_thai_kh` = '1' WHERE email = ?";
-        pdo_execute($sql, $email);
+        $this->db->pdo_execute($sql, $email);
     }
     public function check_email($username, $email)
     {
         $check = false;
-        $kq =  get_all_user();
+        $kq =  $this->get_all_user();
         foreach ($kq as $row) {
 
             if ($row['username'] == $username || $row['email'] == $email) {
@@ -80,6 +84,5 @@ class user extends account
             return false;
         }
     }
-
 
 }

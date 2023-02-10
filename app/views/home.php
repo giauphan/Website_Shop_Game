@@ -934,7 +934,7 @@ require_once __DIR__ . '/wit/header.php';
                      <div class="classWithPad">
                         <div class="news_image">
 
-                           <a href="" title="Danh Mục Game Free Fire" class="">
+     
                               <img src="https://taikhoangame.site/duan/Controller/img/NRO_USMDT.png" alt="Danh Mục Game Free Fire"></a>
                         </div>
                         <div class="news_title">
@@ -952,7 +952,7 @@ require_once __DIR__ . '/wit/header.php';
                         </div>
                         <div class="row">
                            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                              <a href="?act=dich_vu&service=1" title="">
+
                                  <div class="view">
                                     XEM THÊM
                                  </div>

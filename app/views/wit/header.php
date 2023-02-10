@@ -906,11 +906,11 @@
                            ?>
                         </ul>
                      </li>
-                     <li class="c-menu-type-classic"><a rel="" href=" /?act=muathe" class="c-link dropdown-toggle ">Mua thẻ</a></li>
+                     <li class="c-menu-type-classic"><a rel="" href=" /muathe" class="c-link dropdown-toggle ">Mua thẻ</a></li>
                      <li class="c-menu-type-classic">
                         <a rel="" href=" /napthe" class="c-link dropdown-toggle ">Nạp tiền<span class="c-arrow c-toggler"></span></a>
                         <ul id="children-of-41" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                           <li class="c-menu-type-classic"><a rel="" href="#" class="">Nạp thẻ c&agrave;o</a></li>
+                           <li class="c-menu-type-classic"><a rel="" href="/napthe" class="">Nạp thẻ c&agrave;o</a></li>
                            <li class="c-menu-type-classic"><a rel="" href="#" class="">Nạp ATM tự động</a></li>
                            <li class="c-menu-type-classic"><a target='_blank' rel="" href=" blog/huong-dan-nap-tien-tu-dong-bang-atm-vao-nickvn" class="">Hướng dẫn nạp ATM tự động</a></li>
                         </ul>
@@ -939,20 +939,20 @@
 
                                  ?>
 
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b> <span class="c-arrow c-toggler"></span>';
+                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tienkq, 0, ',', '.') . ' </b> <span class="c-arrow c-toggler"></span>';
                                  }
                                  ?>
                               </a>
                               <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
                                  <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thông tin tài khoản</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /lichsunap" class="">lịch sử nạp thẻ</a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /lichsumua" class="">tài khoản đã mua</a></li>
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
                                  ?>
                                  <?= '<li class="c-menu-type-classic"><a rel="" href=" /wp-admin?ma_user=' . $_SESSION["ma_user"] . '& vai_tro=' . $_SESSION['vai_tro'] . ' " class="">vào trang quản trị</a></li>';
                                  } ?>
-                                 <li class="c-menu-type-classic"><a href="outlogin">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php
@@ -991,15 +991,15 @@
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
                                  ?>
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b>';
+                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tienkq, 0, ',', '.') . ' </b>';
                                  }
                                  ?>
                               </a>
                               <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=profile" class="">thôn tin tài khoản</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_nap" class="">lịch sử nạp thẻ</a></li>
-                                 <li class="c-menu-type-classic"><a rel="" href=" /?act=history_bill" class="">tài khoản đã mua</a></li>
-                                 <li class="c-menu-type-classic"><a href="outlogin">Đăng xuất </a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thôn tin tài khoản</a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /lichsunap" class="">lịch sử nạp thẻ</a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /lichsumua" class="">tài khoản đã mua</a></li>
+                                 <li class="c-menu-type-classic"><a href="/outlogin">Đăng xuất </a></li>
                               </ul>
                            </li>
                         <?php

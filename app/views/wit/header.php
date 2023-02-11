@@ -901,7 +901,7 @@
 
 
                            foreach ($kq as $row) {
-                              echo '  <li class="c-menu-type-classic">    <a href="./?sanpham&danhmuc=' . $row['ma_loai'] . '" title="Danh Mục Game ' . $row['ten_loai'] . '" class="">' . $row['ten_loai'] . '</a></li>';
+                              echo '  <li class="c-menu-type-classic">    <a href="/sanpham?danhmuc=' . $row['ma_loai'] . '" title="Danh Mục Game ' . $row['ten_loai'] . '" class="">' . $row['ten_loai'] . '</a></li>';
                            }
                            ?>
                         </ul>
@@ -939,7 +939,7 @@
 
                                  ?>
 
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tienkq, 0, ',', '.') . ' </b> <span class="c-arrow c-toggler"></span>';
+                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b> <span class="c-arrow c-toggler"></span>';
                                  }
                                  ?>
                               </a>
@@ -991,7 +991,7 @@
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
                                  ?>
-                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tienkq, 0, ',', '.') . ' </b>';
+                                 <?= '  ' . $_SESSION["username_show"] . ' - ví:  <b class="tien">' . number_format($tien, 0, ',', '.') . ' </b>';
                                  }
                                  ?>
                               </a>

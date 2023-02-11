@@ -14,15 +14,16 @@ class quenmk_controller extends Controller
         $thongbao = '';
         $tien = new user();
         $home = new Page_home();
+        $mail = new \phpmailer();
         $kq = $home->danhmuc();
         $tien = $tien->get_money();
         if (isset($_POST['sendmail'])) {
             $email = $_POST['email'];
-            $check = get_one_email($email);
+            $check = $mail->get_one_email($email);
 
             if (is_array($check) > 1) {
 
-                $_SESSION['code_opt'] =   sendmail($email);
+                $_SESSION['code_opt'] =   $mail->sendmail($email);
                 $_SESSION['email_forget'] =   $email;
                 header("location:/duan/?act=forget_pass&check=1&email=" . $email . "");
             } else {

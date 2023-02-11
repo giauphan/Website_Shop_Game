@@ -18,7 +18,7 @@ class sanpham extends database
    
          if (isset($_GET['game_id']) && isset($_GET['trang_thai']) && isset($_GET['moneymin']) && isset($_GET['moneymax']) && isset($_GET['Field01'])  && isset($_GET['Field02'])) {
    
-            $query = "SELECT * FROM `sp` join sp_nro JOIN sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  WHERE  ma_loai = '" . $_GET['danhmuc'] . "' ";
+            $query = "SELECT * FROM `sp`  WHERE  ma_loai = '" . $_GET['danhmuc'] . "' ";
    
             if ($_GET['game_id'] != "") {
    
@@ -67,11 +67,11 @@ class sanpham extends database
             }
             $query .= " GROUP by sp.ma_sp";
          } else {
-            $query = "SELECT * FROM `sp` join sp_nro JOIN sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  WHERE trang_thai_sp = 0 and  ma_loai = '" . $_GET['danhmuc'] . "' GROUP by sp.ma_sp   ";
+            $query = "SELECT * FROM `sp` WHERE trang_thai_sp = 0 and  ma_loai = '" . $_GET['danhmuc'] . "' GROUP by sp.ma_sp   ";
          }
    
    
-         $result = pdo_query($query);
+         $result = $this->pdo_query($query);
          $number_of_result = count($result);
 
          $number_of_page = ceil($number_of_result / $results_per_page);
@@ -92,7 +92,7 @@ class sanpham extends database
          //retrieve the selected results from database
    
          if (isset($_GET['game_id']) && isset($_GET['trang_thai']) && isset($_GET['moneymin']) && isset($_GET['moneymax']) && isset($_GET['Field01'])  && isset($_GET['Field02'])) {
-         $query = "SELECT * FROM `sp` join sp_nro JOIN sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_   WHERE  ma_loai = '" . $_GET['danhmuc'] . "' ";
+         $query = "SELECT * FROM `sp`  WHERE  ma_loai = '" . $_GET['danhmuc'] . "' ";
             if ($_GET['game_id'] != "") {
    
                $query .= " and ma_sp = '" . $_GET['game_id'] . "' ";
@@ -141,7 +141,7 @@ class sanpham extends database
             $query .= " GROUP by sp.ma_sp  LIMIT " . $page_first_result . ',' . $results_per_page;
          } else {
    
-            $query = "SELECT *FROM sp join sp_nro join sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  where trang_thai_sp = 0 and ma_loai = " . $_GET['danhmuc'] . " GROUP by sp.ma_sp  LIMIT " . $page_first_result . ',' . $results_per_page;
+            $query = "SELECT *FROM sp  where trang_thai_sp = 0 and ma_loai = " . $_GET['danhmuc'] . " GROUP by sp.ma_sp  LIMIT " . $page_first_result . ',' . $results_per_page;
          }
    
    

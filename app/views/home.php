@@ -325,7 +325,7 @@ require_once __DIR__ . '/wit/header.php';
                            echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                        pay <div class="image">
-                           <a href="?chitietsanpham&id=' . $row['ma_sp'] . '">
+                           <a href="/chitietsanpham?id=' . $row['ma_sp'] . '">
 
                               <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
                               <span class="ms">MS: ' . $row['ma_sp'] . '</span>
@@ -414,7 +414,7 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                               <div class="col-xs-6 ">
                                  <div class="view">
-                                    <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                    <a href="/sanpham?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                                  </div>
                               </div>
@@ -551,7 +551,7 @@ require_once __DIR__ . '/wit/header.php';
                         echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                         <div class="image">
-                           <a href="?chitietsanpham&id=' . $row['ma_sp'] . '">
+                           <a href="/chitietsanpham?id=' . $row['ma_sp'] . '">
 
                               <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
                               <span class="ms">MS: ' . $row['ma_sp'] . '</span>
@@ -780,7 +780,7 @@ require_once __DIR__ . '/wit/header.php';
                                        </div>
                                        <div class="news_title">
                                           <h2 class="categry_tile">
-                                             <a href="./?act=nick&danhmuc=' . $item['ma_loai'] . '" class="categry_tile_link" title="Danh Mục Game ' . $item['ten_loai'] . '">Game ' . $item['ten_loai'] . '</a>
+                                             <a href="./sanpham?danhmuc=' . $item['ma_loai'] . '" class="categry_tile_link" title="Danh Mục Game ' . $item['ten_loai'] . '">Game ' . $item['ten_loai'] . '</a>
                                           </h2>
                                        </div>
                                        <div class="news_description">';
@@ -810,7 +810,7 @@ require_once __DIR__ . '/wit/header.php';
                         echo ' </div>
                                     <div class="row">
                                           <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                                             <a href="?act=nick&danhmuc=' . $item['ma_loai'] . '" title="">
+                                             <a href="/sanpham?danhmuc=' . $item['ma_loai'] . '" title="">
                                                 <div class="view">
                                                    XEM THÊM
                                                 </div>

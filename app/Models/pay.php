@@ -38,7 +38,7 @@ class pay extends ModelsModel
    }
    public function showproductcfsp($idacc)
    {
-      $sql_anh = "SELECT * FROM sp join loai join sp_nro JOIN sp_lq on loai.ma_loai = sp.ma_loai and sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  where `ma_sp` = ? GROUP by sp.ma_sp";
+      $sql_anh = "SELECT * FROM sp  where `ma_sp` = ? GROUP by sp.ma_sp";
 
       return  $this->db->pdo_query($sql_anh, $idacc);
    }
@@ -51,7 +51,7 @@ class pay extends ModelsModel
    }
    public function showsplienquan()
    {
-      $sql = "SELECT * FROM  `sp`  join sp_nro JOIN sp_lq on sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_   where trang_thai_sp = 0 GROUP by sp.ma_sp";
+      $sql = "SELECT * FROM  `sp`  where trang_thai_sp = 0 GROUP by sp.ma_sp";
       return $this->db->pdo_query($sql);
    }
 
@@ -62,7 +62,7 @@ class pay extends ModelsModel
 
       $game = '';
 
-      $sl_sql = "SELECT * FROM `sp` join loai join sp_nro JOIN sp_lq on sp.ma_loai = loai.ma_loai and sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  WHERE ma_sp = " . $_GET['id'] . " GROUP by sp.ma_sp";
+      $sl_sql = "SELECT * FROM `sp` WHERE ma_sp = " . $_GET['id'] . " GROUP by sp.ma_sp";
 
       $kq = $this->db->pdo_query($sl_sql);
 
@@ -95,7 +95,7 @@ class pay extends ModelsModel
 
       $game = '';
 
-      $sl_sql = "SELECT * FROM `sp` join loai join sp_nro JOIN sp_lq on sp.ma_loai = loai.ma_loai and sp.ma_sp = sp_nro.ma_sp_ or sp.ma_sp = sp_lq.ma_sp_  WHERE ma_sp = " . $_GET['id'] . " GROUP by sp.ma_sp";
+      $sl_sql = "SELECT * FROM `sp`  WHERE ma_sp = " . $_GET['id'] . " GROUP by sp.ma_sp";
 
       $kq = $this->db->pdo_query($sl_sql);
 

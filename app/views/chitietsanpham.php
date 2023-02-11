@@ -17,7 +17,6 @@ require_once __DIR__ . '/wit/header.php';
 
 
       <?php
-      $anh  = new pay();
 
       $kt = false;
       $i = 0;

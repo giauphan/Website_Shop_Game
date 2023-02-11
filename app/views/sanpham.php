@@ -11,21 +11,26 @@ require_once __DIR__ . '/wit/header.php';
          <div class="col-sm-12">
          <h1 class="alert-heading" style="color: #000;text-align: center; margin-bottom: 30px;font-size: 30px;">
          <?php
-         foreach($ketqua as $item){
-            if ($_GET['danhmuc']== $item['ma_loai']) {
-             echo $item['ten_loai'];
+         if(isset($kq)&&sizeof($kq)) {
+            foreach($kq as $item){
+               if ($_GET['danhmuc']== $item['ma_loai']) {
+               echo $item['ten_loai'];
+               }
             }
-           
          }
          ?>
         </h1>
             <div class="alert alert-info box-text showtext" role="alert">
-               <h1 class="alert-heading" style="color:#000"><?php foreach($ketqua as $item){
-            if ($_GET['danhmuc']== $item['ma_loai']) {
-             echo $item['ten_loai'];
+               <h1 class="alert-heading" style="color:#000">
+            <?php 
+            if(isset($kq)&&sizeof($kq)) {
+               foreach($kq as $item) {
+                  if ($_GET['danhmuc']== $item['ma_loai']) {
+                  echo $item['ten_loai'];
+                  } 
             }
-           
-         }?></h1>
+         }
+      ?></h1>
                <p></p>
                <table align="center" border="1" cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
                   <tbody>
@@ -57,7 +62,8 @@ require_once __DIR__ . '/wit/header.php';
          </div>
       </div>
       <?php
-      foreach($ketqua as $item) {
+      if(isset($kq)&&isset($_GET['danhmuc'])&&sizeof($kq)) {
+      foreach($kq as $item) {
       if ($_GET['danhmuc']== 1) { 
       
       ?>
@@ -134,8 +140,9 @@ require_once __DIR__ . '/wit/header.php';
             </form>
          </div>
       </div>
-  <?php  
+  <?php  break;
   }else {
+
    ?>
      <div class="row  hidden-xs hidden-sm" style="margin-bottom: 15px">
          <div class="m-l-10 m-r-10">
@@ -223,7 +230,9 @@ require_once __DIR__ . '/wit/header.php';
          </div>
       </div>
    <?php
+   break;
   }
+}
 }
    ?>
       <div class="filter-product-mobile hidden-md hidden-lg">
@@ -409,7 +418,7 @@ require_once __DIR__ . '/wit/header.php';
 
 
                      $loai = $row['ma_loai'];
-                     $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
+                     $retVal = ($row['field4'] != "") ?  "có" : "không";
 
                      echo '<div class="col-sm-6 col-md-3">
 
@@ -417,11 +426,10 @@ require_once __DIR__ . '/wit/header.php';
 
                                     <div class="image">
 
-                                       <a href="?act=acc&id=' . $row['ma_sp'] . '">
-                                       <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                                       <a href="/pay/sp?id=' . $row['ma_sp'] . '">
+                                       <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
                                        <span class="ms">MS: ' . $row['ma_sp'] . '</span>
-
                                        </a>
 
                                        </div>
@@ -434,19 +442,19 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Rank: <b>' . $row['rank'] . '</b>
+                                          Rank: <b>' . $row['field2'] . '</b>
 
                                        </div>
 
                                        <div class="col-xs-6 a_att">
 
-                                          Tướng: <b>' . $row['tuong'] . '</b>
+                                          Tướng: <b>' . $row['field1'] . '</b>
 
                                        </div>
 
                                        <div class="col-xs-6 a_att">
 
-                                          Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                                          Trang Phục: <b>' . $row['field3'] . '</b>
 
                                        </div>
 
@@ -478,7 +486,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                           <div class="view">
 
-                                             <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                             <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                                           
 
@@ -494,16 +502,16 @@ require_once __DIR__ . '/wit/header.php';
 
                      </div>';
                   } else  if ($row['ma_loai'] == 3) {
-                     $retVal = ($row['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($row['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($row['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '<div class="col-sm-6 col-md-3">
 
                                  <div class="classWithPad">
 
                                     <div class="image">
 
-                                       <a href="?act=acc&id=' . $row['ma_sp'] . '">
-                                       <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                                       <a href="/pay/sp?id=' . $row['ma_sp'] . '">
+                                      <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
                                        <span class="ms">MS: ' . $row['ma_sp'] . '</span>
 
@@ -520,12 +528,12 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Máy chủ: <b>' . $row['server'] . ' sao</b>
+                                          Máy chủ: <b>' . $row['field1'] . ' sao</b>
 
                                        </div>
 
                                        <div class="col-xs-6 a_att">
-            Hành tinh: <b>' . $row['Hanh_tinh'] . '</b>
+            Hành tinh: <b>' . $row['field2'] . '</b>
 
                                        </div>
                                        <div class="col-xs-6 a_att">
@@ -564,7 +572,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                           <div class="view">
 
-                                             <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                             <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                                           
 
@@ -580,16 +588,16 @@ require_once __DIR__ . '/wit/header.php';
 
                      </div>';
                   } else  if ($row['ma_loai'] == 2) {
-                     $retVal = ($row['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($row['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($row['field3']  == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '<div class="col-sm-6 col-md-3">
 
                                  <div class="classWithPad">
 
                                     <div class="image">
 
-                                       <a href="?act=acc&id=' . $row['ma_sp'] . '">
-                                       <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                                       <a href="/pay/sp?id=' . $row['ma_sp'] . '">
+                                       <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
                                        <span class="ms">MS: ' . $row['ma_sp'] . '</span>
 
@@ -606,13 +614,13 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Máy chủ: <b>' . $row['server'] . ' sao</b>
+                                          Máy chủ: <b>' . $row['field1'] . ' sao</b>
 
                                        </div>
 
                                        <div class="col-xs-6 a_att">
 
-                                          Hành tinh: <b>' . $row['Hanh_tinh'] . '</b>
+                                          Hành tinh: <b>' . $row['field2'] . '</b>
 
                                        </div>
                                        <div class="col-xs-6 a_att">
@@ -650,7 +658,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                           <div class="view">
 
-                                             <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                             <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                                           
 
@@ -666,16 +674,16 @@ require_once __DIR__ . '/wit/header.php';
 
                      </div>';
                   } else  if ($row['ma_loai'] == 4) {
-                     $retVal = ($row['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($row['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($row['field3']  == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '<div class="col-sm-6 col-md-3">
 
                                  <div class="classWithPad">
 
                                     <div class="image">
 
-                                       <a href="?act=acc&id=' . $row['ma_sp'] . '">
-                                       <img src="/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                                       <a href="/sanpham?id=' . $row['ma_sp'] . '">
+                                       <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
                                        <span class="ms">MS: ' . $row['ma_sp'] . '</span>
 
@@ -692,18 +700,18 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Máy chủ: <b>' . $row['server'] . ' sao</b>
+                                          Máy chủ: <b>' . $row['field1'] . ' sao</b>
 
                                        </div>
 
                                        <div class="col-xs-6 a_att">
 
-                                          Hành tinh: <b>' . $row['Hanh_tinh'] . '</b>
+                                          Hành tinh: <b>' . $row['field2'] . '</b>
 
                                        </div>
                                        <div class="col-xs-6 a_att">
 
-                                       Hành tinh: <b>' . $login_acc . '</b>
+                                       Hành tinh: <b>' . $row['field2'] . '</b>
 
                                     </div>
 
@@ -760,9 +768,13 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
+               if (!isset($_GET['page'])) {
+                  $page = 1;
+               } else {
+                  $page = $_GET['page'];
+               }
 
-
-               if ($_GET['danhmuc'] == $loai) {
+               if ($_GET['danhmuc'] == $loai) {         
 
                   // page_sp
 
@@ -802,7 +814,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         echo '
 
-            <li class="page-item"><a class="page-link" href="?act=nick&danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . $page . '">' . $page . '</a></li>';
+            <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . $page . '">' . $page . '</a></li>';
                      }
 
                      if (isset($_GET['page']) && $_GET['page'] >= $number_of_page) {
@@ -820,7 +832,7 @@ require_once __DIR__ . '/wit/header.php';
 
                            echo ' 
 
-               <li class="page-item"><a class="page-link" href="?act=nick&danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . ($_GET['page'] + 1) . '" >»</a></li>
+               <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . ($_GET['page'] + 1) . '" >»</a></li>
 
                </ul> </div>';
                         }
@@ -859,7 +871,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         echo '
 
-            <li class="page-item"><a class="page-link" href="?act=nick&danhmuc=' . $_GET['danhmuc'] . '&page=' . $page . '">' . $page . '</a></li>';
+            <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&page=' . $page . '">' . $page . '</a></li>';
                      }
 
                      if (isset($_GET['page']) && $_GET['page'] >= $number_of_page) {
@@ -877,7 +889,7 @@ require_once __DIR__ . '/wit/header.php';
 
                            echo ' 
 
-               <li class="page-item"><a class="page-link" href="?act=nick&danhmuc=' . $_GET['danhmuc'] . '&page=' . ($_GET['page'] + 1) . '" >»</a></li>
+               <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&page=' . ($_GET['page'] + 1) . '" >»</a></li>
 
                </ul> </div>';
                         }

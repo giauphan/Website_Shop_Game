@@ -49,15 +49,15 @@
 
    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
 
-   <link href="assets/css/socicon.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/socicon.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-social.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-social.css" rel="stylesheet" type="text/css" />
 
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/animate.min.css" rel="stylesheet" type="text/css" />
 
    <!-- Latest compiled and minified CSS -->
 
@@ -65,49 +65,53 @@
 
    <!-- END GLOBAL MANDATORY STYLES -->
 
+   <!-- CTSP CSS -->
+
+   <link href="/assets/css/style_ctsp.css" rel="stylesheet" type="text/css" />
+
    <!-- BEGIN: BASE PLUGINS  -->
 
-   <link href="assets/css/magnific.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/magnific.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/owl.carousel.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 
    <!-- END: BASE PLUGINS -->
 
    <!-- BEGIN: PAGE STYLES -->
 
-   <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
 
    <!-- END: PAGE STYLES -->
 
    <!-- BEGIN THEME STYLES -->
 
-   <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/plugins.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/default.css" rel="stylesheet" id="style_theme" type="text/css" />
+   <link href="/assets/css/default.css" rel="stylesheet" id="style_theme" type="text/css" />
 
-   <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/custom.css" rel="stylesheet" type="text/css" />
 
-   <link rel="stylesheet" href="assets/css/owl.carousel.css">
+   <link rel="stylesheet" href="/assets/css/owl.carousel.css">
 
-   <link rel="stylesheet" href="assets/css/owl.theme.css">
+   <link rel="stylesheet" href="/assets/css/owl.theme.css">
 
-   <link rel="stylesheet" href="assets/css/owl.transitions.css">
+   <link rel="stylesheet" href="/assets/css/owl.transitions.css">
 
 
 
-   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
 
    <!-- END THEME STYLES -->
 
@@ -165,21 +169,21 @@
 
    <!-- BEGIN THEME STYLES -->
 
-   <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/plugins.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/default.css" rel="stylesheet" id="style_theme" type="text/css" />
+   <link href="/assets/css/default.css" rel="stylesheet" id="style_theme" type="text/css" />
 
-   <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/custom.css" rel="stylesheet" type="text/css" />
 
-   <link rel="stylesheet" href="assets/css/owl.carousel.css">
+   <link rel="stylesheet" href="/assets/css/owl.carousel.css">
 
-   <link rel="stylesheet" href="assets/css/owl.theme.css">
+   <link rel="stylesheet" href="/assets/css/owl.theme.css">
 
-   <link rel="stylesheet" href="assets/css/owl.transitions.css">
+   <link rel="stylesheet" href="/assets/css/owl.transitions.css">
 
-   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
 
    <!-- END THEME STYLES -->
 
@@ -189,19 +193,19 @@
 
 
 
-   <script src="assets/js//jquery-migrate-3.4.0.js"></script>
+   <script src="/assets/js//jquery-migrate-3.4.0.js"></script>
 
-   <script src="assets/js//jquery-3.6.1.min.js"></script>
+   <script src="/assets/js//jquery-3.6.1.min.js"></script>
 
    <!-- end run jquery -->
 
    <script src=" /assets/js/main.js"></script>
 
-   <script src="assets/js//bootstrap.min.js"></script>
+   <script src="/assets/js//bootstrap.min.js"></script>
 
-   <script src="assets/js//owl.carousel.min.js"></script>
+   <script src="/assets/js//owl.carousel.min.js"></script>
 
-   <script src="assets/js//jquery-migrate.min.js" type="text/javascript"></script>
+   <script src="/assets/js//jquery-migrate.min.js" type="text/javascript"></script>
 
    <!-- begin link css -->
 
@@ -211,7 +215,7 @@
 
    <!-- end link css -->
 
-   <link href="assets/css/magnific.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/magnific.css" rel="stylesheet" type="text/css" />
 
    <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css'>-->
 
@@ -219,13 +223,13 @@
 
    <!-- BEGIN: PAGE STYLES -->
 
-   <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
 
    <!-- END: PAGE STYLES -->
 
@@ -244,7 +248,7 @@
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6801170864824918" crossorigin="anonymous"></script>
    <!-- end plusion -->
 
-   <link href="assets/css/magnific.css" rel="stylesheet" type="text/css" />
+   <link href="/assets/css/magnific.css" rel="stylesheet" type="text/css" />
 
    <link rel="stylesheet" href="/assets/css/ctv.css" type="text/css">
    <script src="/assets/js/chart.js"></script>
@@ -840,7 +844,7 @@
                         </svg>
                         <!-- <img width="150px" height="50px" src=" /Controller/img/logo_TKG.png" alt="" class="c-desktop-logo"> -->
                         <!-- <img height="29px" src=" /admin/view/upload/1.jpg" alt="" class="c-desktop-logo-inverse"> -->
-                        <img height="35px" src="assets/img/logo_TKG.png" alt="" class="c-mobile-logo">
+                        <img height="35px" src="/assets/img/logo_TKG.png" alt="" class="c-mobile-logo">
                      </a>
                   </div>
                   <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">

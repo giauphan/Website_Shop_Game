@@ -75,7 +75,7 @@ Route::GET('/lichsumua', [muahang_controller::class, 'lichsumua']);
 Route::GET('/sanpham', [sanpham_controller::class, 'index']);
 
 // /spchitiet
-Route::GET('/chitietsanpham', [sanpham_controller::class, 'chitietsanpham']);
+Route::GET('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
 // ctv
 Route::GET('/ql-san-pham', [adminController::class, 'index']);
 

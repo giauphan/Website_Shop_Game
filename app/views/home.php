@@ -325,7 +325,7 @@ require_once __DIR__ . '/wit/header.php';
                            echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                        pay <div class="image">
-                           <a href="/chitietsanpham?id=' . $row['ma_sp'] . '">
+                           <a href="/pay/sp?id=' . $row['ma_sp'] . '">
 
                               <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
                               <span class="ms">MS: ' . $row['ma_sp'] . '</span>
@@ -543,7 +543,6 @@ require_once __DIR__ . '/wit/header.php';
                   if (is_array($pro) && count($pro) > 0) {
                      $i = 0;
                      foreach ($pro as $row) {
-
 
                         $retVal = ($row['field4'] != "") ? ' <div class="col-xs-6 a_att">
                         Ngọc 90: <b>' . $row['field4'] . '</b>
@@ -775,12 +774,12 @@ require_once __DIR__ . '/wit/header.php';
                                     <div class="classWithPad">
                                        <div class="news_image">
                                          
-                                          <a href="./?act=nick&danhmuc=' . $item['ma_loai'] . '" title="Danh Mục Game ' . $item['ten_loai'] . '" class="">
+                                          <a href="/sanpham?danhmuc=' . $item['ma_loai'] . '" title="Danh Mục Game ' . $item['ten_loai'] . '" class="">
                                              <img src="/assets/upload/' . $item['hinh_loai'] . '" alt="Danh Mục Game ' . $item['ten_loai'] . '"></a>
                                        </div>
                                        <div class="news_title">
                                           <h2 class="categry_tile">
-                                             <a href="./sanpham?danhmuc=' . $item['ma_loai'] . '" class="categry_tile_link" title="Danh Mục Game ' . $item['ten_loai'] . '">Game ' . $item['ten_loai'] . '</a>
+                                             <a href="/sanpham?danhmuc=' . $item['ma_loai'] . '" class="categry_tile_link" title="Danh Mục Game ' . $item['ten_loai'] . '">Game ' . $item['ten_loai'] . '</a>
                                           </h2>
                                        </div>
                                        <div class="news_description">';
@@ -983,11 +982,9 @@ require_once __DIR__ . '/wit/header.php';
                         </div>
                         <div class="row">
                            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                              <a href="?act=dich_vu&service=1" title="">
-                                 <div class="view">
-                                    XEM THÊM
-                                 </div>
-                              </a>
+                              <div class="view">
+                                 XEM THÊM
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -1014,11 +1011,9 @@ require_once __DIR__ . '/wit/header.php';
                         </div>
                         <div class="row">
                            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                              <a href="?act=dich_vu&service=1" title="">
-                                 <div class="view">
-                                    XEM THÊM
-                                 </div>
-                              </a>
+                              <div class="view">
+                                 XEM THÊM
+                              </div>
                            </div>
                         </div>
                      </div>

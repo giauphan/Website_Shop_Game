@@ -13,28 +13,28 @@ class pay extends ModelsModel
 
    {
 
-      $img = explode("|", $img);
-      $check = true;
-      for ($i = 0; $i < sizeof($img); $i++) {
-         $img[$i] = trim($img[$i]);
-         if ($img[$i] != "  " && empty($img[$i]) != true) {
-            echo ' <p>
-      <a rel="gallery1" data-fancybox="images" href="">
-      <img class="img-responsive img-thumbnail" src="/admin/view/upload/' . $img[$i] . '" alt="png-image">
-      </a>
-      </p>';
-         } else {
-            echo '';
-            $check = false;
-         }
-      }
-      if ($check == false) {
-         echo ' <p>
-      <a rel="gallery1" data-fancybox="images" href="">
-      <img class="img-responsive img-thumbnail" src="/admin/view/upload/' . $hinh . '" alt="png-image">
-      </a>
-      </p>';
-      }
+      // $img = explode("|", $img);
+      // $check = true;
+      // for ($i = 0; $i < sizeof($img); $i++) {
+      //    $img[$i] = trim($img[$i]);
+      //    if ($img[$i] != "  " && empty($img[$i]) != true) {
+      //       echo ' <p>
+      // <a rel="gallery1" data-fancybox="images" href="">
+      // <img class="img-responsive img-thumbnail" src="/assets/upload/' . $img[$i] . '" alt="png-image">
+      // </a>
+      // </p>';
+      //    } else {
+      //       echo '';
+      //       $check = false;
+      //    }
+      // }
+      // if ($check == false) {
+      //    echo ' <p>
+      // <a rel="gallery1" data-fancybox="images" href="">
+      // <img class="img-responsive img-thumbnail" src="/assets/upload/' . $hinh . '" alt="png-image">
+      // </a>
+      // </p>';
+      // }
    }
    public function showproductcfsp($idacc)
    {

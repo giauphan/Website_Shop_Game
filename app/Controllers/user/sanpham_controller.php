@@ -15,15 +15,15 @@ class sanpham_controller extends Controller
 {
     public function index() {
         $thongbao = '';
-        $profile = new user();
         $tien = new user();
         $home = new Page_home();
         $napthe = new napthe();
         $sanpham = new sanpham();
         $kq = $home->danhmuc();
         $napthe->pay_the();
-        $tienkq = $tien->get_money();
+        $tiens = $tien->get_money();
         $result = $sanpham->showsp();
+        $number_of_page = $sanpham->phantrang();
             if (isset($_POST['submit'])) {
                 $price =  $_POST['price'];
 
@@ -46,20 +46,22 @@ class sanpham_controller extends Controller
                 header("Location:sanpham?danhmuc=" . $_GET['danhmuc'] . "&game_id=" . $ma_sp . "&trang_thai=" . $trang_thai . "&moneymin=" . $price_min . "&moneymax=" . $price_max . "&Field01=" . $Field02 . "&Field02=" . $Field01 . "&Field03=".$Field03."");
             }
         
-
-            $ketqua = $profile->get_all_user_one($_SESSION['ma_user']);
-
+            if(isset($_SESSION['ma_user'])) {
+                $ketqua = $tien->get_all_user_one($_SESSION['ma_user']);
+            } else {
+                $ketqua = [];
+            }
             return View::render('sanpham', [
                 'kq' => $kq,
                 'ketqua' => $ketqua,
+                'number_of_page'=> $number_of_page,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tien' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
     public function chitietsanpham() {
         $thongbao = '';
-        $profile = new user();
         $tien = new user();
         $home = new Page_home();
         $napthe = new napthe();
@@ -67,15 +69,8 @@ class sanpham_controller extends Controller
         $acc = new pay();
         $kq = $home->danhmuc();
         $napthe->pay_the();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
 
-            if (isset($_POST['submitbl'])) {
-                date_default_timezone_set("Asia/Ho_Chi_Minh");
-                $mydate = getdate(date("U"));
-                $today = "$mydate[year]/$mydate[mon]/$mydate[mday]  $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
-                $noi_dung = $_POST['binhluan'];
-                comment($today, $noi_dung);
-            }
             if (isset($_GET['check'])) {
 
                 if ($_GET['check'] == 1) {
@@ -89,16 +84,20 @@ class sanpham_controller extends Controller
                 </script>';
                 }
             }
+
             if (isset($_GET['id'])) {
-                $idacc = $_GET['id'];
+                $run = $acc-> showproductcfsp($_GET['id']);
+                $runanh = $acc-> showproductcfsp($_GET['id']);
+            } else {
+                $run = [];
+                $runanh = [];
             }
-            $run = $acc-> showproductcfsp($_GET['id']);
+
             $runsq = $acc->showsplienquan();
-            $runanh = $acc-> showproductcfsp($_GET['id']);
         
         return View::render('chitietsanpham', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
             'run' => $run,
             'runsq' => $runsq,

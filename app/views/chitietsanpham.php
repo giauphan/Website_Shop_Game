@@ -13,18 +13,15 @@ require_once __DIR__ . '/wit/header.php';
    <div class="c-content-box c-size-lg c-overflow-hide c-bg-white">
 
 
-
-
-
       <?php
 
       $kt = false;
       $i = 0;
       foreach ($runanh as $rowctsp) {
 
-         $retVal = ($rowctsp['ngoc'] == 0) ?  "có" : "không";
+         $retVal = ($rowctsp['field4'] == 0) ?  "có" : "không";
 
-         $login_acc = ($rowctsp['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+         $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
 
          if ($_GET['id'] == $rowctsp['ma_sp']) {
             if ($rowctsp['hinh_ct_1'] != "") {
@@ -37,7 +34,7 @@ require_once __DIR__ . '/wit/header.php';
 
                      <li class="breadcrumb-item"><a href="/" title="Trang chủ">Trang chủ</a></li>
 
-                     <li class="breadcrumb-item"><a href="/duan/?act=nick&danhmuc=' . $rowctsp['ma_loai'] . '" title="' . $rowctsp['ten_loai'] . '">' . $rowctsp['ten_loai'] . '</a></li>
+                     <li class="breadcrumb-item"><a href="/sanpham?danhmuc=' . $rowctsp['ma_loai'] . '" title="' . $rowctsp['ten_loai'] . '">' . $rowctsp['ten_loai'] . '</a></li>
 
                      <li class="breadcrumb-item active" aria-current="page">' . $rowctsp['ma_sp'] . '</li>
 
@@ -73,7 +70,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="text-center m-t-20">
 
-                           <img class="img-responsive img-thumbnail" src="/duan/admin/view/upload/' . $rowctsp['hinh'] . '" alt="png-image">
+                           <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
 
                         </div>
 
@@ -100,19 +97,19 @@ require_once __DIR__ . '/wit/header.php';
                                              
                                                 <div class="col-sm-4 col-xs-6 c-product-variant">
                                              
-                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['rank'] . '</span></p>
+                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
                                              
                                                 </div>
                                              
                                                 <div class="col-sm-4 col-xs-6 c-product-variant">
                                              
-                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['tuong'] . '</span></p>
+                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['field1'] . '</span></p>
                                              
                                                 </div>
                                              
                                                 <div class="col-sm-4 col-xs-6 c-product-variant">
                                              
-                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['trang_phuc'] . '</span></p>
+                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['field3'] . '</span></p>
                                              
                                                 </div>
                                              
@@ -137,8 +134,8 @@ require_once __DIR__ . '/wit/header.php';
                                              ';
                   } else if ($rowctsp['ma_loai'] == 3) {
 
-                     $retVal = ($rowctsp['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '
                            
                                        
@@ -277,19 +274,19 @@ require_once __DIR__ . '/wit/header.php';
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['rank'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
                                        
                                           </div>
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['tuong'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['field1'] . '</span></p>
                                        
                                           </div>
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['trang_phuc'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['field3'] . '</span></p>
                                        
                                           </div>
                                        
@@ -314,22 +311,22 @@ require_once __DIR__ . '/wit/header.php';
                                        
                                        ';
                   } else if ($rowctsp['ma_loai'] == 3) {
-
-                     $retVal = ($rowctsp['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                  // $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                     $retVal = ($rowctsp['field2'] == 0) ?  "Có" : "Không";
+                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '
                      
                                      
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Máy chủ: <span class="c-font-red">' . $rowctsp['server'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Máy chủ: <span class="c-font-red">' . $rowctsp['field1'] . '</span></p>
                                        
                                           </div>
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Hành tinh: <span class="c-font-red">' . $rowctsp['Hanh_tinh'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Hành tinh: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
                                        
                                           </div>
                                        
@@ -398,7 +395,28 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-                  $anh->show_img($rowctsp['hinh_ct_1'], $rowctsp['hinh']);
+              $img = explode("|",$rowctsp['hinh_ct_1']);
+                  $check = true;
+                  for ($i = 0; $i < sizeof($img); $i++) {
+                     $img[$i] = trim($img[$i]);
+                     if ($img[$i] != "  " && empty($img[$i]) != true) {
+                        echo ' <p>
+                  <a rel="gallery1" data-fancybox="images" href="">
+                  <img class="img-responsive img-thumbnail" src="/assets/upload/' . $img[$i] . '" alt="png-image">
+                  </a>
+                  </p>';
+                     } else {
+                        echo '';
+                        $check = false;
+                     }
+                  }
+                  if ($check == false) {
+                     echo ' <p>
+                  <a rel="gallery1" data-fancybox="images" href="">
+                  <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh']. '" alt="png-image">
+                  </a>
+                  </p>';
+                  }
 
                   echo  '</div>';
 
@@ -415,7 +433,7 @@ require_once __DIR__ . '/wit/header.php';
 
                      <li class="breadcrumb-item"><a href="/" title="Trang chủ">Trang chủ</a></li>
 
-                     <li class="breadcrumb-item"><a href="/duan/?act=nick&danhmuc=' . $rowctsp['ma_loai'] . '" title="' . $rowctsp['ten_loai'] . '">' . $rowctsp['ten_loai'] . '</a></li>
+                     <li class="breadcrumb-item"><a href="/sanpham?danhmuc=' . $rowctsp['ma_loai'] . '" title="' . $rowctsp['ten_loai'] . '">' . $rowctsp['ten_loai'] . '</a></li>
 
                      <li class="breadcrumb-item active" aria-current="page">' . $rowctsp['ma_sp'] . '</li>
 
@@ -516,8 +534,8 @@ require_once __DIR__ . '/wit/header.php';
                                                       ';
                   } else if ($rowctsp['ma_loai'] == 3) {
 
-                     $retVal = ($rowctsp['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '
                                     
                                                     
@@ -663,8 +681,8 @@ require_once __DIR__ . '/wit/header.php';
                                                 ';
                   } else if ($rowctsp['ma_loai'] == 3) {
 
-                     $retVal = ($rowctsp['potara'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '
                               
                                               
@@ -751,8 +769,8 @@ require_once __DIR__ . '/wit/header.php';
       }
 
       foreach ($run as $rowct) {
-         $login_acc = ($rowct['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
-         $retVal = ($rowct['ngoc'] == 0) ?  "có" : "không";
+         $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+         $retVal = ($rowct['field4'] == 0) ?  "có" : "không";
          if ($kt == false) {
 
             if ($rowct['trang_thai_sp'] == 0) {
@@ -768,7 +786,7 @@ require_once __DIR__ . '/wit/header.php';
                <li class="breadcrumb-item"><a href="/" title="Trang chủ">Trang chủ</a></li>
 
                <li class="breadcrumb-item">
-               <a href="/duan/?act=nick&danhmuc=' . $rowct['ma_loai'] . '" title="' . $rowct['ten_loai'] . '">' . $rowct['ten_loai'] . '</a></li>
+               <a href="/sanpham&danhmuc=' . $rowct['ma_loai'] . '" title="' . $rowct['ten_loai'] . '">' . $rowct['ten_loai'] . '</a></li>
 
                <li class="breadcrumb-item active" aria-current="page">' . $rowct['ma_sp'] . '</li>
 
@@ -804,7 +822,7 @@ require_once __DIR__ . '/wit/header.php';
 
                   <div class="text-center m-t-20">
 
-                     <img class="img-responsive img-thumbnail" src="/duan/admin/view/upload/' . $rowct['hinh'] . '" alt="png-image">
+                  <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowct['hinh'] . '" alt="png-image">
 
                   </div>
 
@@ -869,8 +887,8 @@ require_once __DIR__ . '/wit/header.php';
                                                 ';
                } else if ($rowct['ma_loai'] == 3) {
 
-                  $retVal = ($rowct['potara'] == 0) ?  "Có" : "Không";
-                  $login_acc = ($rowct['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                  $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
+                  $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                   echo '
                               
                                               
@@ -1003,19 +1021,19 @@ require_once __DIR__ . '/wit/header.php';
                                           
                                              <div class="col-sm-4 col-xs-6 c-product-variant">
                                           
-                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['rank'] . '</span></p>
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
                                           
                                              </div>
                                           
                                              <div class="col-sm-4 col-xs-6 c-product-variant">
                                           
-                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['tuong'] . '</span></p>
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
                                           
                                              </div>
                                           
                                              <div class="col-sm-4 col-xs-6 c-product-variant">
                                           
-                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['trang_phuc'] . '</span></p>
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
                                           
                                              </div>
                                           
@@ -1039,8 +1057,8 @@ require_once __DIR__ . '/wit/header.php';
                         </div>';
                } else if ($rowct['ma_loai'] == 3) {
 
-                  $retVal = ($rowct['potara'] == 0) ?  "Có" : "Không";
-                  $login_acc = ($rowct['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                  $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
+                  $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                   echo '
                         
                                         
@@ -1101,9 +1119,9 @@ require_once __DIR__ . '/wit/header.php';
 
          <p>
 
-         <a rel="gallery1" data-fancybox="images" href="/duan/admin/view/upload/' . $rowct['hinh'] . '">
+         <a rel="gallery1" data-fancybox="images" href="/assets/upload/' . $rowct['hinh'] . '">
 
-         <img class="img-responsive img-thumbnail" src="/duan/admin/view/upload/' . $rowct['hinh'] . '" alt="png-image">
+         <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowct['hinh'] . '" alt="png-image">
 
          </a>
 
@@ -1128,7 +1146,7 @@ require_once __DIR__ . '/wit/header.php';
 
                      <li class="breadcrumb-item"><a href="/" title="Trang chủ">Trang chủ</a></li>
 
-                     <li class="breadcrumb-item"><a href="/duan/?act=nick&danhmuc=' . $rowct['ma_loai'] . '" title="' . $rowct['ten_loai'] . '">' . $rowct['ten_loai'] . '</a></li>
+                     <li class="breadcrumb-item"><a href="/sanpham&danhmuc=' . $rowct['ma_loai'] . '" title="' . $rowct['ten_loai'] . '">' . $rowct['ten_loai'] . '</a></li>
 
                      <li class="breadcrumb-item active" aria-current="page">' . $rowct['ma_sp'] . '</li>
 
@@ -1515,10 +1533,10 @@ require_once __DIR__ . '/wit/header.php';
                   }
                }
                foreach ($runsq as $row) {
-                  $login_acc = ($row['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                  $login_acc = ($row['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
 
 
-                  $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
+                  $retVal = ($row['field4'] == 0) ?  "có" : "không";
 
                   if ($_GET['id'] != $row['ma_sp']) {
                      if ($row['giasp'] <=  ($lien_quan + 20000) && $row['giasp'] >= ($lien_quan - 20000)) {
@@ -1529,7 +1547,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         <a href="?act=acc&id=' . $row['ma_sp'] . '">
 
-                           <img src="/duan/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                           <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
                            <span class="ms">MS: ' . $row['ma_sp'] . '</span>
 
@@ -1551,19 +1569,19 @@ require_once __DIR__ . '/wit/header.php';
 
                            echo ' <div class="col-xs-6 a_att">
 
-                              Rank: <b>' . $row['rank'] . '</b>
+                              Rank: <b>' . $row['field2'] . '</b>
 
                            </div>
 
                            <div class="col-xs-6 a_att">
 
-                              Tướng: <b>' . $row['tuong'] . '</b>
+                              Tướng: <b>' . $row['field1'] . '</b>
 
                            </div>
 
                            <div class="col-xs-6 a_att">
 
-                              Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                              Trang Phục: <b>' . $row['field3'] . '</b>
 
                            </div>
 
@@ -1574,16 +1592,16 @@ require_once __DIR__ . '/wit/header.php';
                            </div>';
                         } else if ($row['ma_loai'] == 3) {
 
-                           $retVal = ($row['potara'] == 0) ? "Có" : "Không";
+                           $retVal = ($row['field3']  == 0) ? "Có" : "Không";
                            echo ' <div class="col-xs-6 a_att">
 
-                              Máy chủ: <b>' . $row['server'] . '</b>
+                              Máy chủ: <b>' . $row['field1'] . '</b>
 
                            </div>
 
                            <div class="col-xs-6 a_att">
 
-                              Hành tinh: <b>' . $row['Hanh_tinh'] . '</b>
+                              Hành tinh: <b>' . $row['field2'] . '</b>
 
                            </div>
 
@@ -1644,8 +1662,8 @@ require_once __DIR__ . '/wit/header.php';
 
                if ($kt == true) {
                   foreach ($runq as $row) {
-                     $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
-                     $login_acc = ($row['login_ao'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     $retVal = ($row['field4'] == 0) ?  "có" : "không";
+                     $login_acc = ($row['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '  <div class="col-sm-6 col-md-3">
       
                      <div class="classWithPad">
@@ -1654,7 +1672,7 @@ require_once __DIR__ . '/wit/header.php';
       
                            <a href="">
       
-                              <img src="/duan/admin/view/upload/' . $row['hinh'] . '" alt="png-image">
+                              <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
       
                               <span class="ms">MS: ' . $row['ma_sp'] . '</span>
       
@@ -1677,19 +1695,19 @@ require_once __DIR__ . '/wit/header.php';
 
                         echo ' <div class="col-xs-6 a_att">
       
-                           Rank: <b>' . $row['rank'] . '</b>
+                           Rank: <b>' . $row['field2'] . '</b>
       
                         </div>
       
                         <div class="col-xs-6 a_att">
       
-                           Tướng: <b>' . $row['tuong'] . '</b>
+                           Tướng: <b>' . $row['field1'] . '</b>
       
                         </div>
       
                         <div class="col-xs-6 a_att">
       
-                           Trang Phục: <b>' . $row['trang_phuc'] . '</b>
+                           Trang Phục: <b>' . $row['field3'] . '</b>
       
                         </div>
       
@@ -1700,16 +1718,16 @@ require_once __DIR__ . '/wit/header.php';
                         </div>';
                      } else if ($row['ma_loai'] == 3) {
 
-                        $retVal = ($row['potara'] == 0) ?  "Có" : "Không";
+                        $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
                         echo ' <div class="col-xs-6 a_att">
       
-                           Máy chủ: <b>' . $row['server'] . '</b>
+                           Máy chủ: <b>' . $row['field1'] . '</b>
       
                         </div>
       
                         <div class="col-xs-6 a_att">
       
-                           Hành tinh: <b>' . $row['Hanh_tinh'] . '</b>
+                           Hành tinh: <b>' . $row['field2'] . '</b>
       
                         </div>
       
@@ -1748,7 +1766,7 @@ require_once __DIR__ . '/wit/header.php';
       
                            <div class="view">
       
-                              <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                              <a href="/pay/sp&id=' . $row['ma_sp'] . '">Chi tiết</a>
       
                            </div>
       
@@ -2205,14 +2223,6 @@ require_once __DIR__ . '/wit/header.php';
 
    }
 </script>
-
-
-
-</body>
-
-
-
-</html>
 
 <?php
 require_once __DIR__ . '/wit/footer.php';

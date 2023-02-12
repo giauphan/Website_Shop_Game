@@ -146,7 +146,8 @@ class sanpham extends database
          $query .= " GROUP by sp.ma_sp  LIMIT " . $page_first_result . ',' . $results_per_page;
       } else {
 
-         $query = "SELECT *FROM sp  where trang_thai_sp = 0 and ma_loai = " . $_GET['danhmuc'] . " GROUP by sp.ma_sp  LIMIT " . $page_first_result . ',' . $results_per_page;
+            $query = "SELECT *FROM sp  where trang_thai_sp = 0 and ma_loai = " . $_GET['danhmuc'] . " GROUP by sp.ma_sp  LIMIT " . $page_first_result . ',' . $results_per_page;
+
       }
 
 

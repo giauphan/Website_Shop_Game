@@ -38,7 +38,7 @@ class pay extends ModelsModel
    }
    public function showproductcfsp($idacc)
    {
-      $sql_anh = "SELECT * FROM sp  where `ma_sp` = ? GROUP by sp.ma_sp";
+      $sql_anh = "SELECT * FROM sp join loai  on loai.ma_loai = sp.ma_loai  where `ma_sp` = ? GROUP by sp.ma_sp";
 
       return  $this->db->pdo_query($sql_anh, $idacc);
    }

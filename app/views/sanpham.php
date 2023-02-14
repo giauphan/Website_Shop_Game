@@ -501,6 +501,87 @@ require_once __DIR__ . '/wit/header.php';
                                  </div>
 
                      </div>';
+                  } else if ($row['ma_loai'] == 2) {
+
+
+                     $loai = $row['ma_loai'];
+                     $retVal = ($row['field4'] != "") ?  "có" : "không";
+
+                     echo '<div class="col-sm-6 col-md-3">
+
+                                 <div class="classWithPad">
+
+                                    <div class="image">
+
+                                       <a href="/pay/sp?id=' . $row['ma_sp'] . '">
+                                       <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
+
+                                       <span class="ms">MS: ' . $row['ma_sp'] . '</span>
+                                       </a>
+
+                                       </div>
+
+                                       <div class="description">
+                                    </div>
+            <div class="attribute_info">
+
+                                    <div class="row">
+
+                                       <div class="col-xs-6 a_att">
+
+                                          Rank: <b>' . $row['field2'] . '</b>
+
+                                       </div>
+
+                                       <div class="col-xs-6 a_att">
+
+                                          Tướng: <b>' . $row['field1'] . '</b>
+
+                                       </div>
+
+                                       <div class="col-xs-6 a_att">
+
+                                          Trang Phục: <b>' . $row['field3'] . '</b>
+
+                                       </div>
+
+                                    </div>
+
+                                 </div>
+
+                                 <div class="a-more">
+
+                                    <div class="row">
+
+                                       <div class="col-xs-6">
+
+                                          <div class="price_item">
+
+                                          ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
+
+                                          </div>
+
+                                       </div>
+
+                                       <div class="col-xs-6 ">
+
+                                          <div class="view">
+
+                                             <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
+
+                                          
+
+                                          </div>
+
+                                       </div>
+
+                                    </div>
+
+                                 </div>
+
+                                 </div>
+
+                     </div>';
                   } else  if ($row['ma_loai'] == 3) {
                      $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
                      $login_acc = ($row['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
@@ -533,7 +614,7 @@ require_once __DIR__ . '/wit/header.php';
                                        </div>
 
                                        <div class="col-xs-6 a_att">
-            Hành tinh: <b>' . $row['field2'] . '</b>
+                                          Hành tinh: <b>' . $row['field2'] . '</b>
 
                                        </div>
                                        <div class="col-xs-6 a_att">
@@ -587,16 +668,15 @@ require_once __DIR__ . '/wit/header.php';
                                  </div>
 
                      </div>';
-                  } else  if ($row['ma_loai'] == 2) {
-                     $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
-                     $login_acc = ($row['field3']  == 0) ?  "Ảo" : "Gmail xóa vv";
+                  } else  if ($row['ma_loai'] == 4) {
+
                      echo '<div class="col-sm-6 col-md-3">
 
                                  <div class="classWithPad">
 
                                     <div class="image">
 
-                                       <a href="/pay/sp?id=' . $row['ma_sp'] . '">
+                                       <a href="/sanpham?id=' . $row['ma_sp'] . '">
                                        <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
                                        <span class="ms">MS: ' . $row['ma_sp'] . '</span>
@@ -614,27 +694,27 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Máy chủ: <b>' . $row['field1'] . ' sao</b>
+                                          Rank: <b>' . $row['field2'] . ' sao</b>
 
                                        </div>
 
                                        <div class="col-xs-6 a_att">
 
-                                          Hành tinh: <b>' . $row['field2'] . '</b>
+                                          Đăng ký: <b>' . $row['field1'] . '</b>
 
                                        </div>
                                        <div class="col-xs-6 a_att">
 
-                                    Đăng ký: <b>' . $login_acc . '</b>
+                                       Pet: <b>' . $row['field3'] . '</b>
 
                                     </div>
 
-                                    
+                                 
+                                    <div class="col-xs-6 a_att">
 
-                                       <div class="col-xs-6 a_att">
-            Bông tai: <b>' .      $retVal . '</b>
+                                       Thẻ vô cực: <b>' .  $row['field4'] . '</b>
 
-                                       </div>
+                                    </div>
 
                                     </div>
 
@@ -645,8 +725,7 @@ require_once __DIR__ . '/wit/header.php';
                                     <div class="row">
 
                                        <div class="col-xs-6">
-
-                                          <div class="price_item">
+            <div class="price_item">
 
                                           ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
 
@@ -673,93 +752,7 @@ require_once __DIR__ . '/wit/header.php';
                                  </div>
 
                      </div>';
-                  } else  if ($row['ma_loai'] == 4) {
-                     $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
-                     $login_acc = ($row['field3']  == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '<div class="col-sm-6 col-md-3">
-
-                                 <div class="classWithPad">
-
-                                    <div class="image">
-
-                                       <a href="/sanpham?id=' . $row['ma_sp'] . '">
-                                       <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
-
-                                       <span class="ms">MS: ' . $row['ma_sp'] . '</span>
-
-                                       </a>
-
-                                       </div>
-
-                                       <div class="description">
-                                    </div>
-
-                                       <div class="attribute_info">
-
-                                    <div class="row">
-
-                                       <div class="col-xs-6 a_att">
-
-                                          Máy chủ: <b>' . $row['field1'] . ' sao</b>
-
-                                       </div>
-
-                                       <div class="col-xs-6 a_att">
-
-                                          Hành tinh: <b>' . $row['field2'] . '</b>
-
-                                       </div>
-                                       <div class="col-xs-6 a_att">
-
-                                       Hành tinh: <b>' . $row['field2'] . '</b>
-
-                                    </div>
-
-                                    
-
-                                       <div class="col-xs-6 a_att">
-
-                                          Bông tai: <b>' .      $retVal . '</b>
-
-                                       </div>
-
-                                    </div>
-
-                                 </div>
-
-                                 <div class="a-more">
-
-                                    <div class="row">
-
-                                       <div class="col-xs-6">
-            <div class="price_item">
-
-                                          ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ
-
-                                          </div>
-
-                                       </div>
-
-                                       <div class="col-xs-6 ">
-
-                                          <div class="view">
-
-                                             <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
-
-                                          
-
-                                          </div>
-
-                                       </div>
-
-                                    </div>
-
-                                 </div>
-
-                                 </div>
-
-                     </div>';
-                  }
+                  } 
                }
 
 

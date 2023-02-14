@@ -550,7 +550,7 @@ require_once __DIR__ . '/wit/header.php';
                         echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
                         <div class="image">
-                           <a href="/chitietsanpham?id=' . $row['ma_sp'] . '">
+                           <a href="/pay/sp?id=' . $row['ma_sp'] . '">
 
                               <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
                               <span class="ms">MS: ' . $row['ma_sp'] . '</span>

@@ -41,7 +41,7 @@ require_once __DIR__ . '/wit/header.php';
                </div>
                <!-- /.col -->
                <div class="col-xs-6" style="text-align: right">
-                  <a href="/?act=forget_pass" style="color: #666;margin-top: 10px;margin-bottom: 10px;display: block;font-style: italic;">Quên mật khẩu?</a><br>
+                  <a href="/quenmk" style="color: #666;margin-top: 10px;margin-bottom: 10px;display: block;font-style: italic;">Quên mật khẩu?</a><br>
                </div>
                <!-- /.col -->
             </div>

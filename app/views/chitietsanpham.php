@@ -836,6 +836,49 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                                                 
                                                 ';
+                  } else if ($rowctsp['ma_loai'] == 2) {
+
+                     echo '
+                              
+                                              
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['field1'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Đăng ký: <span class="c-font-red">' . $login_acc . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['field3'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                 
+                                             
+                                                <div class="col-sm-4 col-xs-6 c-product-variant">
+   
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowctsp['mo_ta'] . '.</span></p>
+   
+                                             </div>
+                                                
+                                                ';
                   } else if ($rowctsp['ma_loai'] == 3) {
 
                      $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
@@ -865,6 +908,50 @@ require_once __DIR__ . '/wit/header.php';
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
                                                       <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Potara: <span class="c-font-red">' . $retVal . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                 
+                                             
+                                                <div class="col-sm-4 col-xs-6 c-product-variant">
+   
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowctsp['mo_ta'] . '.</span></p>
+   
+                                             </div>
+                                                
+                                                ';
+                  } else if ($rowctsp['ma_loai'] == 4) {
+
+                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     echo '
+                              
+                                              
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Đăng ký: <span class="c-font-red">' . $login_acc . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Pet: <span class="c-font-red">' . $rowctsp['field3'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Thẻ vô cực: <span class="c-font-red">' . $rowctsp['field4'] . '</span></p>
                                                 
                                                    </div>
                                                 
@@ -981,7 +1068,7 @@ require_once __DIR__ . '/wit/header.php';
 
                   <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowct['hinh'] . '" alt="png-image">
 
-                  </div>
+               </div>
 
 
 
@@ -1028,10 +1115,42 @@ require_once __DIR__ . '/wit/header.php';
                                                 
                                                    </div>
                                                 
+       
                                                 
                                                 
+                                 <div class="col-sm-4 col-xs-6 c-product-variant">
+   
+                                 <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
+   
+                              </div>
                                                 
+                                                ';
+               } else if ($rowct['ma_loai'] == 2) {
+
+
+                  echo '
+                              
+                                               
                                                 
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['rank'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['tuong'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['trang_phuc'] . '</span></p>
+                                                
+                                                   </div>
+                                     
+                                   
                                                 
                                                 
                                                 
@@ -1079,6 +1198,48 @@ require_once __DIR__ . '/wit/header.php';
                                                 <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
    
                                              </div>
+                                                
+                                                ';
+               } else if ($rowct['ma_loai'] == 4) {
+
+
+                  echo '
+                              
+                                               
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Đăng ký: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
+                                                
+                                                   </div>
+                                                
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Pet: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
+                                                
+                                                   </div>
+
+                                                   <div class="col-sm-4 col-xs-6 c-product-variant">
+                                                
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Thẻ vô cực: <span class="c-font-red">' . $rowct['field4'] . '</span></p>
+                                                
+                                                   </div>
+                                     
+                                   
+                                                
+                                                
+                                                
+                                 <div class="col-sm-4 col-xs-6 c-product-variant">
+   
+                                 <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
+   
+                              </div>
                                                 
                                                 ';
                }
@@ -1864,7 +2025,7 @@ require_once __DIR__ . '/wit/header.php';
                }
 
                if ($kt == true) {
-                  foreach ($runq as $row) {
+                  foreach ($runsq as $row) {
                      $retVal = ($row['field4'] == 0) ?  "có" : "không";
                      $login_acc = ($row['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '  <div class="col-sm-6 col-md-3">

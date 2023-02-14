@@ -46,23 +46,23 @@ class sanpham extends database
                   $query .= "and rank like '%" . $_GET['Field01']  . "%' ";
                }
    
-               if ($_GET['Field02']  != "") {
-   
-                  $query .= "and ngoc = '" . $_GET['Field02'] . "' ";
-               }
             } else if ($_GET['danhmuc'] == 3) {
                if ($_GET['Field01']  != "") {
    
-                  $query .= "and server = '" . $_GET['Field01']  . "' ";
+                  $query .= "and field1 = '" . $_GET['Field01']  . "' ";
                }
    
                if ($_GET['Field02']  != "") {
    
-                  $query .= "and potara = '" . $_GET['Field02'] . "' ";
+                  $query .= "and field2 = '" . $_GET['Field02'] . "' ";
                }
                if ($_GET['Field03']  != "") {
    
-                  $query .= "and login_ao = '" . $_GET['Field03'] . "' ";
+                  $query .= "and field3 = '" . $_GET['Field03'] . "' ";
+               }
+               if ($_GET['Field04']  != "") {
+   
+                  $query .= "and field4 = '" . $_GET['Field04'] . "' ";
                }
             }
             $query .= " GROUP by sp.ma_sp";
@@ -130,16 +130,20 @@ class sanpham extends database
          } else if ($_GET['danhmuc'] == 3) {
             if ($_GET['Field01']  != "") {
 
-               $query .= "and server = '" . $_GET['Field01']  . "' ";
+               $query .= "and field1 = '" . $_GET['Field01']  . "' ";
             }
 
             if ($_GET['Field02']  != "") {
 
-               $query .= "and potara = '" . $_GET['Field02'] . "' ";
+               $query .= "and field2 = '" . $_GET['Field02'] . "' ";
             }
             if ($_GET['Field03']  != "") {
 
-               $query .= "and login_ao = '" . $_GET['Field03'] . "' ";
+               $query .= "and field3 = '" . $_GET['Field03'] . "' ";
+            }
+            if ($_GET['Field04']  != "") {
+
+               $query .= "and field4 = '" . $_GET['Field03'] . "' ";
             }
          }
 

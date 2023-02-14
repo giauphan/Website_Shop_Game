@@ -42,8 +42,10 @@ class sanpham_controller extends Controller
                 $Field02 =  $_POST['Field02'];
                 $Field03 =  $_POST['Field03'];
 
+                $Field04 =  $_POST['Field04'];
+
                 $trang_thai =  $_POST['status'];
-                header("Location:sanpham?danhmuc=" . $_GET['danhmuc'] . "&game_id=" . $ma_sp . "&trang_thai=" . $trang_thai . "&moneymin=" . $price_min . "&moneymax=" . $price_max . "&Field01=" . $Field02 . "&Field02=" . $Field01 . "&Field03=".$Field03."");
+                header("Location:sanpham?danhmuc=" . $_GET['danhmuc'] . "&game_id=" . $ma_sp . "&trang_thai=" . $trang_thai . "&moneymin=" . $price_min . "&moneymax=" . $price_max . "&Field01=" . $Field02 . "&Field02=" . $Field01 . "&Field03=".$Field03."&Field04=".$Field04."");
             }
         
             if(isset($_SESSION['ma_user'])) {

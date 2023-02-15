@@ -49,6 +49,7 @@ class pay extends ModelsModel
 
       $this->db->pdo_execute($sql_bl, $today, $noi_dung, $_SESSION['ma_user'], $_GET['id']);
    }
+
    public function showsplienquan()
    {
       $sql = "SELECT * FROM  `sp`  where trang_thai_sp = 0 GROUP by sp.ma_sp";

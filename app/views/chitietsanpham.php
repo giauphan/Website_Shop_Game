@@ -307,7 +307,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="c-content-title-1">
 
-                           <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal" rel="/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
+                           <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal" rel="/pay/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
 
                           
 
@@ -315,7 +315,7 @@ require_once __DIR__ . '/wit/header.php';
 
                            <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/recharge">ATM - Ví điện tử</a>
 
-                           <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/nap-the">Nạp thẻ cào</a>
+                           <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/napthe">Nạp thẻ cào</a>
 
                         </div>
 

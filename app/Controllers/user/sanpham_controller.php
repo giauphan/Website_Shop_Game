@@ -59,6 +59,7 @@ class sanpham_controller extends Controller
                 'number_of_page'=> $number_of_page,
                 'result' => $result,
                 'tien' => $tiens,
+                'tien' => $tien,
                 'thongbao' => $thongbao,
             ]);
     }

@@ -41,7 +41,11 @@ class home extends Controller
             'kq' => $kq,
             'pro' => $pro,
             'pro_sale' => $pro_sale,
+
             'tien' => $tien,
+
+            'tien' => $tien,
+
             'sl_loai' => $sl_loai,
             'sl_pay' => $sl_pay,
             'thongbao' => $thongbao

@@ -3,6 +3,7 @@
 namespace App\Controllers\user;
 
 use App\Controllers\Controller;
+use App\Models\Page_home;
 use Core\View;
 use  App\Models\user;
 use  App\Models\phpmailer;
@@ -13,6 +14,7 @@ class login extends Controller
     public function index()
     {
         $tien = new user();
+        $home = new Page_home();
         $thongbao = "";
         if (isset($_POST['dangnhap'])) {
             $user = $_POST['username'];
@@ -62,8 +64,9 @@ class login extends Controller
             header("location: /");
         }
         $tien =     $tien->get_money();
+        $kq = $home->danhmuc();
         return View::render('dangnhap', [
-
+            'kq' => $kq,
             'tien' => $tien,
             'thongbao' => $thongbao
         ]);
@@ -71,7 +74,7 @@ class login extends Controller
     public function sigin()
     {
         $sign = new user();
-        $mail = new \PHPMailer();
+        $home = new Page_home();
         $thongbao = "";
         if (isset($_POST['dangky'])) {
             $username_show = $_POST['username_show'];
@@ -86,7 +89,7 @@ class login extends Controller
 
             $check = $sign->check_email($username, $email);
             if ($check  == 1) {
-                $_SESSION['code_email'] =  $mail->sendmail_sign($email);
+                $_SESSION['code_email'] =  $email->sendmail_sign($email);
                 $_SESSION['email_sign']  = $email;
                 $sign->sign($username, $username_show, $pass, $email,  $phone);
                 // header("location: /?act=dangnhap");
@@ -113,9 +116,10 @@ class login extends Controller
         if (isset($_SESSION['ma_user'])) {
             header("location: /");
         }
+        $kq = $home->danhmuc();
         $tien =     $sign->get_money();
         return View::render('dangky', [
-
+            'kq' => $kq,
             'tien' => $tien,
             'thongbao' => $thongbao
         ]);

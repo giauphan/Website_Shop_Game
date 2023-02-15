@@ -43,7 +43,7 @@ require_once __DIR__ . '/wit/header.php';
 
 <!-- end thongbao -->
 
-<div class="c-content-box c-size-md c-bg-white">
+<div class="c-content-box c-size-md c-bg-white" style="padding: 0!important;">
    <!-- banner  Begin: Title 1 component -->
    <div class="container main-content" style="margin-bottom: 50px;">
       <div class="c-content-client-logos-slider-1  c-bordered">

@@ -26,6 +26,7 @@ class muahang_controller extends Controller
             'kq' => $kq,
             'runshowtien' => $runshowtien,
             'tien' => $tien,
+            'tien' => $tien,
             'thongbao' => ''
         ]);
     }

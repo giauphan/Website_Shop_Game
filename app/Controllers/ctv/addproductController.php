@@ -30,7 +30,6 @@ class addproductController extends Controller
                 }
             }
             $giasp = $_POST['giasp'];
-
             $field1 = (isset($_POST['tuong'])) ? $_POST['tuong'] : "";
             $field2 = (isset($_POST['rank'])) ? $_POST['rank'] : "";
             $field3 = (isset($_POST['trang_phuc'])) ? $_POST['trang_phuc'] : "";

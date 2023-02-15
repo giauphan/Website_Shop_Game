@@ -23,7 +23,10 @@ use App\Controllers\user\napthe_controller;
 use App\Controllers\user\profile_controller;
 use App\Controllers\user\quenmk_controller;
 use App\Controllers\user\sanpham_controller;
+// <<<<<<< Updated upstream
 
+// =======
+// >>>>>>> Stashed changes
 use Core\Route;
 
 

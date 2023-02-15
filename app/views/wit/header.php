@@ -793,7 +793,7 @@
    <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
    <!-- BEGIN: HEADER -->
    <header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="80">
-      <div class="c-topbar c-topbar-light">
+      <div class="c-topbar c-topbar-light" style="height: 38px!important; background-color:rgb(10, 9, 9,0.9);">
          <div class="container">
             <!-- BEGIN: INLINE NAV -->
             <nav class="c-top-menu c-pull-left">
@@ -896,6 +896,7 @@
                   } */
                </style>
                <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold d-none hidden-xs hidden-sm">
+                  
                   <ul class="nav navbar-nav c-theme-nav">
                      <li class="c-menu-type-classic"><a rel="" href=" /?act=home" class="c-link dropdown-toggle ">Trang chủ</a></li>
                      <li class="c-menu-type-classic"><a rel="" href="" class="c-link dropdown-toggle ">Danh mục game</a>
@@ -1029,6 +1030,7 @@
                   </ul>
                </nav>
                <nav class="menu-main-mobile c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold hidden-md hidden-lg">
+                  
                   <ul class="nav navbar-nav c-theme-nav">
                      <li class="c-menu-type-classic"><a rel="" href=" /" class="c-link dropdown-toggle ">Trang chủ</a></li>
                      <li class="c-menu-type-classic"><a rel="" href="" class="c-link dropdown-toggle ">Dịch vụ game</a></li>

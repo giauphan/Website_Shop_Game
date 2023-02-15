@@ -15,11 +15,11 @@ class napthe_controller extends Controller
         $home = new Page_home();
         $napthe = new napthe();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
         $napthe->pay_the();
         return View::render('napthe', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => ''
         ]);
     }
@@ -28,11 +28,11 @@ class napthe_controller extends Controller
         $home = new Page_home();
         $muathe = new napthe();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
         $muathe->pay_the();
         return View::render('muathe', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => ''
         ]);
     }
@@ -42,13 +42,13 @@ class napthe_controller extends Controller
         $home = new Page_home();
         $lichsunap = new napthe();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
         $lichsunap->pay_the();
         $result = $lichsunap->showthe();
         return View::render('lichsunap', [
             'kq' => $kq,
             'result' => $result,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => ''
         ]);
     }

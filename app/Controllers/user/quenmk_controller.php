@@ -16,7 +16,7 @@ class quenmk_controller extends Controller
         $home = new Page_home();
         $mail = new \phpmailer();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
         if (isset($_POST['sendmail'])) {
             $email = $_POST['email'];
             $check = $mail->get_one_email($email);
@@ -39,7 +39,7 @@ class quenmk_controller extends Controller
         }
         return View::render('napthe', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }

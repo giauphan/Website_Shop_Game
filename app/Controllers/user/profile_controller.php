@@ -20,7 +20,7 @@ class profile_controller extends Controller
         $napthe = new napthe();
         $kq = $home->danhmuc();
         $napthe->pay_the();
-        $tienkq = $tien->get_money();
+        $tiens = $tien->get_money();
             if (!isset($_SESSION['ma_user'])) {
                 header("location:/duan/");
             }
@@ -46,7 +46,7 @@ class profile_controller extends Controller
             return View::render('profile', [
                 'kq' => $kq,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tien' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -57,7 +57,7 @@ class profile_controller extends Controller
         $napthe = new napthe();
         $napthe->pay_the();
         $kq = $home->danhmuc();
-        $tienkq = $tien->get_money();
+        $tiens = $tien->get_money();
             if (isset($_POST['ud_infor'])) {
                 $username_show = $_POST['username_show'];
                 $phone = $_POST['phone'];
@@ -73,7 +73,7 @@ class profile_controller extends Controller
             return View::render('edit_profile', [
                 'kq' => $kq,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tien' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -85,7 +85,7 @@ class profile_controller extends Controller
         $doimk = new profile();
         $napthe->pay_the();
         $kq = $home->danhmuc();
-        $tienkq = $tien->get_money();
+        $tiens = $tien->get_money();
         $runshowtien = $doimk->check_tien_mail();
         $restpass = $doimk->get_user_doimk();
 
@@ -122,7 +122,7 @@ class profile_controller extends Controller
 
         return View::render('doimk', [
             'kq' => $kq,
-            'tienkq' => $tienkq,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }
@@ -136,7 +136,7 @@ class profile_controller extends Controller
         $mail = new \phpmailer();
         $napthe->pay_the();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
         $runshowtien = $doimk->check_tien_mail();
         $restpass = $doimk->get_user_doimk();
 
@@ -164,7 +164,7 @@ class profile_controller extends Controller
 
         return View::render('quenmk', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }

@@ -74,9 +74,16 @@ Route::GET('/lichsumua', [muahang_controller::class, 'lichsumua']);
 
 // /show sp
 Route::GET('/sanpham', [sanpham_controller::class, 'index']);
+Route::POST('/sanpham', [sanpham_controller::class, 'index']);
 
 // /spchitiet
 Route::GET('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
+
+// /donhang
+// Route::GET('/pay/sp', [muahang_controller::class, 'donhang']);
+// Route::POST('/pay/sp', [muahang_controller::class, 'donhang']);
+
+
 // ctv
 Route::GET('/ql-san-pham', [adminController::class, 'index']);
 

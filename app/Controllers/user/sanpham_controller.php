@@ -8,11 +8,11 @@ use App\Models\user;
 use App\Models\napthe;
 use App\Models\Page_home;
 use App\Models\sanpham;
-use App\Models\profile;
 use App\Models\pay;
 
 class sanpham_controller extends Controller
 {
+    
     public function index() {
         $thongbao = '';
         $tien = new user();
@@ -24,6 +24,7 @@ class sanpham_controller extends Controller
         $tiens = $tien->get_money();
         $result = $sanpham->showsp();
         $number_of_page = $sanpham->phantrang();
+        
             if (isset($_POST['submit'])) {
                 $price =  $_POST['price'];
 
@@ -67,11 +68,21 @@ class sanpham_controller extends Controller
         $tien = new user();
         $home = new Page_home();
         $napthe = new napthe();
-        $sanpham = new sanpham();
         $acc = new pay();
         $kq = $home->danhmuc();
         $napthe->pay_the();
         $tiens = $tien->get_money();
+        $pay_acc = new pay();
+
+
+        //kt_user
+        if (isset($_SESSION['ma_user']) && isset($_SESSION['vai_tro'])) {
+            
+            $ketqua = $pay_acc ->pay();
+            
+        } else {
+            $ketqua = $pay_acc ->pay_login();
+        }
 
             if (isset($_GET['check'])) {
 
@@ -100,6 +111,7 @@ class sanpham_controller extends Controller
         return View::render('chitietsanpham', [
             'kq' => $kq,
             'tien' => $tiens,
+            'ketqua' => $ketqua,
             'thongbao' => $thongbao,
             'run' => $run,
             'runsq' => $runsq,
@@ -107,4 +119,5 @@ class sanpham_controller extends Controller
         ]);
     }
 
+    
 }

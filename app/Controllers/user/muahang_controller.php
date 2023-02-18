@@ -18,14 +18,13 @@ class muahang_controller extends Controller
         $napthe = new napthe();
         $bill = new muahang();
         $kq = $home->danhmuc();
-        $tien = $tien->get_money();
+        $tiens = $tien->get_money();
         $napthe->pay_the();
         $runshowtien = $bill->show_bill();
 
         return View::render('lichsumua', [
             'kq' => $kq,
             'runshowtien' => $runshowtien,
-            'tien' => $tien,
             'tien' => $tien,
             'thongbao' => ''
         ]);

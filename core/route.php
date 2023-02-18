@@ -12,6 +12,7 @@ class Route
 
     public static function POST($uri, Closure | array $controller)
     {
+        
         Router::add("POST", $uri, $controller);
     }
 }

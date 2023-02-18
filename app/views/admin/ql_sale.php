@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/wit/header.php';
 ?>
+<?=
+$thongbao
+?>
 <div class="container-fluid al" style="margin-top: 10%;">
     <div id="clock"></div>
     <Br>
@@ -22,7 +25,7 @@ require_once __DIR__ . '/wit/header.php';
     <b>CHỨC NĂNG CHÍNH:</b><Br>
 
     <!-- them danh muc-->
-    <a href="/add-code-sale">
+    <a href="/wp-admin/add-code-sale">
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm danh mục"><i class="fa fa-user-plus"></i></button></a>
     <!--end them danh muc-->
     <div class="table-title">
@@ -38,6 +41,7 @@ require_once __DIR__ . '/wit/header.php';
                     <th width="auto">STT</th>
                     <th width="auto">Mã sale</th>
                     <th width="auto">Trạng thái mã giảm</th>
+                    <th width="auto">Danh mục</th>
                     <th width="auto">Số tiền giảm</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
@@ -52,10 +56,11 @@ require_once __DIR__ . '/wit/header.php';
                   <td>' . $i . '</td>
                   <td>' . $row['code']  . '</td>
                   <td>' . $status  . '</td>
+                  <td>' . $row['ten_loai']  . '</td>
                  <td>' . $row['price_sale'] . '</td>
                   <td>
-                  <a class="edit" href="?act=add_sale&change=' . $row['ma_sale'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                  <a class="delete" href ="?act=del_sale&de=' . $row['ma_sale'] . '"title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                  <a class="edit" href="/wp-admin/change-code-sale?change=' . $row['ma_sale'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a class="delete" href ="?de=' . $row['ma_sale'] . '"title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
               </td>
               
               </tr>';

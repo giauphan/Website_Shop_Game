@@ -5,8 +5,11 @@ use App\Controllers\exportController;
 use App\Controllers\admin\addproductControlleradmin;
 use App\Controllers\admin\homeadminControlleradmin;
 use App\Controllers\admin\changeproductadmin;
+use App\Controllers\admin\history_rechargeController;
 use App\Controllers\admin\qlbillControlleradmin;
+use App\Controllers\admin\qlCategoryController;
 use App\Controllers\admin\qlcodesaleControlleradmin;
+use App\Controllers\admin\qluserController;
 //ctv
 use App\Controllers\ctv\addproductController;
 use App\Controllers\ctv\adminController;
@@ -78,6 +81,10 @@ Route::GET('/sanpham', [sanpham_controller::class, 'index']);
 
 // /spchitiet
 Route::GET('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
+
+
+
+
 // ctv
 Route::GET('/ql-san-pham', [adminController::class, 'index']);
 
@@ -100,10 +107,26 @@ Route::POST('/add-code-sale', [ql_code_saleController::class, 'add_code_sale']);
 
 Route::GEt('/export', [exportController::class, 'index']);
 
+
+
 //admin
 Route::GET('/wp-admin', [homeadminControlleradmin::class, 'index']);
 
 Route::POST('/wp-admin', [homeadminControlleradmin::class, 'index']);
+
+// ql user 
+Route::GET('/wp-admin/ql-user', [qluserController::class, 'index']);
+
+
+// category 
+Route::GET('/wp-admin/ql-category', [qlCategoryController::class, 'index']);
+// add category 
+Route::GET('/wp-admin/add-category', [qlCategoryController::class, 'addCategory']);
+Route::POST('/wp-admin/add-category', [qlCategoryController::class, 'addCategory']);
+
+// change category 
+Route::GET('/wp-admin/change-category', [qlCategoryController::class, 'changeCategory']);
+Route::POST('/wp-admin/change-category', [qlCategoryController::class, 'changeCategory']);
 
 //add sp
 Route::GET('/wp-admin/add-product', [addproductControlleradmin::class, 'index']);
@@ -115,7 +138,15 @@ Route::POST('/wp-admin/change-product', [changeproductadmin::class, 'index']);
 
 // ql bill
 Route::GET('/wp-admin/ql-bill', [qlbillControlleradmin::class, 'index']);
-// ql code salq
+// ql code sale
 Route::GET('/wp-admin/ql-code-sale', [qlcodesaleControlleradmin::class, 'index']);
+//add sale
 Route::GET('/wp-admin/add-code-sale', [qlcodesaleControlleradmin::class, 'add_code_sale']);
 Route::POST('/wp-admin/add-code-sale', [qlcodesaleControlleradmin::class, 'add_code_sale']);
+
+//change sale
+Route::GET('/wp-admin/change-code-sale', [qlcodesaleControlleradmin::class, 'changeCodesale']);
+Route::POST('/wp-admin/change-code-sale', [qlcodesaleControlleradmin::class, 'changeCodesale']);
+
+// ql card 
+Route::GET('/wp-admin/ql-historyrecharge', [history_rechargeController::class, 'index']);

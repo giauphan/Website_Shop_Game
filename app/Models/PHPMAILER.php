@@ -1,11 +1,12 @@
 <?php
-
+namespace App\Models;
+use PHPMailer\PHPMailer\src;
 use App\Models\database;
 
 class phpmailer extends database {
 public function sendmail($email)
 {
-    $mail = new PHPMailer\PHPMailer\PHPMailer(true); //true:enables exceptions 
+    $mail = new PHPMailer(true); //true:enables exceptions 
     $code_otp =  rand(0, 99999999999999);
     $BODY_MAIL = "TAIKHOANGAME GỬI EMAIL<BR> Mã xác minh của bạn:<br> " . $code_otp . "<br>Mã xác minh sẽ có hiệu lực trong 30 phút. Vui lòng không chia sẻ mã này với bất kỳ ai. Không nhận ra hoạt động này? Vui lòng <a href='https://taikhoangame.site/duan/?act=change_pass_new&code=" . $code_otp . "&email=" . $email . "' >đặt lại mật khẩu của bạn</a> hoặc truy cập https://taikhoangame.site/duan/?act=change_pass_new&code=" . $code_otp . "&email=" . $email . "' và liên hệ với bộ phận hỗ trợ khách hàng ngay lập tức.";
     try {

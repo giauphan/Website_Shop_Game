@@ -31,9 +31,7 @@ use App\Models\database as DB;
 
 
    public function danhmuc()
-
    {
-
       $sql = 'SELECT * FROM `loai`';
 
       return $this->db->pdo_query($sql);

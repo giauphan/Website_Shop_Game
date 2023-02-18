@@ -14,6 +14,13 @@ class ql_code_saleController extends Controller
 {
     public function index()
     {
+        if (isset($_SESSION['vai_tro'])) {
+          if ($_SESSION['vai_tro'] == 'admin') {
+            header("location:/wp-admin/");
+          }else{
+            header("location:/");
+          }
+        }
         $kq = new ql_code_sale();
         $danhmuc = new Page_home();
         $tien = new user();
@@ -33,35 +40,5 @@ class ql_code_saleController extends Controller
             'tien' => $tien
         ]);
     }
-    public function add_code_sale()
-    {
-        $danhmuc = new Page_home();
-        $tien = new user();
-        $sale = new ql_code_sale();
-        $kq = new category();
-        $thongbao = "";
-        if (isset($_POST['submit_sale'])) {
-            $loai = $_POST['danh_muc'];
-            $price = $_POST['price_down'];
-            $code_sale = $_POST['ma_sale'];
-            $check =   $sale->sale($code_sale, $price, $loai,$_SESSION['ma_user']);
-            if ($check == true) {
-                header("location:/duan/admin/ql-code-sale");
-            } else {
-                header("location:/duan/admin/?act=add_sale&coincide=true");
-            } 
-        }
-        if (isset($_GET['coincide']) && $_GET['coincide'] == true) {
-            $thongbao = "<script> swal('xảy ra trùng tên mã sale ')</script>";
-        }
-        $tien = $tien->get_money();
-        $kq = $kq->show_category();
-        $danhmuc = $danhmuc -> danhmuc();
-        return view::render('add_sale', [
-            'kq'=>$danhmuc,
-            'tien' => $tien,
-            'thongbao'=> $thongbao,
-            'kq' =>  $kq
-        ]);
-    }
+   
 }

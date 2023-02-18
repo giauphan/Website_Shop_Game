@@ -196,7 +196,17 @@ require_once __DIR__ . '/wit/header.php';
                         <option value="8">8 sao</option>
                         <option value="9">9 sao</option>
                         <option value="10">10 sao</option>
-
+                     
+                     </select>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
+                  <div class="input-group c-square">
+                     <span class="input-group-addon">Bông tai </span>
+                     <select name="Field02" class="form-control c-square" title="-- Không chọn --">
+                        <option value="">-- Bông tai --</option>
+                        <option value="1">Không</option>
+                        <option value="0">Có</option>
                      </select>
                   </div>
                </div>

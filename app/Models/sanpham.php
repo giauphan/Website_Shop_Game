@@ -166,4 +166,11 @@ class sanpham extends database
       //********/
 
    }
+   public function get_sp(){
+      $sql = 'SELECT * FROM `sp` WHERE trang_thai_sp = 1 ';
+
+      $query = $this-> pdo_query($sql);
+
+      return $query;
+   }
 }

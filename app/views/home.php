@@ -414,7 +414,7 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                               <div class="col-xs-6 ">
                                  <div class="view">
-                                    <a href="/sanpham?id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                    <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                                  </div>
                               </div>

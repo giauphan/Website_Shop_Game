@@ -30,18 +30,19 @@ class home extends Controller
            imageAlt: 'Custom image',
          });";
         }
+        
         $sl_loai = $home->sl_loai();
         $sl_pay = $home->sl_pay();
         $pro_sale =   $home->showproductSALE();
         $pro =   $home->product_new();
         $kq = $home->danhmuc();
         $tiens =     $tien->get_money();
-        $thongbao = "";
+       
         return View::render('home', [
             'kq' => $kq,
             'pro' => $pro,
             'pro_sale' => $pro_sale,
-            'tien' => $tien,
+            'tien' => $tiens,
             'sl_loai' => $sl_loai,
             'sl_pay' => $sl_pay,
             'thongbao' => $thongbao

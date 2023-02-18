@@ -8,7 +8,6 @@ use App\Models\user;
 use App\Models\napthe;
 use App\Models\Page_home;
 use App\Models\sanpham;
-use App\Models\profile;
 use App\Models\pay;
 
 class sanpham_controller extends Controller
@@ -21,7 +20,12 @@ class sanpham_controller extends Controller
         $sanpham = new sanpham();
         $kq = $home->danhmuc();
         $napthe->pay_the();
+        if (isset($_SESSION['ma_user'])) {
         $tiens = $tien->get_money();
+        }
+        else{
+            $tien = 0;
+        }
         $result = $sanpham->showsp();
         $number_of_page = $sanpham->phantrang();
             if (isset($_POST['submit'])) {
@@ -59,7 +63,6 @@ class sanpham_controller extends Controller
                 'number_of_page'=> $number_of_page,
                 'result' => $result,
                 'tien' => $tiens,
-                'tien' => $tien,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -68,12 +71,11 @@ class sanpham_controller extends Controller
         $tien = new user();
         $home = new Page_home();
         $napthe = new napthe();
-        $sanpham = new sanpham();
+        // $sanpham = new sanpham();
         $acc = new pay();
         $kq = $home->danhmuc();
         $napthe->pay_the();
         $tiens = $tien->get_money();
-
             if (isset($_GET['check'])) {
 
                 if ($_GET['check'] == 1) {
@@ -95,9 +97,7 @@ class sanpham_controller extends Controller
                 $run = [];
                 $runanh = [];
             }
-
             $runsq = $acc->showsplienquan();
-        
         return View::render('chitietsanpham', [
             'kq' => $kq,
             'tien' => $tiens,

@@ -46,16 +46,13 @@ require_once __DIR__ . '/wit/header.php';
                             <select name="danh_muc" id="danh_muc" style="width: 100%;" required>
                                 <?php
                                 if (isset($kq) && sizeof($kq) > 0) {
-                                    $i = 1;
                                     foreach ($kq as $row) {
-
-                                        echo '  <option value="' . $i . '">' . $row['ten_loai'] . '</option>';
-                                        $i++;
+                                        echo '  <option value="' .  $row['ma_loai'] . '">' . $row['ten_loai'] . '</option>';
                                     }
                                 }
                                 ?>
                             </select>
-                            <!-- <input type="" id="ngoc" name="ngoc" placeholder="ngọc sp" required> -->
+                        
                         </div>
 
                     </div>

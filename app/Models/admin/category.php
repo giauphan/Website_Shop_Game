@@ -13,7 +13,7 @@ class category extends database
                 $flag = false;
                 //Bước 1: Tạo thư mục lưu file
                 $error = array();
-                $target_dir = "view/upload/";
+                $target_dir = "assets/upload/";
                 $target_file = $target_dir . basename($_FILES['fileUpload']['name']);
                 // Kiểm tra kiểu file hợp lệ
                 $type_file = pathinfo($_FILES['fileUpload']['name'], PATHINFO_EXTENSION);
@@ -46,92 +46,58 @@ class category extends database
 
     public function category($ten_loai, $hinh)
     {
-        $conn = po_con();
+
         $sql_show = "SELECT * FROM `loai` where `ten_loai` like '%" . $ten_loai . "%' ";
-        $query = mysqli_query($conn, $sql_show);
+        $query = $this->pdo_query($sql_show);
         $check = true;
-        while ($row = mysqli_fetch_array($query)) {
+        foreach ($query as $row) {
             if ($row['ten_loai'] == $ten_loai) {
                 $check = false;
             }
         }
-
         if ($check == false) {
             return false;
         } else {
-            $sql = "INSERT INTO `loai`( `ten_loai`, `hinh_loai`) VALUES ('" . $ten_loai . "','" . $hinh . "')";
-            mysqli_query($conn, $sql);
+            $sql = "INSERT INTO `loai`( `ten_loai`, `hinh_loai`) VALUES (?,?)";
+            $this->pdo_query($sql, $ten_loai, $hinh);
             return true;
         }
     }
-
     public function change_category($ma_loai, $ten_loai, $hinh_loai)
     {
 
         if ($hinh_loai != "") {
-
-
-            $sql = "UPDATE `loai` SET `ten_loai`='" . $ten_loai . "',`hinh_loai`='" . $hinh_loai . "' WHERE ma_loai = " . $ma_loai . "";
-            pdo_execute($sql);
+            $sql = "UPDATE `loai` SET `ten_loai`=?,`hinh_loai`=? WHERE ma_loai = ?";
+            $this->pdo_execute($sql, $ten_loai, $hinh_loai, $ma_loai);
         } else {
-            $sql = "UPDATE `loai` SET `ten_loai`='" . $ten_loai . "' WHERE ma_loai = " . $ma_loai . "";
-            pdo_execute($sql);
+            $sql = "UPDATE `loai` SET `ten_loai`=? WHERE ma_loai = ?";
+            $this->pdo_execute($sql, $ten_loai, $ma_loai);
         }
-        header("location:/duan/admin/?act=ql_category");
+      
     }
- 
-        // while ($row = mysqli_fetch_array($query)) {
-        //     if ($row['ma_loai'] == $_GET['change']) {
+    public function check_category_onSp($id)
+    {
+        $sql = 'SELECT * FROM `loai` WHERE ma_loai  IN (SELECT ma_loai FROM sp WHERE sp.ma_loai = loai.ma_loai)';
+        return $this->pdo_query($sql);
+    }
 
-        //         echo '  <div class="col">
-
-        //         <div class="col1">
-        //             <div class="tensp">
-        //                 <div class="text_name">
-        //                     <label for="fileUpload">Ảnh danh mục<span>*</span></label>
-        //                 </div>
-        //                 <div class="inp">
-        //                     <input type="file" id="fileUpload" name="fileUpload" placeholder="ảnh danh mục " >
-        //                 </div>
-
-        //             </div>
-        //         </div>
-        //         <div class="col1">
-        //             <div class="tensp">
-        //                 <div class="text_name">
-        //                     <label for="ten_loai">Tên danh mục <span>*</span></label>
-        //                 </div>
-        //                 <div class="inp">
-        //                     <input type="text" id="ten_loai" name="ten_loai" value="' . $row['ten_loai'] . '" placeholder="nhập Tên danh mục "  min="0">
-        //                 </div>
-
-        //             </div>
-        //         </div>
-
-        //         <div class="col1">
-        //             <div class="col_btn">
-        //             <div class="text_name">
-        //                     <label for="tuong"></label>
-        //                 </div>
-        //                 <div class="btn">
-        //                     <button type="submit" name="submit_category"> Gửi</button>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>';
-        //     }
-        // }
-    
+    public function check_category_onDiscount($id)
+    {
+        $sql = 'SELECT * FROM `loai` WHERE ma_loai  IN (SELECT ma_loai FROM tbl_code_sale WHERE loai.ma_loai = tbl_code_sale.ma_loai)';
+        return $this->pdo_query($sql);
+    }
 
     public function de_category($id)
     {
-        $sql = 'DELETE FROM `loai` WHERE ma_loai = "' . $id .  '"  ';
-        $this->pdo_execute( $sql);
+        $sql = 'DELETE FROM `loai`  WHERE ma_loai = ?  ';
+        $this->pdo_execute($sql,$id);
     }
 
     public function show_category()
     {
-        $sql = 'select * from  `loai`  ';
+        $sql = 'SELECT * from  `loai`  ';
         return $this->pdo_query($sql);
     }
+    
+   
 }

@@ -19,7 +19,7 @@ class napthe_controller extends Controller
         $napthe->pay_the();
         return View::render('napthe', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => ''
         ]);
     }

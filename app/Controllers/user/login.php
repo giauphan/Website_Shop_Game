@@ -63,9 +63,10 @@ class login extends Controller
         if (isset($_SESSION['ma_user'])) {
             header("location: /");
         }
+        $kq = $home->danhmuc();
         $tien =     $tien->get_money();
         return View::render('dangnhap', [
-
+            'kq' => $kq,
             'tien' => $tien,
             'thongbao' => $thongbao
         ]);
@@ -115,9 +116,10 @@ class login extends Controller
         if (isset($_SESSION['ma_user'])) {
             header("location: /");
         }
+        $kq = $home->danhmuc();
         $tien =     $sign->get_money();
         return View::render('dangky', [
-
+            'kq' => $kq,
             'tien' => $tien,
             'thongbao' => $thongbao
         ]);

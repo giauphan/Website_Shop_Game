@@ -6,6 +6,7 @@ use App\Controllers\Controller;
 use App\Models\admin\HomeModels;
 use App\Models\history_bill;
 use App\Models\Page_home;
+use App\Models\sanpham;
 use Core\View;
 
 class homeadminControlleradmin extends Controller
@@ -16,6 +17,7 @@ class homeadminControlleradmin extends Controller
         $home =  new HomeModels;
         $thongke = new history_bill;
         $danhmuc = new Page_home();
+        $doanhthuBySp = new sanpham();
         $thongbao = '';
         // check admin
         if (isset($_SESSION['ma_user'])) {
@@ -59,18 +61,20 @@ class homeadminControlleradmin extends Controller
                 $thongbao = '<script> swal("uii Sản phẩm đã bán không thể xóa");</script>';
             }
         }
-        $danhmuc = $danhmuc -> danhmuc();
-        $thongke = $thongke->get_month_bill();
+        $danhmuc = $danhmuc->danhmuc();
+        $thongkes = $thongke->get_month_bill();
+        $doanhthu = $doanhthuBySp->get_sp();
         $page = $home->show_sp_admin();
         $tien = 0;
 
         return  View::render('admin/home', [
-'kq'=>$danhmuc,
+            'kq' => $danhmuc,
             'page' => $page,
             'thongbao' => $thongbao,
-            'thongke' => $thongke,
-            'check_product' =>$check_product,
-            'tien' => $tien
+            'thongke' => $thongkes,
+            'check_product' => $check_product,
+            'tien' => $tien,
+            'doanhthu' => $doanhthu
         ]);
     }
 }

@@ -12,6 +12,7 @@ use App\Models\phpmailer;
 
 class profile_controller extends Controller
 {
+    
     public function index() {
         $thongbao = '';
         $profile = new user();
@@ -46,7 +47,7 @@ class profile_controller extends Controller
             return View::render('profile', [
                 'kq' => $kq,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tienkq' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -73,7 +74,7 @@ class profile_controller extends Controller
             return View::render('edit_profile', [
                 'kq' => $kq,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tien' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -122,7 +123,7 @@ class profile_controller extends Controller
 
         return View::render('doimk', [
             'kq' => $kq,
-            'tienkq' => $tienkq,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }
@@ -164,15 +165,10 @@ class profile_controller extends Controller
 
         return View::render('quenmk', [
             'kq' => $kq,
-            'tien' => $tien,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }
 
-    public function logout() {
-
-        session_unset();
-        header('location:/home');
-
-    }
+   
 }

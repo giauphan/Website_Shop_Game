@@ -8,16 +8,13 @@ class user extends account
 {
     public function __construct()
     {
-       $this->db = new database;
+        $this->db = new database;
     }
-
     public function login($user, $pass)
     {
         $sql_login = "SELECT * FROM `user` WHERE (email = ? or username = ?) and password = ?";
         return   $this->db->pdo_query($sql_login, $user, $user, $pass);
     }
-
-
     public function get_all_user()
     {
         $sql = 'SELECT * FROM `user` ';
@@ -38,21 +35,22 @@ class user extends account
         $sql = "UPDATE `user` SET `ten_hien_thi`=?,`email`=?,`phone`=? WHERE ma_kh = ?";
         $this->db->pdo_query($sql, $username_show, $email, $phone, $_SESSION['ma_user']);
         return true;
-
     }
-
     public function get_money()
-
     {
+        $tien = 0;
         if (isset($_SESSION['ma_user'])) {
-            $showtien = 'SELECT tien,email FROM `user` WHERE ma_kh = ?';
 
+
+            $showtien = 'SELECT tien,email FROM `user` WHERE ma_kh = ?';
             $kq =      $this->db->pdo_query($showtien, $_SESSION['ma_user']);
-            $tien = 0;
+
             foreach ($kq as  $rowtien) {
 
                 $tien = $rowtien['tien'];
             }
+            return $tien;
+        } else {
             return $tien;
         }
     }
@@ -84,5 +82,4 @@ class user extends account
             return false;
         }
     }
-
 }

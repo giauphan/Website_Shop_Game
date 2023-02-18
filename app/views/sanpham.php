@@ -108,7 +108,7 @@ require_once __DIR__ . '/wit/header.php';
                <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
                   <div class="input-group c-square">
                      <span class="input-group-addon">Rank</span>
-                     <select name="field1" class="form-control c-square" title="-- Không chọn --">
+                     <select name="field2" class="form-control c-square" title="-- Không chọn --">
                         <option value="">-- Rank --</option>
                         <option value="dong">Đồng</option>
                         <option value="bac">Bạc</option>
@@ -125,7 +125,7 @@ require_once __DIR__ . '/wit/header.php';
                <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
                   <div class="input-group c-square">
                      <span class="input-group-addon">Tướng</span>
-                     <select class="form-control c-square" name="field2">
+                     <select class="form-control c-square" name="field1">
                         <option value="">Tất cả</option>
                         <option value="0-50">Dưới 50</option>
                         <option value="50-100">Từ 50 - 100</option>
@@ -153,8 +153,8 @@ require_once __DIR__ . '/wit/header.php';
                      <span class="input-group-addon">Ngọc 90</span>
                      <select name="field4" class="form-control c-square" title="-- Không chọn --">
                         <option value="">-- Ngọc --</option>
-                        <option value="1">Không</option>
-                        <option value="0">Có</option>
+                        <option value="không">Không</option>
+                        <option value="có">Có</option>
                      </select>
                   </div>
                </div>
@@ -296,49 +296,53 @@ require_once __DIR__ . '/wit/header.php';
                            </select>
                         </div>
                      </div>
-                     <div class="input-group c-square">
-                           <span class="input-group-addon">Máy chủ</span>
-                           <select name="field1" class="form-control c-square" title="-- Không chọn --">
-                              <option value="">-- Máy chủ --</option>
-                              <option value="1">1 sao</option>
-                              <option value="2">2 sao</option>
-                              <option value="3">3 sao</option>
-                              <option value="4">4 sao</option>
-                              <option value="5">5 sao</option>
-                              <option value="6">6 sao</option>
-                              <option value="7">7 sao</option>
-                              <option value="8">8 sao</option>
-                              <option value="9">9 sao</option>
-                              <option value="10">10 sao</option>
+                     <div class="col-md-3 col-sm-4 p-5 field-search">
+                        <div class="input-group c-square">
+                              <span class="input-group-addon">Máy chủ</span>
+                              <select name="field1" class="form-control c-square" title="-- Không chọn --">
+                                 <option value="">-- Máy chủ --</option>
+                                 <option value="1">1 sao</option>
+                                 <option value="2">2 sao</option>
+                                 <option value="3">3 sao</option>
+                                 <option value="4">4 sao</option>
+                                 <option value="5">5 sao</option>
+                                 <option value="6">6 sao</option>
+                                 <option value="7">7 sao</option>
+                                 <option value="8">8 sao</option>
+                                 <option value="9">9 sao</option>
+                                 <option value="10">10 sao</option>
 
-                           </select>
+                              </select>
+                        </div>
                      </div>
-                     <div class="input-group c-square">
-                           <span class="input-group-addon">Hành tinh</span>
-                           <select name="field2" class="form-control c-square" title="-- Không chọn --">
-                              <option value="">-- Hành tinh --</option>
-                              <option value="1">Xayda</option>
-                              <option value="2">Namếc</option>
-                              <option value="3">Trái đất</option>
-                           </select>
+                     <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
+                        <div class="input-group c-square">
+                              <span class="input-group-addon">Hành tinh</span>
+                              <select name="field2" class="form-control c-square" title="-- Không chọn --">
+                                 <option value="">-- Hành tinh --</option>
+                                 <option value="Xayda">Xayda</option>
+                                 <option value="Namếc">Namếc</option>
+                                 <option value="Trái Đất">Trái đất</option>
+                              </select>
+                        </div>
                      </div>
                      <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
                         <div class="input-group c-square">
                            <span class="input-group-addon">Bông tai </span>
-                           <select name="field4" class="form-control c-square" title="-- Không chọn --">
+                           <select name="field3" class="form-control c-square" title="-- Không chọn --">
                               <option value="">-- Bông tai --</option>
-                              <option value="1">Không</option>
-                              <option value="0">Có</option>
+                              <option value="không">Không</option>
+                              <option value="có">Có</option>
                            </select>
                         </div>
                      </div>
                      <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
                         <div class="input-group c-square">
                            <span class="input-group-addon">Đăng ký </span>
-                           <select name="field3" class="form-control c-square" title="-- Không chọn --">
+                           <select name="field4" class="form-control c-square" title="-- Không chọn --">
                               <option value="">-- Đăng ký --</option>
-                              <option value="0">Ảo</option>
-                              <option value="1">Gmail xóa vv</option>
+                              <option value="ảo">Ảo</option>
+                              <option value="gmail">Gmail xóa vv</option>
                            </select>
                         </div>
                      </div>
@@ -703,8 +707,7 @@ require_once __DIR__ . '/wit/header.php';
 
                      </div>';
                   } else  if ($row['ma_loai'] == 3) {
-                     $retVal = ($row['field3']  == 0) ?  "Có" : "Không";
-                     $login_acc = ($row['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+
                      echo '<div class="col-sm-6 col-md-3">
 
                                  <div class="classWithPad">
@@ -729,7 +732,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Máy chủ: <b>' . $row['field1'] . ' sao</b>
+                                          Máy chủ: <b>' . $row['field1'] . '</b>
 
                                        </div>
 
@@ -739,7 +742,7 @@ require_once __DIR__ . '/wit/header.php';
                                        </div>
                                        <div class="col-xs-6 a_att">
 
-                                       Đăng ký: <b>' . $login_acc . '</b>
+                                       Đăng ký: <b>' . $row['field4'] . '</b>
 
                                     </div>
 
@@ -747,7 +750,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Bông tai: <b>' .      $retVal . '</b>
+                                          Bông tai: <b>' .      $row['field3'] . '</b>
 
                                        </div>
 
@@ -814,7 +817,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Rank: <b>' . $row['field2'] . ' sao</b>
+                                          Rank: <b>' . $row['field2'] . '</b>
 
                                        </div>
 

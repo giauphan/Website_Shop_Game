@@ -23,6 +23,7 @@ class sanpham_controller extends Controller
         $napthe->pay_the();
         $tiens = $tien->get_money();
         $result = $sanpham->showsp();
+        // echo $result;
         $number_of_page = $sanpham->phantrang();
         
             if (isset($_POST['submit'])) {
@@ -38,15 +39,15 @@ class sanpham_controller extends Controller
                 }
                 $ma_sp =  $_POST['id'];
 
-                $Field01 =  $_POST['Field01'];
+                $Field01 =  $_POST['field1']; 
 
-                $Field02 =  $_POST['Field02'];
-                $Field03 =  $_POST['Field03'];
+                $Field02 =  $_POST['field2'];
+                $Field03 =  $_POST['field3'];
 
-                $Field04 =  $_POST['Field04'];
+                $Field04 =  $_POST['field4'];
 
                 $trang_thai =  $_POST['status'];
-                header("Location:sanpham?danhmuc=" . $_GET['danhmuc'] . "&game_id=" . $ma_sp . "&trang_thai=" . $trang_thai . "&moneymin=" . $price_min . "&moneymax=" . $price_max . "&Field01=" . $Field02 . "&Field02=" . $Field01 . "&Field03=".$Field03."&Field04=".$Field04."");
+                header("Location:sanpham?danhmuc=" . $_GET['danhmuc'] . "&game_id=" . $ma_sp . "&trang_thai=" . $trang_thai . "&moneymin=" . $price_min . "&moneymax=" . $price_max . "&Field01=" . $Field01 . "&Field02=" . $Field02 . "&Field03=".$Field03."&Field04=".$Field04."");
             }
         
             if(isset($_SESSION['ma_user'])) {

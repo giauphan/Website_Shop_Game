@@ -19,7 +19,9 @@ class muahang_controller extends Controller
         $bill = new muahang();
         $kq = $home->danhmuc();
         if (isset($_SESSION['ma_user'])) {
-            $tiens =     $tien->get_money($_SESSION['ma_user']);
+            $tien =     $tien->get_money($_SESSION['ma_user']);
+            }else{
+                $tien  =0;
             }
         $napthe->pay_the();
         $runshowtien = $bill->show_bill();

@@ -22,13 +22,11 @@ use App\Controllers\ctv\ql_code_saleController;
 
 use App\Controllers\user\home;
 use App\Controllers\user\login;
+use App\Controllers\user\muahang_controller;
 use App\Controllers\user\napthe_controller;
 use App\Controllers\user\profile_controller;
 use App\Controllers\user\quenmk_controller;
 use App\Controllers\user\sanpham_controller;
-
-use App\Controllers\user\muahang_controller;
-
 use Core\Route;
 
 
@@ -81,7 +79,7 @@ Route::GET('/sanpham', [sanpham_controller::class, 'index']);
 
 // /spchitiet
 Route::GET('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
-
+Route::POST('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
 
 
 

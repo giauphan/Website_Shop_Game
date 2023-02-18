@@ -65,6 +65,7 @@ class login extends Controller
         }
         $kq = $home->danhmuc();
         $tien =     $tien->get_money();
+        $kq = $home->danhmuc();
         return View::render('dangnhap', [
             'kq' => $kq,
             'tien' => $tien,

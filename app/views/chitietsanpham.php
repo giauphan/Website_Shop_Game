@@ -168,8 +168,7 @@ require_once __DIR__ . '/wit/header.php';
                                         
                                              
                                              ';
-                  } 
-                  else if ($rowctsp['ma_loai'] == 3) {
+                  } else if ($rowctsp['ma_loai'] == 3) {
 
                      $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
                      $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
@@ -423,7 +422,7 @@ require_once __DIR__ . '/wit/header.php';
                                        
                                        ';
                   } else if ($rowctsp['ma_loai'] == 3) {
-                  // $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                     // $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
                      $retVal = ($rowctsp['field2'] == 0) ?  "Có" : "Không";
                      $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
                      echo '
@@ -552,7 +551,7 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-              $img = explode("|",$rowctsp['hinh_ct_1']);
+                  $img = explode("|", $rowctsp['hinh_ct_1']);
                   $check = true;
                   for ($i = 0; $i < sizeof($img); $i++) {
                      $img[$i] = trim($img[$i]);
@@ -570,7 +569,7 @@ require_once __DIR__ . '/wit/header.php';
                   if ($check == false) {
                      echo ' <p>
                   <a rel="gallery1" data-fancybox="images" href="">
-                  <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh']. '" alt="png-image">
+                  <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
                   </a>
                   </p>';
                   }
@@ -1845,7 +1844,7 @@ require_once __DIR__ . '/wit/header.php';
                if (isset($_GET['id'])) {
                   foreach ($runsq as $ro) {
                      if ($_GET['id'] == $ro['ma_sp'] &&  $lien_quan == null) {
-         
+
                         $lien_quan = $ro['giasp'];
                      }
                   }
@@ -1980,7 +1979,7 @@ require_once __DIR__ . '/wit/header.php';
                               Thẻ vô cực: <b>' . $row['field4'] . '</b>
 
                            </div>';
-                        } 
+                        }
 
                         echo '
                         </div>
@@ -2156,27 +2155,27 @@ require_once __DIR__ . '/wit/header.php';
                      // } else if ($row['ma_loai'] == 4) {
 
                      //    echo ' <div class="col-xs-6 a_att">
-      
+
                      //       Rank: <b>' . $row['field2'] . '</b>
-      
+
                      //    </div>
-      
+
                      //    <div class="col-xs-6 a_att">
-      
+
                      //       Đăng ký: <b>' . $row['field1'] . '</b>
-      
+
                      //    </div>
-      
+
                      //    <div class="col-xs-6 a_att">
-      
+
                      //      Pet: <b>' . $row['field3'] . '</b>
-      
+
                      //    </div>
-      
+
                      //    <div class="col-xs-6 a_att">
-      
+
                      //       Thẻ vô cực: <b>' . $row['field4'] . '</b>
-      
+
                      //    </div>';
                      // }
 
@@ -2298,9 +2297,7 @@ require_once __DIR__ . '/wit/header.php';
                   </button>
 
                   <h4 class="modal-title">Xác nhận mua tài khoản</h4>
-
                </div>
-
                <div class="modal-body">
 
                   <div class="c-content-tab-4 c-opt-3" role="tabpanel">
@@ -2531,13 +2528,49 @@ require_once __DIR__ . '/wit/header.php';
 
 
                <?php
-               $pay_acc = new pay();
                if (isset($_SESSION['ma_user']) && isset($_SESSION['vai_tro'])) {
+                  $game  = '';
+                  foreach ($payAcc as $row) {
+                     if ($row['ma_loai'] == 1) {
 
-                  $pay_acc ->pay();
+                        $game = 'Liên quân';
+                     } else  if ($row['ma_loai'] == 2) {
+
+                        $game = 'Liên minh huyền thoại';
+                     } else  if ($row['ma_loai'] == 3) {
+
+                        $game = 'Ngọc rồng online';
+                     } else {
+
+                        $game = 'Free fire';
+                     }
+                     echo '
+                  `<div class="modal-content"> <form method="POST"  accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr>
+            
+                  <div id="gia_sp"><input type="hidden" id="price" name="price_sp" value="' . $row['giasp']  . '"></div> </tbody> <tbody> <tr> <input class="hidden" type="text" id="category" value="' . $row['ma_loai']  . '"> </tr>  <td>Tên game:</td> <th>' . $game   . ' </th>  </tr> <tr> <td>Giá tiền:</td> <th class="text-info" id="total">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ </th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr> <td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td> </tr> <tr> <td style="width:50%">Nick có tướng trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> <tr> <td style="width:50%">Nick có trang phục trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group "> <label class="col-md-3 form-control-label">Mã giảm giá:</label> <div class="col-md-7">  <input type="text" id="coupon_sale" class="form-control c-square c-theme coupon" name="coupon" placeholder="Mã giảm giá" value="">    <button type="button" id="btn_sale"  onclick="check_sale()"> Áp dụng</button>     <span class="help-block" id="block"> Nhập mã giảm giá nếu có để nhận ưu đãi</span> </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <button type="sumbit" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="pay">Mua</button> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
+                  }
                } else {
 
-                  $pay_acc ->pay_login();
+                  foreach ($payAccLogin as $row) {
+
+                     $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
+
+                     if ($row['ma_loai'] == 1) {
+
+                        $game = 'liên quân';
+                     } else  if ($row['ma_loai'] == 2) {
+
+                        $game = 'liên minh huyền thoại';
+                     } else  if ($row['ma_loai'] == 3) {
+
+                        $game = 'Ngọc rồng online';
+                     } else {
+
+                        $game = 'Free fire';
+                     }
+
+                     echo '`<div class="modal-content"> <form method="POST" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr> </tbody> <tbody> <tr>  </tr> <tr> <td>Tên game:</td> <th>' . $game   . '</th> </tr> <tr> <td>Giá tiền:</td> <th class="text-info">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ</th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr> <td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .   $row['field4'] . '</td> </tr> <tr> <td style="width:50%">Nick có tướng trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> <tr> <td style="width:50%">Nick có trang phục trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group ">  <div class="col-md-7">  </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <a href="?act=dangnhap" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="login">Đăng nhập</a> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
+                  }
                }
 
                ?>
@@ -2575,13 +2608,24 @@ require_once __DIR__ . '/wit/header.php';
       total = price;
 
       var code_sale = [<?php
-      $pay_acc  = new pay(); 
-      
-      $pay_acc -> show_code_sale();
+                        echo "[";
+                        foreach ($runShow as $row) {
+                           echo  " '" . $row['code'] . "', ";
+                        }
+                        echo "],";
 
-      $pay_acc -> show_price_sale();
+                        echo " [";
+                        foreach ($showPrice as $row) {
+                           echo  " '" . $row['price_sale'] . "', ";
+                        }
+                        echo "],";
 
-      $pay_acc ->show_category_sale(); ?>];
+                        echo " [";
+                        foreach ($showCategory as $row) {
+                           echo  " '" . $row['ma_loai'] . "', ";
+                        }
+
+                        echo "]";  ?>];
 
       check_category = false;
 

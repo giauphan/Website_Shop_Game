@@ -19,7 +19,7 @@ class napthe_controller extends Controller
         $napthe->pay_the();
         return View::render('napthe', [
             'kq' => $kq,
-            'tien' => $tiens,
+            'tienkq' => $tienkq,
             'thongbao' => ''
         ]);
     }
@@ -32,7 +32,7 @@ class napthe_controller extends Controller
         $muathe->pay_the();
         return View::render('muathe', [
             'kq' => $kq,
-            'tien' => $tiens,
+            'tienkq' => $tienkq,
             'thongbao' => ''
         ]);
     }
@@ -48,7 +48,7 @@ class napthe_controller extends Controller
         return View::render('lichsunap', [
             'kq' => $kq,
             'result' => $result,
-            'tien' => $tiens,
+            'tienkq' => $tienkq,
             'thongbao' => ''
         ]);
     }

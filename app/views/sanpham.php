@@ -65,7 +65,6 @@ require_once __DIR__ . '/wit/header.php';
       if(isset($kq)&&isset($_GET['danhmuc'])&&sizeof($kq)) {
       foreach($kq as $item) {
       if ($_GET['danhmuc']== 1) { 
-      
       ?>
       <div class="row  hidden-xs hidden-sm" style="margin-bottom: 15px">
          <div class="m-l-10 m-r-10">
@@ -225,32 +224,6 @@ require_once __DIR__ . '/wit/header.php';
                </div>
                <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
                   <div class="input-group c-square">
-<<<<<<< HEAD
-                     <span class="input-group-addon">Máy chủ</span>
-                     <select name="Field01" class="form-control c-square" title="-- Không chọn --">
-                        <option value="">-- Máy chủ --</option>
-                        <option value="1">1 sao</option>
-                        <option value="2">2 sao</option>
-                        <option value="3">3 sao</option>
-                        <option value="4">4 sao</option>
-                        <option value="5">5 sao</option>
-                        <option value="6">6 sao</option>
-                        <option value="7">7 sao</option>
-                        <option value="8">8 sao</option>
-                        <option value="9">9 sao</option>
-                        <option value="10">10 sao</option>
-                     
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                  <div class="input-group c-square">
-                     <span class="input-group-addon">Bông tai </span>
-                     <select name="Field02" class="form-control c-square" title="-- Không chọn --">
-                        <option value="">-- Bông tai --</option>
-                        <option value="1">Không</option>
-                        <option value="0">Có</option>
-=======
                      <span class="input-group-addon">Tướng</span>
                      <select class="form-control c-square" name="field1">
                         <option value="">Tất cả</option>
@@ -259,7 +232,6 @@ require_once __DIR__ . '/wit/header.php';
                         <option value="100-150">Từ 100 - 150</option>
                         <option value="150-200">Từ 150 - 200</option>
                         <option value="200">Trên 200</option>
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
                      </select>
                   </div>
                </div>
@@ -569,8 +541,7 @@ require_once __DIR__ . '/wit/header.php';
 
 
                      $loai = $row['ma_loai'];
-                     $retVal = ($row['field4'] != "") ?  "có" : "không";
-
+                  
                      echo '<div class="col-sm-6 col-md-3">
 
                                  <div class="classWithPad">
@@ -611,7 +582,7 @@ require_once __DIR__ . '/wit/header.php';
 
                                        <div class="col-xs-6 a_att">
 
-                                          Ngọc 90: <b>' . $retVal . '</b>
+                                          Ngọc 90: <b>' .$row['field4'] . '</b>
 
                                        </div>
 
@@ -935,7 +906,7 @@ require_once __DIR__ . '/wit/header.php';
 
             <ul class="pagination pagination-sm">
 
-            <li class="page-item "><a class="page-link" href="?act=nick1&danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . ($page - 1) . '" >«</a></li>
+            <li class="page-item "><a class="page-link" href="?act=nick1&danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&Field03=' . $_GET['Field03'] . '&Field04=' . $_GET['Field04'] . '&page=' . ($page - 1) . '" >«</a></li>
 
             ';
                      } else {
@@ -957,7 +928,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         echo '
 
-            <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . $page . '">' . $page . '</a></li>';
+            <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&Field03=' . $_GET['Field03'] . '&Field04=' . $_GET['Field04'] . '&page=' . $page . '">' . $page . '</a></li>';
                      }
 
                      if (isset($_GET['page']) && $_GET['page'] >= $number_of_page) {
@@ -975,7 +946,7 @@ require_once __DIR__ . '/wit/header.php';
 
                            echo ' 
 
-               <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&page=' . ($_GET['page'] + 1) . '" >»</a></li>
+               <li class="page-item"><a class="page-link" href="/sanpham?danhmuc=' . $_GET['danhmuc'] . '&game_id=' . $_GET['game_id'] . '&trang_thai=' . $_GET['trang_thai'] . '&moneymin=' . $_GET['moneymin'] . '&moneymax=' . $_GET['moneymax'] . '&Field01=' . $_GET['Field01'] . '&Field02=' . $_GET['Field02'] . '&Field03=' . $_GET['Field03'] . '&Field04=' . $_GET['Field04'] . '&page=' . ($_GET['page'] + 1) . '" >»</a></li>
 
                </ul> </div>';
                         }

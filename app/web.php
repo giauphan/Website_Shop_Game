@@ -80,15 +80,13 @@ Route::POST('/sanpham', [sanpham_controller::class, 'index']);
 
 // /spchitiet
 Route::GET('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
-<<<<<<< HEAD
+
 Route::POST('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
 
-=======
+// // /donhang
+//  Route::GET('/pay/sp', [muahang_controller::class, 'donhang']);
+//  Route::POST('/pay/sp', [muahang_controller::class, 'donhang']);
 
-// /donhang
-// Route::GET('/pay/sp', [muahang_controller::class, 'donhang']);
-// Route::POST('/pay/sp', [muahang_controller::class, 'donhang']);
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
 
 
 // ctv

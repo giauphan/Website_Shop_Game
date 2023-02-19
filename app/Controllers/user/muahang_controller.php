@@ -8,8 +8,7 @@ use  App\Models\user;
 use  App\Models\napthe;
 use  App\Models\muahang;
 use  App\Models\Page_home;
-use  App\Models\pay_sp;
-use  App\Models\pay;
+
 
 class muahang_controller extends Controller
 {

@@ -14,19 +14,19 @@ require_once __DIR__ . '/wit/header.php';
 
 
       <?php
-      if(isset($runanh)&&sizeof($runanh)) {
-      $kt = false;
-      $i = 0;
-      foreach ($runanh as $rowctsp) {
+      if (isset($runanh) && sizeof($runanh)) {
+         $kt = false;
+         $i = 0;
+         foreach ($runanh as $rowctsp) {
 
-         $retVal = ($rowctsp['field4'] == 0) ?  "có" : "không";
+            $retVal = ($rowctsp['field4'] == 0) ?  "có" : "không";
 
-         $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+            $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
 
-         if ($_GET['id'] == $rowctsp['ma_sp']) {
-            if ($rowctsp['hinh_ct_1'] != "") {
-               if ($rowctsp['trang_thai_sp'] == 0) {
-                  echo '<div class="container">
+            if ($_GET['id'] == $rowctsp['ma_sp']) {
+               if ($rowctsp['hinh_ct_1'] != "") {
+                  if ($rowctsp['trang_thai_sp'] == 0) {
+                     echo '<div class="container">
 
                <nav aria-label="breadcrumb" style="display:none">
 
@@ -88,10 +88,10 @@ require_once __DIR__ . '/wit/header.php';
 
                            <div class="row">';
 
-                  if ($rowctsp['ma_loai'] == 1) {
+                     if ($rowctsp['ma_loai'] == 1) {
 
 
-                     echo '
+                        echo '
                            
                                         
                                              
@@ -132,10 +132,10 @@ require_once __DIR__ . '/wit/header.php';
                                         
                                              
                                              ';
-                  } else if ($rowctsp['ma_loai'] == 2) {
+                     } else if ($rowctsp['ma_loai'] == 2) {
 
 
-                     echo '
+                        echo '
                            
                                         
                                              
@@ -168,11 +168,11 @@ require_once __DIR__ . '/wit/header.php';
                                         
                                              
                                              ';
-                  } else if ($rowctsp['ma_loai'] == 3) {
+                     } else if ($rowctsp['ma_loai'] == 3) {
 
-                     $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '
+                        $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                        $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                        echo '
                            
                                        
                                              
@@ -212,10 +212,10 @@ require_once __DIR__ . '/wit/header.php';
                                     
                                              
                                              ';
-                  } else if ($rowctsp['ma_loai'] == 4) {
+                     } else if ($rowctsp['ma_loai'] == 4) {
 
-                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '
+                        $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                        echo '
                            
                                        
                                              
@@ -255,10 +255,10 @@ require_once __DIR__ . '/wit/header.php';
                                     
                                              
                                              ';
-                  }
+                     }
 
 
-                  echo ' </div>
+                     echo ' </div>
 
                         
 
@@ -344,10 +344,10 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-                  if ($rowctsp['ma_loai'] == 1) {
+                     if ($rowctsp['ma_loai'] == 1) {
 
 
-                     echo '
+                        echo '
                      
                                       
                                        
@@ -389,10 +389,10 @@ require_once __DIR__ . '/wit/header.php';
                      </div>
                                        
                                        ';
-                  } else if ($rowctsp['ma_loai'] == 2) {
+                     } else if ($rowctsp['ma_loai'] == 2) {
 
 
-                     echo '
+                        echo '
                      
                                       
                                        
@@ -421,11 +421,11 @@ require_once __DIR__ . '/wit/header.php';
                      </div>
                                        
                                        ';
-                  } else if ($rowctsp['ma_loai'] == 3) {
-                     // $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
-                     $retVal = ($rowctsp['field2'] == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '
+                     } else if ($rowctsp['ma_loai'] == 3) {
+                        // $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                        $retVal = ($rowctsp['field2'] == 0) ?  "Có" : "Không";
+                        $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                        echo '
                      
                                      
                                        
@@ -467,10 +467,10 @@ require_once __DIR__ . '/wit/header.php';
                                     </div>
                                        
                                        ';
-                  } else if ($rowctsp['ma_loai'] == 4) {
+                     } else if ($rowctsp['ma_loai'] == 4) {
 
 
-                     echo '
+                        echo '
                      
                                       
                                        
@@ -512,7 +512,7 @@ require_once __DIR__ . '/wit/header.php';
                      </div>
                                        
                                        ';
-                  }
+                     }
 
 
 
@@ -521,7 +521,7 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-                  echo ' </div>
+                     echo ' </div>
 
                      <div class="c-content-divider">
 
@@ -551,37 +551,37 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-                  $img = explode("|", $rowctsp['hinh_ct_1']);
-                  $check = true;
-                  for ($i = 0; $i < sizeof($img); $i++) {
-                     $img[$i] = trim($img[$i]);
-                     if ($img[$i] != "  " && empty($img[$i]) != true) {
-                        echo ' <p>
+                     $img = explode("|", $rowctsp['hinh_ct_1']);
+                     $check = true;
+                     for ($i = 0; $i < sizeof($img); $i++) {
+                        $img[$i] = trim($img[$i]);
+                        if ($img[$i] != "  " && empty($img[$i]) != true) {
+                           echo ' <p>
                   <a rel="gallery1" data-fancybox="images" href="">
                   <img class="img-responsive img-thumbnail" src="/assets/upload/' . $img[$i] . '" alt="png-image">
                   </a>
                   </p>';
-                     } else {
-                        echo '';
-                        $check = false;
+                        } else {
+                           echo '';
+                           $check = false;
+                        }
                      }
-                  }
-                  if ($check == false) {
-                     echo ' <p>
+                     if ($check == false) {
+                        echo ' <p>
                   <a rel="gallery1" data-fancybox="images" href="">
                   <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
                   </a>
                   </p>';
-                  }
+                     }
 
-                  echo  '</div>';
+                     echo  '</div>';
 
-                  $kt = true;
-               } else {
+                     $kt = true;
+                  } else {
 
 
 
-                  echo '<div class="container">
+                     echo '<div class="container">
 
                <nav aria-label="breadcrumb" style="display:none">
 
@@ -643,10 +643,10 @@ require_once __DIR__ . '/wit/header.php';
 
                            <div class="row">';
 
-                  if ($rowctsp['ma_loai'] == 1) {
+                     if ($rowctsp['ma_loai'] == 1) {
 
 
-                     echo '
+                        echo '
                                     
                                                      
                                                       
@@ -688,11 +688,11 @@ require_once __DIR__ . '/wit/header.php';
                                     </div>
                                                       
                                                       ';
-                  } else if ($rowctsp['ma_loai'] == 3) {
+                     } else if ($rowctsp['ma_loai'] == 3) {
 
-                     $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '
+                        $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                        $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                        echo '
                                     
                                                     
                                                       
@@ -726,9 +726,9 @@ require_once __DIR__ . '/wit/header.php';
                                                    </div>
                                                       
                                                       ';
-                  }
+                     }
 
-                  echo '  </div>
+                     echo '  </div>
 
                         
 
@@ -798,10 +798,10 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-                  if ($rowctsp['ma_loai'] == 1) {
+                     if ($rowctsp['ma_loai'] == 1) {
 
 
-                     echo '
+                        echo '
                               
                                                
                                                 
@@ -835,9 +835,9 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                                                 
                                                 ';
-                  } else if ($rowctsp['ma_loai'] == 2) {
+                     } else if ($rowctsp['ma_loai'] == 2) {
 
-                     echo '
+                        echo '
                               
                                               
                                                 
@@ -878,11 +878,11 @@ require_once __DIR__ . '/wit/header.php';
                                              </div>
                                                 
                                                 ';
-                  } else if ($rowctsp['ma_loai'] == 3) {
+                     } else if ($rowctsp['ma_loai'] == 3) {
 
-                     $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
-                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '
+                        $retVal = ($rowctsp['field3']  == 0) ?  "Có" : "Không";
+                        $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                        echo '
                               
                                               
                                                 
@@ -923,10 +923,10 @@ require_once __DIR__ . '/wit/header.php';
                                              </div>
                                                 
                                                 ';
-                  } else if ($rowctsp['ma_loai'] == 4) {
+                     } else if ($rowctsp['ma_loai'] == 4) {
 
-                     $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                     echo '
+                        $login_acc = ($rowctsp['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                        echo '
                               
                                               
                                                 
@@ -967,9 +967,9 @@ require_once __DIR__ . '/wit/header.php';
                                              </div>
                                                 
                                                 ';
-                  }
+                     }
 
-                  echo '   </div>
+                     echo '   </div>
 
                      <div class="c-content-divider">
 
@@ -999,30 +999,30 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-                  $anh->show_img($rowctsp['hinh_ct_1'], $rowctsp['hinh']);
+                     $anh->show_img($rowctsp['hinh_ct_1'], $rowctsp['hinh']);
 
-                  echo  '</div>';
+                     echo  '</div>';
 
-                  $kt = true;
+                     $kt = true;
+                  }
                }
             }
+
+            $i++;
          }
-
-         $i++;
       }
-   }
 
-   if(isset($run)&&sizeof($run)>0) {
-      foreach ($run as $rowct) {
-         $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-         $retVal = ($rowct['field4'] == 0) ?  "có" : "không";
-         if ($kt == false) {
+      if (isset($run) && sizeof($run) > 0) {
+         foreach ($run as $rowct) {
+            $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+            $retVal = ($rowct['field4'] == 0) ?  "có" : "không";
+            if ($kt == false) {
 
-            if ($rowct['trang_thai_sp'] == 0) {
-
+               if ($rowct['trang_thai_sp'] == 0) {
 
 
-               echo '<div class="container">
+
+                  echo '<div class="container">
 
          <nav aria-label="breadcrumb" style="display:none">
 
@@ -1085,10 +1085,10 @@ require_once __DIR__ . '/wit/header.php';
 
                      <div class="row">';
 
-               if ($rowct['ma_loai'] == 1) {
+                  if ($rowct['ma_loai'] == 1) {
 
 
-                  echo '
+                     echo '
                               
                                                
                                                 
@@ -1126,10 +1126,10 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                                                 
                                                 ';
-               } else if ($rowct['ma_loai'] == 2) {
+                  } else if ($rowct['ma_loai'] == 2) {
 
 
-                  echo '
+                     echo '
                               
                                                
                                                 
@@ -1162,11 +1162,11 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                                                 
                                                 ';
-               } else if ($rowct['ma_loai'] == 3) {
+                  } else if ($rowct['ma_loai'] == 3) {
 
-                  $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
-                  $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                  echo '
+                     $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     echo '
                               
                                               
                                                 
@@ -1201,10 +1201,10 @@ require_once __DIR__ . '/wit/header.php';
                                              </div>
                                                 
                                                 ';
-               } else if ($rowct['ma_loai'] == 4) {
+                  } else if ($rowct['ma_loai'] == 4) {
 
 
-                  echo '
+                     echo '
                               
                                                
                                                 
@@ -1243,9 +1243,9 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                                                 
                                                 ';
-               }
+                  }
 
-               echo '  </div>
+                  echo '  </div>
 
                   
 
@@ -1331,10 +1331,10 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-               if ($rowct['ma_loai'] == 1) {
+                  if ($rowct['ma_loai'] == 1) {
 
 
-                  echo '
+                     echo '
                         
                                          
                                           
@@ -1374,11 +1374,11 @@ require_once __DIR__ . '/wit/header.php';
                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
 
                         </div>';
-               } else if ($rowct['ma_loai'] == 3) {
+                  } else if ($rowct['ma_loai'] == 3) {
 
-                  $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
-                  $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
-                  echo '
+                     $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
+                     $login_acc = ($rowct['field3'] == 0) ?  "Ảo" : "Gmail xóa vv";
+                     echo '
                         
                                         
                                           
@@ -1420,9 +1420,9 @@ require_once __DIR__ . '/wit/header.php';
                                        </div>
                                           
                                           ';
-               }
+                  }
 
-               echo '  </div>
+                  echo '  </div>
 
                <div class="c-content-divider">
 
@@ -1455,9 +1455,9 @@ require_once __DIR__ . '/wit/header.php';
         </div>
 
             ';
-            } else {
+               } else {
 
-               echo '<div class="container">
+                  echo '<div class="container">
 
                <nav aria-label="breadcrumb" style="display:none">
 
@@ -1519,10 +1519,10 @@ require_once __DIR__ . '/wit/header.php';
 
                            <div class="row">';
 
-               if ($rowct['ma_loai'] == 1) {
+                  if ($rowct['ma_loai'] == 1) {
 
 
-                  echo '
+                     echo '
                            
                                              <div class="row">
                                              
@@ -1563,8 +1563,8 @@ require_once __DIR__ . '/wit/header.php';
                                              </div>
                                              
                                              ';
-               } else if ($rowct['ma_loai'] == 3) {
-                  echo '
+                  } else if ($rowct['ma_loai'] == 3) {
+                     echo '
                            
                                              <div class="row">
                                              
@@ -1605,14 +1605,14 @@ require_once __DIR__ . '/wit/header.php';
                                             
                                              
                                              ';
-               }
+                  }
 
 
 
 
 
 
-               echo ' 
+                  echo ' 
 
                            </div>
 
@@ -1682,10 +1682,10 @@ require_once __DIR__ . '/wit/header.php';
 
 
 
-               if ($rowct['ma_loai'] == 1) {
+                  if ($rowct['ma_loai'] == 1) {
 
 
-                  echo '
+                     echo '
                      
                          
                                        
@@ -1726,10 +1726,10 @@ require_once __DIR__ . '/wit/header.php';
                                        </div>
                                        
                                        ';
-               } else if ($rowct['ma_loai'] == 3) {
+                  } else if ($rowct['ma_loai'] == 3) {
 
 
-                  echo '
+                     echo '
                      
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
@@ -1769,14 +1769,14 @@ require_once __DIR__ . '/wit/header.php';
                                      
                                        
                                        ';
-               }
+                  }
 
 
 
 
 
 
-               echo ' 
+                  echo ' 
 
                      </div>
 
@@ -1806,10 +1806,10 @@ require_once __DIR__ . '/wit/header.php';
             </div>
 
                   ';
+               }
             }
          }
       }
-   }
       ?>
 
 
@@ -2531,7 +2531,7 @@ require_once __DIR__ . '/wit/header.php';
 
 
                <?php
-<<<<<<< HEAD
+
                if (isset($_SESSION['ma_user']) && isset($_SESSION['vai_tro'])) {
                   $game  = '';
                   foreach ($payAcc as $row) {
@@ -2551,7 +2551,22 @@ require_once __DIR__ . '/wit/header.php';
                      echo '
                   `<div class="modal-content"> <form method="POST"  accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr>
             
-                  <div id="gia_sp"><input type="hidden" id="price" name="price_sp" value="' . $row['giasp']  . '"></div> </tbody> <tbody> <tr> <input class="hidden" type="text" id="category" value="' . $row['ma_loai']  . '"> </tr>  <td>Tên game:</td> <th>' . $game   . ' </th>  </tr> <tr> <td>Giá tiền:</td> <th class="text-info" id="total">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ </th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr> <td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td> </tr> <tr> <td style="width:50%">Nick có tướng trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> <tr> <td style="width:50%">Nick có trang phục trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group "> <label class="col-md-3 form-control-label">Mã giảm giá:</label> <div class="col-md-7">  <input type="text" id="coupon_sale" class="form-control c-square c-theme coupon" name="coupon" placeholder="Mã giảm giá" value="">    <button type="button" id="btn_sale"  onclick="check_sale()"> Áp dụng</button>     <span class="help-block" id="block"> Nhập mã giảm giá nếu có để nhận ưu đãi</span> </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <button type="sumbit" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="pay">Mua</button> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
+                  <div id="gia_sp"><input type="hidden" id="price" name="price_sp" value="' . $row['giasp']  . '"></div> </tbody> <tbody> <tr> <input class="hidden" type="text" id="category" value="' . $row['ma_loai']  . '"> </tr>  <td>Tên game:</td> <th>' . $game   . ' </th>  </tr> <tr> <td>Giá tiền:</td> <th class="text-info" id="total">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ </th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr>' ?>
+
+                     <?php
+                     if ($row['ma_loai'] == 1) {
+                        echo '<td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td> </tr> ';
+                     } else    if ($row['ma_loai'] == 2) {
+                        echo '<td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr>  ';
+                     } else    if ($row['ma_loai'] == 3) {
+                        echo '<td style="width:50%">Hành tinh:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Máy chủ:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Bông tai:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Đăng ký:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td></tr>  ';
+                     }else    if ($row['ma_loai'] == 4) {
+                        echo '<td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Đăng ký:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Pét:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Thẻ vô cực:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td></tr>  ';
+                     }
+                     ?>
+
+
+               <?php echo ' </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group "> <label class="col-md-3 form-control-label">Mã giảm giá:</label> <div class="col-md-7">  <input type="text" id="coupon_sale" class="form-control c-square c-theme coupon" name="coupon" placeholder="Mã giảm giá" value="">    <button type="button" id="btn_sale"  onclick="check_sale()"> Áp dụng</button>     <span class="help-block" id="block"> Nhập mã giảm giá nếu có để nhận ưu đãi</span> </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <button type="sumbit" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="pay">Mua</button> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
                   }
                } else {
 
@@ -2573,59 +2588,25 @@ require_once __DIR__ . '/wit/header.php';
                         $game = 'Free fire';
                      }
 
-                     echo '`<div class="modal-content"> <form method="POST" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr> </tbody> <tbody> <tr>  </tr> <tr> <td>Tên game:</td> <th>' . $game   . '</th> </tr> <tr> <td>Giá tiền:</td> <th class="text-info">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ</th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr> <td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .   $row['field4'] . '</td> </tr> <tr> <td style="width:50%">Nick có tướng trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> <tr> <td style="width:50%">Nick có trang phục trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group ">  <div class="col-md-7">  </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <a href="?act=dangnhap" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="login">Đăng nhập</a> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
+                     echo '`<div class="modal-content"> <form method="POST" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr> </tbody> <tbody> <tr>  </tr> <tr> <td>Tên game:</td> <th>' . $game   . '</th> </tr> <tr> <td>Giá tiền:</td> <th class="text-info">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ</th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr>' ?>
+
+                     <?php
+                     if ($row['ma_loai'] == 1) {
+                        echo '<td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td> </tr> ';
+                     } else    if ($row['ma_loai'] == 2) {
+                        echo '<td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr>  ';
+                     } else    if ($row['ma_loai'] == 3) {
+                        echo '<td style="width:50%">Hành tinh:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Máy chủ:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Bông tai:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Đăng ký:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td></tr>  ';
+                     }else    if ($row['ma_loai'] == 4) {
+                        echo '<td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['field2'] . '</td> </tr> <tr> <td style="width: 50%">Đăng ký:</td> <td class="text-danger" style="font-weight: 700">' . $row['field1'] . '</td> </tr> <tr> <td style="width: 50%">Pét:</td> <td class="text-danger" style="font-weight: 700">' . $row['field3'] . '</td> </tr> <tr> <td style="width:50%">Thẻ vô cực:</td> <td class="text-danger" style="font-weight: 700">' .    $row['field4'] . '</td></tr>  ';
+                     }
+                     ?>
+
+
+               <?php echo ' </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group ">  <div class="col-md-7">  </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <a href="?act=dangnhap" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="login">Đăng nhập</a> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
                   }
                }
-=======
 
-                  // $game = '';
-                  // foreach ($ketqua as $row) {
-
-                  //    $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
-
-                  //    if ($row['ma_loai'] == 1) {
-
-                  //       $game = 'Liên quân';
-                  //    } else  if ($row['ma_loai'] == 2) {
-
-                  //       $game = 'Liên minh huyền thoại';
-                  //    } else  if ($row['ma_loai'] == 3) {
-
-                  //       $game = 'Ngọc rồng online';
-                  //    } else {
-
-                  //       $game = 'Free fire';
-                  //    }
-                  //    echo '
-                  // `<div class="modal-content"> <form method="POST" action="/pay/sp?id=' . $row['ma_sp'] . '&loai=' . $row['ma_loai'] . '&check=1" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr>
-
-                  // <div id="gia_sp"><input type="hidden" id="price" name="price_sp" value="' . $row['giasp']  . '"></div> </tbody> <tbody> <tr> <input class="hidden" type="text" id="category" value="' . $row['ma_loai']  . '"> </tr>  <td>Tên game:</td> <th>' . $game   . ' </th>  </tr> <tr> <td>Giá tiền:</td> <th class="text-info" id="total">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ </th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr> <td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['rank'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['tuong'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['trang_phuc'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .   $retVal . '</td> </tr> <tr> <td style="width:50%">Nick có tướng trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> <tr> <td style="width:50%">Nick có trang phục trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group "> <label class="col-md-3 form-control-label">Mã giảm giá:</label> <div class="col-md-7">  <input type="text" id="coupon_sale" class="form-control c-square c-theme coupon" name="coupon" placeholder="Mã giảm giá" value="">    <button type="button" id="btn_sale"  onclick="check_sale()"> Áp dụng</button>     <span class="help-block" id="block"> Nhập mã giảm giá nếu có để nhận ưu đãi</span> </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <button type="sumbit" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="pay">Mua</button> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
-                  // }
-
-                  // $game = '';
-                  // foreach ($ketqua as $row) {
-
-                  //    $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
-            
-                  //    if ($row['ma_loai'] == 1) {
-            
-                  //       $game = 'liên quân';
-                  //    } else  if ($row['ma_loai'] == 2) {
-            
-                  //       $game = 'liên minh huyền thoại';
-                  //    } else  if ($row['ma_loai'] == 3) {
-            
-                  //       $game = 'Ngọc rồng online';
-                  //    } else {
-            
-                  //       $game = 'Free fire';
-                  //    }
-            
-                  //    echo '`<div class="modal-content"> <form method="POST" action="" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data" data-hs-cf-bound="true"> <input name="_token" type="hidden" value="FArKiDKUx5qLkQ607AMswlQoIx7lC3kczIIBXb8t"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> <h4 class="modal-title">Xác nhận mua tài khoản</h4> </div> <div class="modal-body"> <div class="c-content-tab-4 c-opt-3" role="tabpanel"> <ul class="nav nav-justified" role="tablist"> <li role="presentation" class="active"> <a href="#payment" role="tab" data-toggle="tab" class="c-font-16">Thanh toán</a> </li> <li role="presentation"> <a href="#info" role="tab" data-toggle="tab" class="c-font-16">Tài khoản</a> </li> </ul> <div class="tab-content"> <div role="tabpanel" class="tab-pane fade in active" id="payment"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Thông tin tài khoản #' . $row['ma_sp'] . '</th> </tr> </tbody> <tbody> <tr>  </tr> <tr> <td>Tên game:</td> <th>' . $game   . '</th> </tr> <tr> <td>Giá tiền:</td> <th class="text-info">' . number_format(($row['giasp']), 0, ',', '.')  . 'đ</th> </tr> </tbody> </table> </li> </ul> </div> <div role="tabpanel" class="tab-pane fade" id="info"> <ul class="c-tab-items p-t-0 p-b-0 p-l-5 p-r-5"> <li class="c-font-dark"> <table class="table table-striped"> <tbody> <tr> <th colspan="2">Chi tiết tài khoản #' . $row['ma_sp'] . '</th> </tr> <tr> <td style="width:50%">Rank:</td> <td class="text-danger" style="font-weight: 700">' . $row['rank'] . '</td> </tr> <tr> <td style="width: 50%">Tướng:</td> <td class="text-danger" style="font-weight: 700">' . $row['tuong'] . '</td> </tr> <tr> <td style="width: 50%">Trang Phục:</td> <td class="text-danger" style="font-weight: 700">' . $row['trang_phuc'] . '</td> </tr> <tr> <td style="width:50%">Ngọc 90:</td> <td class="text-danger" style="font-weight: 700">' .   $retVal . '</td> </tr> <tr> <td style="width:50%">Nick có tướng trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> <tr> <td style="width:50%">Nick có trang phục trong đá quý:</td> <td class="text-danger" style="font-weight: 700">Có</td> </tr> </tbody> </table> </li> </ul> </div> </div> </div> <div class="form-group ">  <div class="col-md-7">  </div> </div> <div class="form-group "> <label class="col-md-12 form-control-label text-danger" style="text-align: center;margin: 10px 0; ">  </label> </div> <div style="clear: both"></div> </div> <div class="modal-footer">  <a href="?act=dangnhap" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" name="login">Đăng nhập</a> <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Đóng</button> </div>  </form> </div>`';
-                  // }
-
-                  
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
 
                ?>
 

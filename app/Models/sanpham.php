@@ -164,7 +164,7 @@ class sanpham extends database
 
             if ($_GET['Field04']  != "") {
 
-               $query .= "and field4 = '" . $_GET['Field04'] . "' ";
+               $query .= "and field4 like '%" . $_GET['Field04'] . "%' ";
             }
          } 
          

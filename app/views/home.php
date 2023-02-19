@@ -324,7 +324,7 @@ require_once __DIR__ . '/wit/header.php';
 
                            echo '<div class="col-sm-6 col-md-3" style="padding:0 15px 0 0 !important;">
                      <div class="classWithPad">
-                       pay <div class="image">
+                        <div class="image">
                            <a href="/pay/sp?id=' . $row['ma_sp'] . '">
 
                               <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
@@ -639,7 +639,7 @@ require_once __DIR__ . '/wit/header.php';
                               </div>
                               <div class="col-xs-6 ">
                                  <div class="view">
-                                    <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                    <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                                  </div>
                               </div>

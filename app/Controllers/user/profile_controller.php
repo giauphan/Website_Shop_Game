@@ -15,7 +15,6 @@ class profile_controller extends Controller
     
     public function index() {
         $thongbao = '';
-        $profile = new user();
         $tien = new user();
         $home = new Page_home();
         $napthe = new napthe();
@@ -42,7 +41,7 @@ class profile_controller extends Controller
                 }
             }
 
-            $result = $profile->get_all_user_one($_SESSION['ma_user']);
+            $result = $tien->get_all_user_one($_SESSION['ma_user']);
 
             return View::render('profile', [
                 'kq' => $kq,

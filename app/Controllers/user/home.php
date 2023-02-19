@@ -36,7 +36,11 @@ class home extends Controller
         $pro =   $home->product_new();
         $kq = $home->danhmuc();
         $tiens =     $tien->get_money();
+<<<<<<< HEAD
        
+=======
+  
+>>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
         return View::render('home', [
             'kq' => $kq,
             'pro' => $pro,

@@ -8,6 +8,8 @@ use  App\Models\user;
 use  App\Models\napthe;
 use  App\Models\muahang;
 use  App\Models\Page_home;
+use  App\Models\pay_sp;
+use  App\Models\pay;
 
 class muahang_controller extends Controller
 {
@@ -34,7 +36,23 @@ class muahang_controller extends Controller
         ]);
     }
 
-    
+    // public function donhang() {
+    //     $tien = new user();
+    //     $home = new Page_home();
+    //     $napthe = new napthe();
+    //     $kq = $home->danhmuc();
+    //     $tiens = $tien->get_money();
+    //     $napthe->pay_the();
+        
+        
+
+    //     return View::render('chitietsanpham', [
+    //         'kq' => $kq,
+    //         'tien' => $tiens,
+    //         'ketqua' =>  $ketqua,
+    //         'thongbao' => ''
+    //     ]);
+    // }
 
     
 

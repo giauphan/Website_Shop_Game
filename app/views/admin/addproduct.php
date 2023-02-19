@@ -396,10 +396,10 @@ require_once __DIR__ . '/wit/header.php';
                         myDiv.innerHTML = ` <div class="col1">
                <div class="tensp">
                    <div class="text_name">
-                       <label for="server">Máy chủ <span>*</span></label>
+                       <label for="field1">Máy chủ <span>*</span></label>
                    </div>
                    <div class="inp">
-                       <select name="truong" id="server" style=" width: 100%;" required>
+                       <select name="tuong" id="field1" style=" width: 100%;" required>
                        <option >Chọn Máy chủ</option>
                        <option value="1">1 Sao</option>
                     <option value="2">2 Sao</option>
@@ -424,10 +424,10 @@ require_once __DIR__ . '/wit/header.php';
            <div class="col1">
                <div class="tensp">
                    <div class="text_name">
-                       <label for="rank">Hành tinh <span>*</span></label>
+                       <label for="field2">Hành tinh <span>*</span></label>
                    </div>
                    <div class="inp">
-                       <select name="rank" id="rank" style="    width: 100%;" required>
+                       <select name="rank" id="field2" style="    width: 100%;" required>
                        <option >Chọn Hành tinh</option>
                            <option value="Xayda">Xayda</option>
                            <option value="Namếc">Namếc</option>
@@ -482,7 +482,7 @@ require_once __DIR__ . '/wit/header.php';
                             <label for="tuong">Loại đăng ký <span>*</span></label>
                         </div>
                         <div class="inp">
-                        <select style="  height: auto;  width: 100%;" name="ngoc" id="field4" required>
+                        <select style="  height: auto;  width: 100%;" name="tuong" id="field4" required>
                        <option >Chọn Loại đăng ký</option>
                            <option value="Facebook">Facebook</option>
                            <option value="Gmail">Gmail</option>
@@ -519,7 +519,7 @@ require_once __DIR__ . '/wit/header.php';
                             <label for="field3">Pet <span>*</span></label>
                         </div>
                         <div class="inp">
-                        <select style="  height: auto;  width: 100%;" name="ngoc" id="field4" required>
+                        <select style="  height: auto;  width: 100%;" name="trang_phuc" id="field4" required>
                        <option >Chọn Pet</option>
                            <option value="có">có</option>
                            <option value="không">không</option>

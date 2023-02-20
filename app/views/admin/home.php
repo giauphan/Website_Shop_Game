@@ -223,37 +223,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         </select>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                    <div class="input-group c-square">
-                        <span class="input-group-addon">Rank</span>
-                        <select name="rank_seach" class="form-control c-square" title="-- Không chọn --">
-                            <option value="">-- Rank --</option>
-                            <option value="dong">Đồng</option>
-                            <option value="bac">Bạc</option>
-                            <option value="vang">Vàng</option>
-                            <option value="Bach Kim">Bạch Kim</option>
-                            <option value="Kim cuong">Kim Cương</option>
-                            <option value="Tinh Anh">Tinh Anh</option>
-                            <option value="Cao Thu">Cao Thủ</option>
-                            <option value="thach Dau">Thách Đấu</option>
-
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                    <div class="input-group c-square">
-                        <span class="input-group-addon">Ngọc 90</span>
-                        <select name="ngoc_seach" class="form-control c-square" title="-- Không chọn --">
-                            <option value="">-- Ngọc --</option>
-                            <option value="1">Không</option>
-                            <option value="0">Có</option>
-                        </select>
-                    </div>
-                </div>
-
-
-                <div class="col-md-3 col-sm-4 p-5 no-radius">
+                </div><div class="col-md-3 col-sm-4 p-5 no-radius">
                     <button type="submit" name='submit' class="btn c-square c-theme c-btn-green">Tìm kiếm</button>
 
                 </div>
@@ -318,33 +288,8 @@ require_once __DIR__ . '/wit/header.php';
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                            <div class="input-group c-square">
-                                <span class="input-group-addon">Rank</span>
-                                <select name="rank_seach" class="form-control c-square" title="-- Không chọn --">
-                                    <option value="">-- Rank --</option>
-                                    <option value="dong">Đồng</option>
-                                    <option value="bac">Bạc</option>
-                                    <option value="vang">Vàng</option>
-                                    <option value="Bach Kim">Bạch Kim</option>
-                                    <option value="Kim cuong">Kim Cương</option>
-                                    <option value="Tinh Anh">Tinh Anh</option>
-                                    <option value="Cao Thu">Cao Thủ</option>
-                                    <option value="thach Dau">Thách Đấu</option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                            <div class="input-group c-square">
-                                <span class="input-group-addon">Ngọc 90</span>
-                                <select name="ngoc_seach" class="form-control c-square" title="-- Không chọn --">
-                                    <option value="">-- Ngọc --</option>
-                                    <option value="1">Không</option>
-                                    <option value="0">Có</option>
-                                </select>
-                            </div>
-                        </div>
+                       
+                       
 
 
                         <div class="col-md-3 col-sm-4 p-5 no-radius">

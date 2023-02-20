@@ -1335,3 +1335,53 @@ a.categry_tile_link {
 /* .c-layout-header.c-layout-header-4 .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon,
 .c-layout-header.c-layout-header-4 .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-link {
   color: #69727c!important; } */
+  .navbar-wrapper {
+	width: 100%;
+	display: flex;
+  }
+  
+  @media (max-width: 980px) {
+	.navbar-wrapper {
+	  display: block !important;
+	}
+  }
+  
+  .brand {
+	display: flex;
+  }
+  
+  .logo {
+	margin-top: -10px;
+	display: inline-block;
+  }
+  
+  .hor-nav-toggler,
+  .topbar-toggler,
+  .search-toggler {
+	background: none;
+	border: none;
+	color: #69727c;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 10px;
+  }
+  
+  .hor-nav-toggler:hover,
+  .topbar-toggler:hover,
+  .search-toggler:hover {
+	color: #000;
+  }
+  
+  .line {
+	background-color: #69727c;
+	display: block;
+	height: 2px;
+	margin-bottom: 3px;
+	width: 25px;
+  }
+  
+  .mega-menu {
+	width: 100%;
+  }
+  
+ 

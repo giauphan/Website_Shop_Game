@@ -31,15 +31,15 @@ class homeModels extends database
                 $query .= "and giasp >= '" . $_GET['moneymin']  . "' ";
             }
 
-            if ($_GET['Field01']  != "") {
+            // if ($_GET['Field01']  != "") {
 
-                $query .= "and rank like '%" . $_GET['Field01']  . "%' ";
-            }
+            //     $query .= "and rank like '%" . $_GET['Field01']  . "%' ";
+            // }
 
-            if ($_GET['Field02']  != "") {
+            // if ($_GET['Field02']  != "") {
 
-                $query .= "and ngoc = '" . $_GET['Field02'] . "' ";
-            }
+            //     $query .= "and ngoc = '" . $_GET['Field02'] . "' ";
+            // }
             $query .= ' ORDER BY sp.ma_loai ASC';
             $sql = $this->pdo_query($query);
         } else {

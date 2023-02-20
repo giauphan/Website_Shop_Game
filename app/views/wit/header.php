@@ -616,6 +616,11 @@
       }
 
       @media only screen and (max-width: 768px) {
+         .c-navbar-wrapper .clearfix {
+            width: 100%;
+            display: block !important;
+         }
+
          .item_video {
             position: relative;
             display: flex;
@@ -847,6 +852,19 @@
                         <img height="35px" src="/assets/img/logo_TKG.png" alt="" class="c-mobile-logo">
                      </a>
                   </div>
+                  <style>
+                     .c-navbar-wrapper {
+                        width: 100%;
+                        display: flex;
+                     }
+
+                     @media  (max-width: 980px) {
+                        .c-navbar-wrapper {
+                           width: 100%;
+                           display: block !important;
+                        }
+                     }
+                  </style>
                   <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
                      <span class="c-line"></span>
                      <span class="c-line"></span>
@@ -865,10 +883,10 @@
                </div>
                <!-- END: BRAND -->
                <!-- BEGIN: QUICK SEARCH -->
-               <form class="c-quick-search" action="#">
+               <!-- <form class="c-quick-search" action="#">
                   <input type="text" name="query" placeholder="Tìm kiếm..." value="" class="form-control" autocomplete="off">
                   <span class="c-theme-link">&times;</span>
-               </form>
+               </form> -->
                <!-- END: QUICK SEARCH -->
                <!-- BEGIN: HOR NAV -->
                <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
@@ -895,16 +913,13 @@
                      }
                   } */
                </style>
-               <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold d-none hidden-xs hidden-sm">
-                  
-                  <ul class="nav navbar-nav c-theme-nav">
+               <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold d-none hidden-xs hidden-sm" style="width: 100%;">
+
+                  <ul class="nav navbar-nav c-theme-nav" style="width: 100%;">
                      <li class="c-menu-type-classic"><a rel="" href=" /?act=home" class="c-link dropdown-toggle ">Trang chủ</a></li>
                      <li class="c-menu-type-classic"><a rel="" href="" class="c-link dropdown-toggle ">Danh mục game</a>
-
                         <ul id="children-of-41" class="dropdown-menu c-menu-type-classic c-pull-left ">
                            <?php
-
-
                            foreach ($kq as $row) {
                               echo '  <li class="c-menu-type-classic">    <a href="/sanpham?danhmuc=' . $row['ma_loai'] . '" title="Danh Mục Game ' . $row['ten_loai'] . '" class="">' . $row['ten_loai'] . '</a></li>';
                            }
@@ -936,8 +951,10 @@
                         if ($_SESSION['vai_tro'] == 'admin') {
 
                      ?>
-                           <li>
-                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                           <li style="float: right;">
+
+                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold" style="    margin-right: 0px!important;
+">
                                  <i class="icon-user"></i>
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
@@ -965,8 +982,9 @@
                         } else  if ($_SESSION['vai_tro'] == 'ctv') {
 
                         ?>
-                           <li>
-                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                           <li style="float: right;">
+                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold" style="margin-right: 0px!important;
+">
                                  <i class="icon-user"></i>
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
@@ -991,7 +1009,8 @@
                         } else if (isset($_SESSION['ma_user'])) {
                         ?>
                            <li>
-                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold">
+                              <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold" style="margin-right: 0px!important;
+">
                                  <i class="icon-user"></i>
                                  <?php
                                  if (isset($_SESSION["username_show"])) {
@@ -1030,7 +1049,7 @@
                   </ul>
                </nav>
                <nav class="menu-main-mobile c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold hidden-md hidden-lg">
-                  
+
                   <ul class="nav navbar-nav c-theme-nav">
                      <li class="c-menu-type-classic"><a rel="" href=" /" class="c-link dropdown-toggle ">Trang chủ</a></li>
                      <li class="c-menu-type-classic"><a rel="" href="" class="c-link dropdown-toggle ">Dịch vụ game</a></li>

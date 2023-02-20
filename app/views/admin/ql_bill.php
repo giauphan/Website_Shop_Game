@@ -166,7 +166,7 @@ require_once __DIR__ . '/wit/header.php';
                     <th width="auto"><b>Mã sản phẩm:</b></th>
                     <th width="auto"><b>Tên game:</b></th>
                     <th width="auto"><b>Giá sản phẩm</b></th>
-                    <th width="auto"><b>Trạng thái sản phẩm </b></th>
+                  
                     <th width="auto"><b>Người mua </b></th>
                     <th width="auto"><b>Thời gian </b></th>
                     <th width="5px; !important">Tính Năng</th>
@@ -181,13 +181,13 @@ require_once __DIR__ . '/wit/header.php';
                 if (isset($bill) && sizeof($bill) > 0) {
                     foreach ($bill as $row) {
                         if ($row['trang_thai_sp'] >= 1) {
-                            $trang_thai = ($row['trang_thai_sp'] == 1) ?  'đã bán' : '';
+                          
                             echo '        
                                   <tr>
                                       <td><a href="/duan/?act=acc&id=' . $row['ma_sp'] . '">' . $row['ma_sp'] . '</a></td>
                                       <td>' . $row['ten_loai'] . '</td>
                                       <td>' . $row['giasp'] . '</td>
-                                      <td>' . $trang_thai . '</td>
+                                      
                                       <td>' . $row['ten_hien_thi'] . '</td>
                                       <td>' . $row['ngay_nhap_dh'] . '</td>
                                      
@@ -199,7 +199,6 @@ require_once __DIR__ . '/wit/header.php';
                     echo '        
                             <tr>
                               <th>không có đơn hàng</th>
-              
                             </tr>
                         ';
                 }

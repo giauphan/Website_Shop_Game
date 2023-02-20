@@ -2,11 +2,10 @@
 
 namespace App\Controllers\user;
 
-use App\Controllers\Controller;
-use App\Models\Page_home;
-use Core\View;
-use  App\Models\user;
+use  App\Controllers\Controller;
 use  App\Models\Page_home;
+use  Core\View;
+use  App\Models\user;
 use  App\Models\phpmailer;
 
 class login extends Controller
@@ -16,10 +15,7 @@ class login extends Controller
     {
         $tien = new user();
         $home = new Page_home();
-<<<<<<< HEAD
-=======
         $kq = $home->danhmuc();
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
         $thongbao = "";
         if (isset($_POST['dangnhap'])) {
             $user = $_POST['username'];
@@ -73,11 +69,7 @@ class login extends Controller
         $kq = $home->danhmuc();
         return View::render('dangnhap', [
             'kq' => $kq,
-<<<<<<< HEAD
             'tien' => $tien,
-=======
-            'tien' => $tiens,
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
             'thongbao' => $thongbao
         ]);
     }
@@ -85,10 +77,7 @@ class login extends Controller
     {
         $sign = new user();
         $home = new Page_home();
-<<<<<<< HEAD
-=======
         $kq = $home->danhmuc();
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
         $thongbao = "";
         if (isset($_POST['dangky'])) {
             $username_show = $_POST['username_show'];
@@ -134,11 +123,7 @@ class login extends Controller
         $tien =     $sign->get_money();
         return View::render('dangky', [
             'kq' => $kq,
-<<<<<<< HEAD
             'tien' => $tien,
-=======
-            'tien' => $tiens,
->>>>>>> f1e795ad04aa1a0427a0d91a7438b66be2188841
             'thongbao' => $thongbao
         ]);
     }

@@ -996,7 +996,7 @@
                                  ?>
                               </a>
                               <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thôn tin tài khoản</a></li>
+                                 <li class="c-menu-type-classic"><a rel="" href=" /profile" class="">thông tin tài khoản</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /ql-san-pham" class="">Quản lý sản phẩm</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /ql-code-sale" class="">Quản lý mã giảm giá</a></li>
                                  <li class="c-menu-type-classic"><a rel="" href=" /ql-bill" class="">Quản lý đơn hàng</a></li>

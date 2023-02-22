@@ -938,7 +938,7 @@
                      <li class="c-menu-type-classic">
                         <a rel="" href="#" class="c-link dropdown-toggle ">Tin tức<span class="c-arrow c-toggler"></span></a>
                         <ul id="children-of-42" class="dropdown-menu c-menu-type-classic c-pull-left ">
-                           <li class="c-menu-type-classic"><a rel="" href="/blog" class="">Blog</a></li>
+                           <li class="c-menu-type-classic"><a rel="" href="/tin-tuc" class="">Blog</a></li>
                            <li class="c-menu-type-classic"><a rel="" href="/uy-tin-cua-shop" class="">UY T&Iacute;N CỦA SHOP</a></li>
                            <li class="c-menu-type-classic"><a rel="" href="/danh-sach-gdv-group" class="">Danh S&aacute;ch GDV group</a></li>
                            <li class="c-menu-type-classic"><a rel="" href="/dich-vu-game" class="">Dịch Vụ Game</a></li>
@@ -982,6 +982,10 @@
                         } else  if ($_SESSION['vai_tro'] == 'ctv') {
 
                         ?>
+                        <li class="c-menu-type-classic">
+                        <a rel="" href="/ql-san-pham" class="c-link dropdown-toggle ">Vào khu vực CTV<span class="c-arrow c-toggler"></span></a>
+                        
+                     </li>
                            <li style="float: right;">
                               <a href="" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-dark c-btn-circle c-btn-uppercase c-btn-sbold" style="margin-right: 0px!important;
 ">

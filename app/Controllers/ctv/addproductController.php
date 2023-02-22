@@ -17,7 +17,7 @@ class addproductController extends Controller
         $add = new add_product();
         $danhmuc = new Page_home();
         $count = count($_POST);
-        $check_add = 0;
+        $check = false;
         if (isset($_POST['submit'])) {
             date_default_timezone_set("Asia/Ho_Chi_Minh");
             $mydate = getdate(date("U"));
@@ -44,7 +44,7 @@ class addproductController extends Controller
             }
 
             if ($check == true) {
-                $check_add =   $add->add_product($hinh, $giasp, $field2, $field1, $field3, $field4, $giam_gia, $mo_ta, $tai_khoan_game, $password_game, $today, $danh_muc, $hinh_ct);
+              $add->add_product($hinh, $giasp, $field2, $field1, $field3, $field4, $giam_gia, $mo_ta, $tai_khoan_game, $password_game, $today, $danh_muc, $hinh_ct);
             } else {
                 header("location:?check=0");
             }

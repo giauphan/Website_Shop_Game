@@ -60,8 +60,8 @@ class add_product extends database
         if ($_SESSION['vai_tro'] == 'ctv' || $_SESSION['vai_tro'] == 'admin') {
             $sql_submit_acc = " INSERT INTO `sp`(  `hinh`, `hinh_ct_1`, `giasp`, `field2`, `field1`, `field3`, `field4`,  `giam_gia`,`ngay_nhap`,`tai_khoan_game`, `password_game`,mo_ta, `ma_loai`, `ma_user`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-            $add_ac =    $this->pdo_execute($sql_submit_acc, $hinh, $hinh_ct, $giasp, $rank, $tuong, $trang_phuc, $ngoc, $giam_gia, $today, $tai_khoan_game, $password_game, $mo_ta, $danh_muc, $_SESSION['ma_user']);
-            return $add_ac;
+           $this->pdo_execute($sql_submit_acc, $hinh, $hinh_ct, $giasp, $rank, $tuong, $trang_phuc, $ngoc, $giam_gia, $today, $tai_khoan_game, $password_game, $mo_ta, $danh_muc, $_SESSION['ma_user']);
+        
         }
     }
 }

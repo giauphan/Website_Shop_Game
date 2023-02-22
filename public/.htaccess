@@ -4,4 +4,8 @@
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ index.php/$1 [L]
+	
+	RewriteCond %{QUERY_STRING} (^|&)id=145($|&)
+	RewriteRule ^pay/sp$ /pay/san-phan-game-vip? [R=301,L]
+
 </IfModule>

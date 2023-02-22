@@ -236,8 +236,9 @@ label.control-label {
 .btn.c-btn-border-1x {
   border-width: 1px; }
 
-.btn + .btn {
-  margin-left: 10px; }
+/* .btn + .btn {
+  margin-left: 10px; 
+} */
 
 .btn.c-btn-icon {
   min-height: 56px;

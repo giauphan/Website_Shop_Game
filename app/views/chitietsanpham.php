@@ -2,9 +2,24 @@
 require_once __DIR__ . '/wit/header.php';
 ?>
 
+
 <!-- END: LAYOUT/HEADERS/HEADER-1 -->
 
 <!-- BEGIN: PAGE CONTAINER -->
+
+<style>
+   .price-money>p {
+      font-size: 25px;
+      color: dodgerblue;
+      margin-top: 0;
+   }
+   .col-md-6 {
+      padding: 0 !important;
+   }
+
+
+</style>
+
 
 <div class="c-layout-page">
 
@@ -50,8 +65,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="c-product-header">
 
-                        
-
+                     
                            <div class="c-content-title-1">
 
                               <h3 class="c-font-uppercase c-font-bold">#' . $rowctsp['ma_sp'] . '</h3>
@@ -59,8 +73,14 @@ require_once __DIR__ . '/wit/header.php';
                               <span class="c-font-red c-font-bold">' . $rowctsp['ten_loai'] . '</span>
 
                            </div>
+                           </div>
+                           <div class="c-product-header">
+                              <div class="c-content-title-1">
+                                 <h3 class="c-font-uppercase c-font-bold price-money"><p>' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VNĐ</p></h3>
+                              </div>
+                           </div>
 
-                        </div>
+                        
 
                         
 
@@ -70,7 +90,7 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="text-center m-t-20">
 
-                           <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
+                           <img src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
 
                         </div>
 
@@ -280,13 +300,10 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="c-product-price c-theme-font" style="float: none;text-align: center">
 
+
                            <div class="position0">
-
-               ' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VÍ
-
+                              <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
                            </div>
-
-                        
 
                            </div>
 
@@ -300,21 +317,38 @@ require_once __DIR__ . '/wit/header.php';
 
             
 
-                     <div class="col-md-4 text-right">
+                     <div class="">
 
                      <div class="c-product-header">
 
-                        <div class="c-content-title-1">
+                        <div class="c-content-title-1 d-flex justify-content-between">
 
-                           <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal" rel="/pay/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
+                           <div class="row d-flex justify-content-between">
 
-                          
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal w-100" style="width: 100%;" rel="/pay/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
+                              </div>
+                              
+                              
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg btn-danger c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal " style="width: 100%; margin-left: 10px;" rel="/hire-purchase/518323">Trả góp</button>
+                              </div>
+                              
+                           </div>
+                           
 
-                           <button type="button" class="btn c-btn btn-lg btn-danger c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal" rel="/hire-purchase/518323">Trả góp</button>
+                           
+                           <div class="row d-flex justify-content-between">
+                              <div class="col-md-6 ">
+                                 <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" style="width: 100%;" href="/recharge">ATM - Ví điện tử</a>
+                              </div>
+                              <div class="col-md-6 ">
+                                 <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20 w-100" style="width: 100%; margin-left: 10px;" href="/napthe">Nạp thẻ cào</a>
+                              </div>                          
+                           </div>
+                           
 
-                           <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/recharge">ATM - Ví điện tử</a>
-
-                           <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/napthe">Nạp thẻ cào</a>
+                           
 
                         </div>
 
@@ -614,8 +648,15 @@ require_once __DIR__ . '/wit/header.php';
                               <span class="c-font-red c-font-bold">' . $rowctsp['ten_loai'] . '</span>
 
                            </div>
-
-                        </div>
+                     </div>
+                           <div class="c-product-header">
+                              <div class="c-content-title-1">
+                                 <h3 class="c-font-uppercase c-font-bold price-money"><p>' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VNĐ</p></h3>
+                              </div>
+                           </div>
+                        
+                              
+                        
 
                         
 
@@ -652,19 +693,19 @@ require_once __DIR__ . '/wit/header.php';
                                                       
                                                          <div class="col-sm-4 col-xs-6 c-product-variant">
                                                       
-                                                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['rank'] . '</span></p>
+                                                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
                                                       
                                                          </div>
                                                       
                                                          <div class="col-sm-4 col-xs-6 c-product-variant">
                                                       
-                                                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['tuong'] . '</span></p>
+                                                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['field1'] . '</span></p>
                                                       
                                                          </div>
                                                       
                                                          <div class="col-sm-4 col-xs-6 c-product-variant">
                                                       
-                                                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['trang_phuc'] . '</span></p>
+                                                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['field3'] . '</span></p>
                                                       
                                                          </div>
                                                       
@@ -730,10 +771,6 @@ require_once __DIR__ . '/wit/header.php';
 
                      echo '  </div>
 
-                        
-
-
-
                            <div class="c-content-divider">
 
                               <i class="icon-dot"></i>
@@ -750,13 +787,10 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="c-product-price c-theme-font" style="float: none;text-align: center">
 
+
                            <div class="position0">
-
-               ' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VÍ
-
+                           <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
                            </div>
-
-                        
 
                            </div>
 
@@ -766,34 +800,50 @@ require_once __DIR__ . '/wit/header.php';
 
                         </div>
 
-                  
-
             
 
-                     <div class="col-md-4 text-right">
+                     <div class="">
 
-                     
+                     <div class="c-product-header">
 
-                  </div>
+                        <div class="c-content-title-1 d-flex justify-content-between">
+                           <div class="row d-flex justify-content-between">
+
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal w-100" style="width: 100%;" rel="/pay/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
+                              </div>
+                              
+                              
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg btn-danger c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal " style="width: 100%; margin-left: 10px;" rel="/hire-purchase/518323">Trả góp</button>
+                              </div>
+                              
+                           </div>
+                           
+
+                           
+                           <div class="row d-flex justify-content-between">
+                              <div class="col-md-6 ">
+                                 <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" style="width: 100%;" href="/recharge">ATM - Ví điện tử</a>
+                              </div>
+                              <div class="col-md-6 ">
+                                 <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20 w-100" style="width: 100%; margin-left: 10px;" href="/napthe">Nạp thẻ cào</a>
+                              </div>                          
+                           </div>
+                           
+
+                           
+
+                        </div>
+                        <div class="c-product-meta visible-md visible-lg">
+
+               <div class="c-content-divider">
+
+                  <i class="icon-dot"></i>
+
+                  
 
                </div>
-
-            
-
-                  
-
-                  <div class="c-product-meta visible-md visible-lg">
-
-                     <div class="c-content-divider">
-
-                        <i class="icon-dot"></i>
-
-                        
-
-                     </div>
-
-                     
-
                      <div class="row">';
 
 
@@ -807,19 +857,19 @@ require_once __DIR__ . '/wit/header.php';
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['rank'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowctsp['field2'] . '</span></p>
                                                 
                                                    </div>
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['tuong'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowctsp['field1'] . '</span></p>
                                                 
                                                    </div>
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['trang_phuc'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowctsp['field3'] . '</span></p>
                                                 
                                                    </div>
                                                 
@@ -1056,8 +1106,13 @@ require_once __DIR__ . '/wit/header.php';
                         <span class="c-font-red c-font-bold">' . $rowct['ten_loai'] . '</span>
 
                      </div>
-
-                  </div>
+                     </div>
+                     <div class="c-product-header">
+                              <div class="c-content-title-1">
+                                 <h3 class="c-font-uppercase c-font-bold price-money"><p>' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VNĐ</p></h3>
+                              </div>
+                           </div>
+                  
 
                   
 
@@ -1094,19 +1149,19 @@ require_once __DIR__ . '/wit/header.php';
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['rank'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
                                                 
                                                    </div>
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['tuong'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
                                                 
                                                    </div>
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['trang_phuc'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
                                                 
                                                    </div>
                                                 
@@ -1135,19 +1190,19 @@ require_once __DIR__ . '/wit/header.php';
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['rank'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
                                                 
                                                    </div>
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['tuong'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
                                                 
                                                    </div>
                                                 
                                                    <div class="col-sm-4 col-xs-6 c-product-variant">
                                                 
-                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['trang_phuc'] . '</span></p>
+                                                      <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
                                                 
                                                    </div>
                                      
@@ -1265,55 +1320,54 @@ require_once __DIR__ . '/wit/header.php';
 
                <div class="c-product-meta">
 
-                  <div class="c-product-price c-theme-font" style="float: none;text-align: center">
-
-                     <div class="position0">
+                        <div class="c-product-price c-theme-font" style="float: none;text-align: center">
 
 
+                           <div class="position0">
+                           <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
+                           </div>
 
-                     </div>
+                           </div>
 
-                       ' . number_format(($rowct['giasp']), 0, ',', '.') . ' VÍ
+                        </div>
 
-                     </div>
+                        <div style="display: none">
 
-                  </div>
-
-                  <div style="display: none">
-
-                  </div>
-
-             
-
-       
-
-               <div class="col-md-4 text-right">
-
-               <div class="c-product-header">
-
-                  <div class="c-content-title-1">
-
-                     <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal" rel="/">Mua ngay</button>
-
-                   
-
-                     <button type="button" class="btn c-btn btn-lg btn-danger c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal" rel="/hire-purchase/518323">Trả góp</button>
-
-                     <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/recharge">ATM - Ví điện tử</a>
-
-                     <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" href="/nap-the">Nạp thẻ cào</a>
-
-                  </div>
-
-               </div>
-
-            </div>
-
-           </div>
-
-        
+                        </div>
 
             
+
+                     <div class="">
+
+                     <div class="c-product-header">
+
+                        <div class="c-content-title-1 d-flex justify-content-between">
+
+                           <div class="row d-flex justify-content-between">
+
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal w-100" style="width: 100%;" rel="/pay/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
+                              </div>
+                              
+                              
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg btn-danger c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal " style="width: 100%; margin-left: 10px;" rel="/hire-purchase/518323">Trả góp</button>
+                              </div>
+                              
+                           </div>
+                           
+
+                           
+                           <div class="row d-flex justify-content-between">
+                              <div class="col-md-6 ">
+                                 <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" style="width: 100%;" href="/recharge">ATM - Ví điện tử</a>
+                              </div>
+                              <div class="col-md-6 ">
+                                 <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20 w-100" style="width: 100%; margin-left: 10px;" href="/napthe">Nạp thẻ cào</a>
+                              </div>                          
+                           </div>
+                           <!-- Day bi loi -->
+                        </div>
 
             <div class="c-product-meta visible-md visible-lg">
 
@@ -1322,10 +1376,7 @@ require_once __DIR__ . '/wit/header.php';
                   <i class="icon-dot"></i>
 
                   
-
                </div>
-
-               
 
                <div class="row">';
 
@@ -1374,6 +1425,38 @@ require_once __DIR__ . '/wit/header.php';
                            <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
 
                         </div>';
+                  } else if ($rowct['ma_loai'] == 2) {
+
+
+                     echo '
+                        
+                                         
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
+                                          
+                                             </div>
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
+                                          
+                                             </div>
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
+                                          
+                                             </div>             
+                                                                       
+                                          
+                                          
+                           <div class="col-sm-4 col-xs-6 c-product-variant">
+
+                           <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
+
+                        </div>';
                   } else if ($rowct['ma_loai'] == 3) {
 
                      $retVal = ($rowct['field3']  == 0) ?  "Có" : "Không";
@@ -1415,11 +1498,54 @@ require_once __DIR__ . '/wit/header.php';
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
 
-                                          <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
 
-                                       </div>
+                                          </div>
                                           
                                           ';
+                  } else if ($rowct['ma_loai'] == 4) {
+
+
+                     echo '
+                        
+                                         
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
+                                          
+                                             </div>
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
+                                          
+                                             </div>
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
+                                          
+                                             </div>
+                                          
+                                             <div class="col-sm-4 col-xs-6 c-product-variant">
+                                          
+                                                <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Ngọc 90: <span class="c-font-red">' . $retVal . '</span></p>
+                                          
+                                             </div>
+                                          
+                                          
+                                          
+                                          
+                                          
+                                           
+                                          
+                                          
+                           <div class="col-sm-4 col-xs-6 c-product-variant">
+
+                           <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Nổi bật: <span class="c-font-red">' . $rowct['mo_ta'] . '.</span></p>
+
+                        </div>';
                   }
 
                   echo '  </div>
@@ -1492,6 +1618,12 @@ require_once __DIR__ . '/wit/header.php';
                            </div>
 
                         </div>
+                           <div class="c-product-header">
+                              <div class="c-content-title-1">
+                                 <h3 class="c-font-uppercase c-font-bold"><p>' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VNĐ</p></h3>
+                              </div>
+                           </div>
+                        
 
                         
 
@@ -1528,19 +1660,19 @@ require_once __DIR__ . '/wit/header.php';
                                              
                                                 <div class="col-sm-4 col-xs-6 c-product-variant">
                                              
-                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['rank'] . '</span></p>
+                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
                                              
                                                 </div>
                                              
                                                 <div class="col-sm-4 col-xs-6 c-product-variant">
                                              
-                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['tuong'] . '</span></p>
+                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
                                              
                                                 </div>
                                              
                                                 <div class="col-sm-4 col-xs-6 c-product-variant">
                                              
-                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['trang_phuc'] . '</span></p>
+                                                   <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
                                              
                                                 </div>
                                              
@@ -1636,13 +1768,10 @@ require_once __DIR__ . '/wit/header.php';
 
                         <div class="c-product-price c-theme-font" style="float: none;text-align: center">
 
+
                            <div class="position0">
-
-      
-
+                           <img class="img-responsive img-thumbnail" src="/assets/upload/' . $rowctsp['hinh'] . '" alt="png-image">
                            </div>
-
-                             ' . number_format(($rowct['giasp']), 0, ',', '.') . ' VÍ
 
                            </div>
 
@@ -1652,29 +1781,46 @@ require_once __DIR__ . '/wit/header.php';
 
                         </div>
 
-                   
-
-             
-
-                   
-
-                  </div>
-
-                 </div>
-
-              
-
                   
 
-                  <div class="c-product-meta visible-md visible-lg">
+            
 
-                     <div class="c-content-divider">
+                     <div class="">
 
-                        <i class="icon-dot"></i>
+                     <div class="c-product-header">
 
-                        
+                        <div class="c-content-title-1 d-flex justify-content-between">
+                           <div class="price-money">
+                              <p>' . number_format($rowctsp['giasp'], 0, ',', '.') . ' VNĐ</p>
+                           </div>
+                           <div class="row d-flex justify-content-between">
 
-                     </div>
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg c-theme-btn c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal w-100" style="width: 100%;" rel="/pay/acc/' . $rowctsp['ma_sp'] . '">Mua ngay</button>
+                              </div>
+                              
+                              
+                              <div class="col-md-6 ">
+                                 <button type="button" class="btn c-btn btn-lg btn-danger c-font-uppercase c-font-bold c-btn-square m-t-20 load-modal " style="width: 100%; margin-left: 10px;" rel="/hire-purchase/518323">Trả góp</button>
+                              </div>
+                              
+                           </div>
+                           
+
+                           
+                           <div class="row d-flex justify-content-between">
+                              <div class="col-md-6 ">
+                                 <a type="button" class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20" style="width: 100%;" href="/recharge">ATM - Ví điện tử</a>
+                              </div>
+                              <div class="col-md-6 ">
+                                 <a class="btn c-btn btn-lg c-bg-green-4 c-font-white c-font-uppercase c-font-bold c-btn-square m-t-20 w-100" style="width: 100%; margin-left: 10px;" href="/napthe">Nạp thẻ cào</a>
+                              </div>                          
+                           </div>
+                           
+
+                           
+
+                        </div>
 
                      
 
@@ -1691,19 +1837,19 @@ require_once __DIR__ . '/wit/header.php';
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['rank'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Rank: <span class="c-font-red">' . $rowct['field2'] . '</span></p>
                                        
                                           </div>
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['tuong'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Tướng: <span class="c-font-red">' . $rowct['field1'] . '</span></p>
                                        
                                           </div>
                                        
                                           <div class="col-sm-4 col-xs-6 c-product-variant">
                                        
-                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['trang_phuc'] . '</span></p>
+                                             <p class="c-product-meta-label c-product-margin-1 c-font-uppercase c-font-bold">Trang Phục: <span class="c-font-red">' . $rowct['field3'] . '</span></p>
                                        
                                           </div>
                                        
@@ -1811,11 +1957,11 @@ require_once __DIR__ . '/wit/header.php';
          }
       }
       ?>
-
-
-
-
-
+<!--       
+<textarea name="editor1"></textarea>
+<script>
+      CKEDITOR.replace( 'editor1' );
+</script> -->
 
 
 
@@ -1865,7 +2011,7 @@ require_once __DIR__ . '/wit/header.php';
 
                      <div class="image">
 
-                        <a href="/pay/sp&id=' . $row['ma_sp'] . '">
+                        <a href="/pay/sp?id=' . $row['ma_sp'] . '">
 
                            <img src="/assets/upload/' . $row['hinh'] . '" alt="png-image">
 
@@ -2007,7 +2153,7 @@ require_once __DIR__ . '/wit/header.php';
 
                               <div class="view">
 
-                                 <a href="?act=acc&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                                 <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
 
                               </div>
 
@@ -2204,7 +2350,7 @@ require_once __DIR__ . '/wit/header.php';
       
                            <div class="view">
       
-                              <a href="/pay/sp&id=' . $row['ma_sp'] . '">Chi tiết</a>
+                              <a href="/pay/sp?id=' . $row['ma_sp'] . '">Chi tiết</a>
       
                            </div>
       
@@ -2572,7 +2718,7 @@ require_once __DIR__ . '/wit/header.php';
 
                   foreach ($payAccLogin as $row) {
 
-                     $retVal = ($row['ngoc'] == 0) ?  "có" : "không";
+                     $retVal = ($row['field4'] == 0) ?  "có" : "không";
 
                      if ($row['ma_loai'] == 1) {
 

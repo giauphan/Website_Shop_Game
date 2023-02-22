@@ -20,14 +20,16 @@ class home extends Controller
         if (!isset($_SESSION['luottruycap'])) $_SESSION['luottruycap'] = 1;
         else $_SESSION['luottruycap'] += 1;
         if ($_SESSION['luottruycap'] == 1) {
-            $thongbao = "Swal.fire({
+            $thongbao = "<script>
+            Swal.fire({
            title: '<h1>THÔNG BÁO</h1>',
            html: '<h2><b>Nhân Dịp Black Friday <a href=` /`><b style=`color:#5E70B3;`>TAIKHOANGAME</b></a>  Sale 50% </b></h2>',
            imageUrl: ' /Controller/img/banner_sale.jpg',
            imageWidth: 800,
            imageHeight: 300,
            imageAlt: 'Custom image',
-         });";
+         });
+         </script>";
         }
         
         $sl_loai = $home->sl_loai();

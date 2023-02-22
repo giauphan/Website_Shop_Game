@@ -25,7 +25,7 @@ class sanpham_controller extends Controller
         $kq = $home->danhmuc();
         $napthe->pay_the();
         if (isset($_SESSION['ma_user'])) {
-            $tiens = $tien->get_money();
+            $tien = $tien->get_money();
         } else {
             $tien = 0;
         }
@@ -60,7 +60,7 @@ class sanpham_controller extends Controller
             'ketqua' => $ketqua,
             'number_of_page' => $number_of_page,
             'result' => $result,
-            'tien' => $tiens,
+            'tien' => $tien,
             'thongbao' => $thongbao,
         ]);
     }
@@ -74,7 +74,7 @@ class sanpham_controller extends Controller
         $acc = new pay();
         $kq = $home->danhmuc();
         $napthe->pay_the();
-        $tiens = $tien->get_money();
+        $tien = $tien->get_money();
         $pay_acc = new pay();
 
 
@@ -127,7 +127,7 @@ class sanpham_controller extends Controller
             'kq' => $kq,
             'payAcc' => $payAcc,
             'payAccLogin' => $payAccLogin,
-            'tien' => $tiens,
+            'tien' => $tien,
 
             'runShow' =>   $runcode,
             'showPrice' => $showprice,

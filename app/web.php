@@ -27,6 +27,7 @@ use App\Controllers\user\napthe_controller;
 use App\Controllers\user\profile_controller;
 use App\Controllers\user\quenmk_controller;
 use App\Controllers\user\sanpham_controller;
+use App\Controllers\user\tintuc_controller;
 use Core\Route;
 
 
@@ -83,9 +84,8 @@ Route::GET('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
 
 Route::POST('/pay/sp', [sanpham_controller::class, 'chitietsanpham']);
 
-// // /donhang
-//  Route::GET('/pay/sp', [muahang_controller::class, 'donhang']);
-//  Route::POST('/pay/sp', [muahang_controller::class, 'donhang']);
+// /tintuc
+Route::GET('/tintuc', [tintuc_controller::class, 'index']);
 
 
 

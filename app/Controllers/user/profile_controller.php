@@ -46,7 +46,7 @@ class profile_controller extends Controller
             return View::render('profile', [
                 'kq' => $kq,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tien' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -73,7 +73,7 @@ class profile_controller extends Controller
             return View::render('edit_profile', [
                 'kq' => $kq,
                 'result' => $result,
-                'tienkq' => $tienkq,
+                'tien' => $tiens,
                 'thongbao' => $thongbao,
             ]);
     }
@@ -122,7 +122,7 @@ class profile_controller extends Controller
 
         return View::render('doimk', [
             'kq' => $kq,
-            'tienkq' => $tienkq,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }
@@ -164,7 +164,7 @@ class profile_controller extends Controller
 
         return View::render('quenmk', [
             'kq' => $kq,
-            'tienkq' => $tienkq,
+            'tien' => $tiens,
             'thongbao' => $thongbao,
         ]);
     }

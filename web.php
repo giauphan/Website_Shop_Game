@@ -1,89 +1,84 @@
 <?php
+//convert
+use App\Http\Controllers\ConversionController;
+use App\Http\Controllers\pdftxt;
+use App\Http\Controllers\FileController;
+
+// giao dien
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\admin\accountAdmin;
+use App\Http\Controllers\admin\homeAdmin;
+use App\Http\Controllers\Convert\PdfToWordController;
+use App\Http\Controllers\ConvertFilesController;
+use App\Http\Controllers\homeapge;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 //admin
+Route::get('/admin', [homeAdmin::class, 'index']);
+Route::get('/admin/profile', [accountAdmin::class, 'index']);
 
-use App\Controllers\ctv\addproductController;
-use App\Controllers\ctv\adminController;
-use App\Controllers\ctv\changeproduct;
-use App\Controllers\ctv\ql_billController;
-use App\Controllers\ctv\ql_code_saleController;
-//user
-
-use App\Controllers\user\home;
-use App\Controllers\user\login;
-use App\Controllers\user\napthe_controller;
-use App\Controllers\user\profile_controller;
-use App\Controllers\user\quenmk_controller;
-use App\Controllers\user\muahang_controller;
-use App\Controllers\user\sanpham_controller;
-
-use Core\Route;
-
-
-
-Route::GET('/', [home::class, 'index']);
-// /account
-Route::GET('/login', [login::class, 'index']);
-Route::POST('/login', [login::class, 'index']);
-
-Route::GET('/dangky', [login::class, 'sigin']);
-Route::GET('/outlogin', function () {
-    session_start();
-    session_unset();
-    header("location: /");
+Route::get('language/{locate}', function ($locate) {
+  if (!in_array($locate, ['en', 'vi'])) {
+    abort(404);
+  }
+  session()->put('locate', $locate);
+  return redirect()->back();
 });
-// /napthe
-Route::GET('/napthe', [napthe_controller::class, 'index']);
+// account
+Route::get('/login', [AccountController::class, 'Login'])->name('Login');
+Route::post('/login', [AccountController::class, 'postlogin']);
+Route::get('/signup', [AccountController::class, 'Signup'])->name('signup');
+Route::get('/profile', [AccountController::class, 'Profile'])->name('profile');
+//change pass and forgot pass
+Route::get('/changepassword', [AccountController::class, 'ChangePass'])->name('change_pass');
+Route::get('/forgotpass', [AccountController::class, 'ForgotPass'])->name('forgotpas');
 
-// /muathe
-Route::GET('/muathe', [napthe_controller::class, 'muathe']);
+Route::get('/aboutus', [AccountController::class, 'AboutUs'])->name('aboutus');
+Route::get('/contact', [AccountController::class, 'Contact'])->name('contact');
+Route::get('/tool', [AccountController::class, 'Tool'])->name('tool');
 
-// /quenmk
-Route::GET('/quenmk', [quenmk_controller::class, 'index']);
+Route::get('/', [homeapge::class, 'Homepage'])->name('Homepage');
+Route::get('/home', [ConvertFilesController::class, 'Convert'])->name('convert');
+Route::get('/policy', [AccountController::class, 'policy'])->name('policy');
+Route::get('/term', [AccountController::class, 'term'])->name('term');
+Route::get('/logout', function () {
+  session_start();
+  session_unset();
+  header("location: /");
+});
 
-// /doimk
-Route::GET('/doimk', [profile_controller::class, 'doimk']);
-Route::POST('/doimk', [profile_controller::class, 'doimk']);
+// convert file
+Route::get('/test/pdf-to-json', [pdftxt::class, 'index']);
+Route::get('/test', [pdftxt::class, 'convertfilepdfencode']);
+Route::get('/testform', function () {
+  return view('formtest');
+});
+Route::post('/testform', [pdftxt::class, 'convertPdfToText']);
+// Route::get('/pdf-to-txt', [ConversionController::class, 'index']);
 
-// /quenmk
-Route::GET('/quenmk', [profile_controller::class, 'quenmk']);
+Route::post('/convert', [ConversionController::class, 'pdfToTxt'])->name('pdfToTxt');
+Route::get('/pdf-to-json', 'App\Http\Controllers\FileController@index');
+Route::post('/pdf-to-json', 'App\Http\Controllers\FileController@pdfToJson');
 
-// /profile
-Route::GET('/profile', [profile_controller::class, 'index']);
+//convert pdf to txt
+Route::post('/api/pdf-to-txt', [pdftxt::class, 'convertToTxt']);
+Route::get('/api/pdf-to-txt', [pdftxt::class, 'index']);
+//convert txt to json
+Route::post('/api/txt-to-json', [pdftxt::class, 'convertToJson']);
+Route::get('/api/txt-to-json', [pdftxt::class, 'index']);
+//covert file pdf to json
+Route::post('/api/pdf-to-jsont', [pdftxt::class, 'convertToJsontest']);
+//covert file word to pdf
+Route::get('/api/word-to-pdf', [PdfToWordController::class, 'index']);
+Route::post('/api/word-to-pdf', [PdfToWordController::class, 'convertToPdf']);
 
-// /edit_profile
-Route::GET('/edit_profile', [profile_controller::class, 'edit']);
-Route::POST('/edit_profile', [profile_controller::class, 'edit']);
-
-// /lichsunap
-Route::GET('/lichsunap', [napthe_controller::class, 'lichsunap']);
-Route::POST('/lichsunap', [napthe_controller::class, 'lichsunap']);
-
-// /lichsumuahang
-Route::GET('/lichsumua', [muahang_controller::class, 'lichsumua']);
-
-// /show sp
-Route::GET('/sanpham', [sanpham_controller::class, 'index']);
-
-
-// admin
-Route::GET('/ql-san-pham', [adminController::class, 'index']);
-
-Route::POST('/ql-san-pham', [adminController::class, 'index']);
-
-//add sp
-Route::GET('/add-product', [addproductController::class, 'index']);
-Route::POST('/add-product', [addproductController::class, 'index']);
-
-// change product 
-Route::GET('/change-product', [changeproduct::class, 'index']);
-Route::POST('/change-product', [changeproduct::class, 'index']);
-
-// ql bill
-Route::GET('/ql-bill', [ql_billController::class, 'index']);
-// ql code salq
-Route::GET('/ql-code-sale', [ql_code_saleController::class, 'index']);
-
-Route::GET('/add-code-sale', [ql_code_saleController::class, 'add_code_sale']);
-Route::POST('/add-code-sale', [ql_code_saleController::class, 'add_code_sale']);
-
-// Route::GEt('/export', [ql_code_saleController::class, 'add_code_sale']);

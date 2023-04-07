@@ -2,84 +2,96 @@
 
 namespace App\Models;
 
-use App\Models\account;
+use App\Models\database;
 
-class user extends account
+class User extends database
 {
-    public function __construct()
-    {
-        $this->db = new database;
-    }
+
+
+
     public function login($user, $pass)
     {
-        $sql_login = "SELECT * FROM `user` WHERE (email = ? or username = ?) and password = ?";
-        return   $this->db->pdo_query($sql_login, $user, $user, $pass);
+        $run = 'SELECT UserID, `FistName`, `LastName`, `userName`, `passWord`, `role` FROM `user` WHERE  userName = ? and passWord = ?';
+        return $this->pdo_query($run, $user, $pass);
     }
-    public function get_all_user()
+    public function getoneuser($id)
     {
-        $sql = 'SELECT * FROM `user` ';
-        $user = $this->db->pdo_query($sql);
-        return $user;
+        return $this->pdo_query('SELECT UserID, `FistName`, `LastName`, `userName`,email, `passWord`, `role` FROM `user` WHERE  UserID = ? ', $id);
     }
-
-    public function get_all_user_one($ma_user)
+    public function getalluser()
     {
-        $sql = 'SELECT * FROM `user` where ma_kh = ? ';
-        $user =      $this->db->pdo_query($sql, $ma_user);
-        return $user;
+        return $this->pdo_query('SELECT UserID, `FistName`, `LastName`, `userName`,email, `passWord`, `role` FROM `user` ');
     }
 
-    public function ud_user($phone, $email, $username_show)
-    {
-
-        $sql = "UPDATE `user` SET `ten_hien_thi`=?,`email`=?,`phone`=? WHERE ma_kh = ?";
-        $this->db->pdo_query($sql, $username_show, $email, $phone, $_SESSION['ma_user']);
-        return true;
-    }
-    public function get_money()
-    {
-        $tien = 0;
-        if (isset($_SESSION['ma_user'])) {
-
-
-            $showtien = 'SELECT tien,email FROM `user` WHERE ma_kh = ?';
-            $kq =      $this->db->pdo_query($showtien, $_SESSION['ma_user']);
-
-            foreach ($kq as  $rowtien) {
-
-                $tien = $rowtien['tien'];
-            }
-            return $tien;
-        } else {
-            return $tien;
-        }
+    public function inpuser(
+        $FistName,
+        $LastName,
+        $email,
+        $userName,
+        $passWord
+    ) {
+        $sql = 'INSERT INTO `user`(`FistName`, `LastName`, `email`, `userName`, `passWord`, `role`) VALUES (?,?,?,?,?,?)';
+        return $this->pdo_execute(
+            $sql,
+            $FistName,
+            $LastName,
+            $email,
+            $userName,
+            $passWord,
+            'thành viên'
+        );
     }
 
-
-    public function sign($username, $username_show, $pass, $email,  $phone)
-    {
-        $sql_sign = "INSERT INTO `user`(`ten_hien_thi`, `username`, `password`, `email`, `phone`, `trang_thai_kh`, `vai_tro`) VALUES (?,?,?,?,?,?,?)";
-        $this->db->pdo_execute($sql_sign, $username_show, $username, $pass, $email, $phone, '0', 'thành viên');
+    public function updateUser(
+        $FistName,
+        $LastName,
+        $mail,
+        $id
+    ) {
+        $sql = 'UPDATE `user` SET`FistName`=?,`LastName`=?,`email`=? WHERE  UserID =?';
+        return $this->pdo_execute(
+            $sql,
+            $FistName,
+            $LastName,
+            $mail,
+            $id
+        );
     }
-    public function action_email($email)
-    {
-        $sql = "UPDATE `user` SET `trang_thai_kh` = '1' WHERE email = ?";
-        $this->db->pdo_execute($sql, $email);
-    }
-    public function check_email($username, $email)
-    {
-        $check = false;
-        $kq =  $this->get_all_user();
-        foreach ($kq as $row) {
 
-            if ($row['username'] == $username || $row['email'] == $email) {
-                $check = true;
-            }
-        }
-        if ($check == false) {
-            return true;
-        } else {
-            return false;
-        }
+    public function updateUserAdmin(
+        $FistName,
+        $LastName,
+        $mail,
+        $role,
+        $id
+    ) {
+        $sql = 'UPDATE `user` SET`FistName`=?,`LastName`=?,`email`=?,`role` = ? WHERE  UserID =?';
+        return $this->pdo_execute(
+            $sql,
+            $FistName,
+            $LastName,
+            $mail,
+            $role,
+            $id
+        );
+    }
+
+    public function chanpass(
+        $newpass,
+        $id
+    ) {
+        $sql = 'UPDATE `user` SET`passWord`=? WHERE  UserID =?';
+        return $this->pdo_execute(
+            $sql,
+            $newpass,
+            $id
+        );
+    }
+    public function delteUser( $id) {
+        $sql = 'DELETE FROM `user` WHERE  UserID =?';
+        $this->pdo_execute(
+            $sql,
+            $id
+        );
     }
 }

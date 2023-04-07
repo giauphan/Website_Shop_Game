@@ -1,470 +1,616 @@
 <?php
-require_once __DIR__ . '/wit/header.php';
+require_once __DIR__ . '/header.php';
 ?>
-<div class="container-fluid al">
+<main id="main" class="main">
 
-    <div id="clock"></div>
-    <br>
-    <p class="thongke" style="font-weight: 700;"><b>THỐNG KÊ</b></p>
-    <div class="box">
-        <div class="boxleft">
-            <div class="chart">
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
 
-                <canvas id="thongke" style="width: 700px; height: 200px;"></canvas>
+  <section class="section dashboard">
+    <!-- Left side columns -->
+    <div class="col-lg-12">
+      <div class="row">
+
+        <!-- Sales Card -->
+        <div class="col-xxl-3 col-md-6">
+          <div class="card info-card sales-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
             </div>
-            <script>
-                var canvas = document.getElementById("thongke");
-                var ctx = canvas.getContext("2d");
 
-                const today = new Date();
-                const year = today.getFullYear();
+            <div class="card-body">
+              <h5 class="card-title"> Convert <span>| PDF </span></h5>
 
-                var chart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                        datasets: [{
-                            label: 'THỐNG KÊ ANH THU NĂM ' + year + ' THEO THÁNG',
-                            data: [<?php
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img class="size border border-dark-subtle rounded-circle" src="assets/images/pdf-cir.png" width="32px" alt="">
+                </div>
+                <div class="ps-3">
+                  <h6>145</h6>
+                  <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
-                                    $m1 = 0;
-                                    $m2 = 0;
-                                    $m3 = 0;
-                                    $m4 = 0;
-                                    $m5 = 0;
-                                    $m6 = 0;
-                                    $m7 = 0;
-                                    $m8 = 0;
-                                    $m9 = 0;
-                                    $m10 = 0;
-                                    $m11 = 0;
-                                    $m12 = 0;
-                                    foreach ($thongke as $row) {
-                                        foreach ($page as $thongke) {
+                </div>
+              </div>
+            </div>
 
-                                            if ($row['ma_sp'] == $thongke['ma_sp'] && $thongke['ma_user'] == $_SESSION['ma_user']) {
-                                                $i = $row['ngay_nhap_dh'];
+          </div>
+        </div><!-- End Sales Card -->
 
-                                                if ($i == 1) {
-                                                    $m1 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 2) {
-                                                    $m2 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 3) {
-                                                    $m3 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 4) {
-                                                    $m4 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 5) {
-                                                    $m5 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 6) {
-                                                    $m6 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 7) {
-                                                    $m7 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 8) {
-                                                    $m8 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 9) {
-                                                    $m9 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 10) {
-                                                    $m10 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 11) {
-                                                    $m11 +=    $row['gia_dh'];
-                                                }
-                                                if ($i == 12) {
-                                                    $m12 +=    $row['gia_dh'];
-                                                }
-                                            }
-                                        }
-                                    }
-                                    echo $m1 . "," . $m2 . "," . $m3 . "," . $m4 . "," . $m5 . "," . $m6 . "," . $m7 . "," . $m8 . "," . $m9 . "," . $m10 . "," . $m11 . "," . $m12   ?>],
-                            backgroundColor: [
-                                "rgba(255, 99, 132, 0.2)",
-                                "rgba(54, 162, 235, 0.2)",
-                                "rgba(255, 206, 86, 0.2)",
-                                "rgba(75, 192, 192, 0.2)",
-                                "rgba(153, 102, 255, 0.2)",
-                                "rgba(255, 159, 64, 0.2)",
-                                "rgba(255, 99, 132, 0.5)",
-                                "rgba(54, 162, 235, 0.5)",
-                                "rgba(255, 206, 86, 0.5)",
-                                "rgba(75, 192, 192, 0.5)",
-                                "rgba(153, 102, 255, 0.5)",
-                                "rgba(255, 159, 64, 0.5)"
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)',
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-            </script>
+        <!-- Revenue Card -->
+        <div class="col-xxl-3 col-md-6">
+          <div class="card info-card revenue-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> Convert <span>| WORD </span></h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img class="border border-dark-subtle  size rounded-circle" src="assets/images/word-cir.png" width="32px" alt="">
+                </div>
+                <div class="ps-3">
+                  <h6>342</h6>
+                  <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End Revenue Card -->
+
+        <!-- Customers Card -->
+        <div class="col-xxl-3 col-xl-12">
+
+          <div class="card info-card customers-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title"> Convert <span>| TEXT </span></h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img class="border border-dark-subtle  size rounded-circle" src="assets/images/txt-cir.png" width="32px" alt="">
+                </div>
+                <div class="ps-3">
+                  <h6>124</h6>
+                  <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-        <div class="boxright">
-            <table class="table table-bordered" id="myTable">
+        <div class="col-xxl-3 col-xl-12">
+
+          <div class="card info-card customers-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> Convert <span>| Json </span></h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img class="border border-dark-subtle size rounded-circle" src="assets/images/json-cir.png" width="32px" alt="">
+                </div>
+                <div class="ps-3">
+                  <h6>144</h6>
+                  <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- End Customers Card -->
+
+        <!-- Reports -->
+        <div class="col-12">
+          <div class="card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Reports <span>/Today</span></h5>
+              <!-- Line Chart -->
+              <div id="reportsChart"></div>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new ApexCharts(document.querySelector("#reportsChart"), {
+
+                    series: [{
+                      name: 'Sales',
+                      data: [31, 40, 28, 51, 42, 82, 56],
+                    }, {
+                      name: 'Revenue',
+                      data: [11, 32, 45, 32, 34, 52, 41]
+                    }, {
+                      name: 'Customers',
+                      data: [15, 11, 32, 18, 9, 24, 11]
+                    }],
+                    chart: {
+                      height: 350,
+                      type: 'area',
+                      toolbar: {
+                        show: false
+                      },
+                    },
+                    markers: {
+                      size: 4
+                    },
+                    colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                    fill: {
+                      type: "gradient",
+                      gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.3,
+                        opacityTo: 0.4,
+                        stops: [0, 90, 100]
+                      }
+                    },
+                    dataLabels: {
+                      enabled: false
+                    },
+                    stroke: {
+                      curve: 'smooth',
+                      width: 2
+                    },
+                    xaxis: {
+                      type: 'datetime',
+                      categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                    },
+                    tooltip: {
+                      x: {
+                        format: 'dd/MM/yy HH:mm'
+                      },
+                    }
+                  }).render();
+                });
+              </script>
+              <!-- End Line Chart -->
+            </div>
+          </div>
+        </div><!-- End Reports -->
+
+        <!-- Recent Sales -->
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+
+
+            <div class="card-body">
+              <h5 class="card-title">Recent Convert <span>| New</span></h5>
+
+              <table class="table table-borderless datatable">
                 <thead>
-                    <tr class="ex">
-                        <th width="auto">tỔNG DOANH THU từ trước đến nay</th>
-
-                        <!-- <th width="auto">Tên danh mục</th> -->
-                    </tr>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name user</th>
+                    <th scope="col">Convert type</th>
+                    <th scope="col">Number of convert</th>
+                    <!-- <th scope="col">Status</th> -->
+                  </tr>
                 </thead>
-
                 <tbody>
-                    <?php
-                    if (isset($doanhthu) && sizeof($doanhthu) > 0) {
-                        $tongdoanhthu = 0;
-                        foreach ($doanhthu  as  $row) {
-                            extract($row);
-                            if ($ma_user == $_SESSION['ma_user']) {
-                                $tongdoanhthu  +=  $giasp;
-                            }
-                        }
-                        echo ' <tr>
-                    <td>' .  $tongdoanhthu . '</td>
-                   </tr>';
-                    } ?>
+                  <tr>
+                    <th scope="row"><a href="#">#2457</a></th>
+                    <td>Brandon Jacob</td>
+                    <td><a href="#" class="text-primary">word</a></td>
+                    <td>64</td>
+                    <!-- <td><span class="badge bg-success">success</span></td>  -->
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#2457</a></th>
+                    <td>Brandon Jacob</td>
+                    <td><a href="#" class="text-primary">Txt</a></td>
+                    <td>64</td>
+                    <!-- <td><span class="badge bg-danger">fail</span></td>  -->
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#2457</a></th>
+                    <td>Brandon Jacob</td>
+                    <td><a href="#" class="text-primary">Json</a></td>
+                    <td>64</td>
+                    <!-- <td><span class="badge bg-success">success</span></td> -->
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div><!-- End Recent Sales -->
+
+        <!-- Top Selling -->
+        <div class="col-12">
+          <div class="card top-selling overflow-auto">
 
 
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Top Convert <span>| new</span></h5>
+
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">Preview</th>
+                    <th scope="col">Name user</th>
+                    <th scope="col">Convert Type</th>
+                    <th scope="col">Day/times</th>
+                    <th scope="col">Moth/times </th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><a href="#"><img src="assets/images/json-cir.png" width="48px" alt=""></a></th>
+                    <td>Brandon Jacob</td>
+                    <td><a href="#" class="text-primary fw-bold"> Json</a></td>
+                    <td>30</td>
+                    <td class="fw-bold">124</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#"><img src="assets/images/word-cir.png" width="48px" alt=""></a></th>
+                    <td>Brandon Jacob</td>
+                    <td><a href="#" class="text-primary fw-bold">Word</a></td>
+                    <td>46</td>
+                    <td class="fw-bold">98</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#"><img src="assets/images/txt-cir.png" width="48px" alt=""></a></th>
+                    <td>Brandon Jacob</td>
+                    <td><a href="#" class="text-primary fw-bold">Txt</a></td>
+                    <td>46</td>
+                    <td class="fw-bold">98</td>
+
+                  </tr>
 
                 </tbody>
-                <tfoot></tfoot>
-            </table>
-        </div>
-    </div>
-    <style>
-        .box {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
+              </table>
 
-        }
-
-        .boxleft {
-            width: 60%;
-
-        }
-
-        .boxright {
-            padding-left: 2%;
-            width: 38%;
-
-        }
-    </style>
-    <br>
-
-    <b>CHỨC NĂNG thêm sản phẩm:</b><Br>
-    <!-- them san pham-->
-    <a href="/wp-admin/add-product" style="margin-bottom: 20px;">
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm sản phẩm"><i class="fa fa-user-plus"></i></button></a>
-    <!--   end them san pham-->
-
-    <p class="timkiemnhanvien" style="margin-top: 3%;"><b>TÌM KIẾM SẢN PHẨM:</b></p>
-    <div class="row  hidden-xs hidden-sm" style="margin-bottom: 15px">
-        <div class="m-l-10 m-r-10">
-            <form action="" method="POST" data-hs-cf-bound="true" class="form-inline m-b-10">
-                <div class="col-md-3 col-sm-4 p-5 field-search">
-                    <div class="input-group c-square">
-                        <span class="input-group-addon">Mã số</span>
-                        <input type="text" class="form-control c-square" value="" placeholder="Mã số" name="id">
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                    <div class="input-group c-square">
-                        <span class="input-group-addon">Giá tiền</span>
-                        <select class="form-control c-square" name="price">
-                            <option value="">Tất cả</option>
-                            <option value="0-50000">Dưới 50K</option>
-                            <option value="50000-200000">Từ 50K - 200K</option>
-                            <option value="200000-500000">Từ 200K - 500K</option>
-                            <option value="500000-1000000">Từ 500K - 1 Triệu</option>
-                            <option value="1000000">Trên 1 Triệu</option>
-                            <option value="5000000">Trên 5 Triệu</option>
-                            <option value="10000000">Trên 10 Triệu</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-4 p-5 field-search">
-                    <div class="input-group c-square">
-                        <span class="input-group-addon">Trạng thái</span>
-                        <select class="form-control c-square" name="status">
-                            <option value="">Trạng thái</option>
-                            <option value="0">Chưa bán</option>
-                            <option value="1">Đã bán</option>
-
-
-                        </select>
-                    </div>
-                </div><div class="col-md-3 col-sm-4 p-5 no-radius">
-                    <button type="submit" name='submit' class="btn c-square c-theme c-btn-green">Tìm kiếm</button>
-
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="filter-product-mobile hidden-md hidden-lg">
-        <div class="filter-left form-group">
-        </div>
-        <div class="filter-right form-group">
-            <a class="btn btn-success" style="display: block">
-                <i class="fa fa-filter"></i> Tìm kiếm
-            </a>
-        </div>
-        <div id="togger-filter"></div>
-    </div>
-    <div class="form-filter-right hidden-md hidden-lg">
-        <div class="form-filter-content-mobile">
-            <div class="list-product-left">
-                <div class="category-left">
-                    <div class="title-product mb-4">
-                        <span class="c-theme-link close-popup">×</span>
-                        <h2 style="font-size: 16px;text-align: center">Tìm kiếm </h2>
-                    </div>
-                    <div class="category-list-product">
-                    </div>
-                </div>
-                <hr>
-                <div class="search-list-product">
-                    <form class="form-inline m-b-10" role="form" method="POST" data-hs-cf-bound="true">
-
-                        <div class="col-md-3 col-sm-4 p-5 field-search">
-                            <div class="input-group c-square">
-                                <span class="input-group-addon">Mã số</span>
-                                <input type="text" class="form-control c-square" value="" placeholder="Mã số" name="id">
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12  p-5 field-search">
-                            <div class="input-group c-square">
-                                <span class="input-group-addon">Giá tiền</span>
-                                <select class="form-control c-square" name="price">
-                                    <option value="">Tất cả</option>
-                                    <option value="0-50000">Dưới 50K</option>
-                                    <option value="50000-200000">Từ 50K - 200K</option>
-                                    <option value="200000-500000">Từ 200K - 500K</option>
-                                    <option value="500000-1000000">Từ 500K - 1 Triệu</option>
-                                    <option value="1000000">Trên 1 Triệu</option>
-                                    <option value="5000000">Trên 5 Triệu</option>
-                                    <option value="10000000">Trên 10 Triệu</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 p-5 field-search">
-                            <div class="input-group c-square">
-                                <span class="input-group-addon">Trạng thái</span>
-                                <select class="form-control c-square" name="status">
-                                    <option value="">Trạng thái</option>
-                                    <option value="0">Chưa bán</option>
-                                    <option value="1">Đã bán</option>
-
-
-                                </select>
-                            </div>
-                        </div>
-                       
-                       
-
-
-                        <div class="col-md-3 col-sm-4 p-5 no-radius">
-                            <button type="submit" name='submit' class="btn c-square c-theme c-btn-green">Tìm kiếm</button>
-
-                        </div>
-                    </form>
-                </div>
             </div>
+
+          </div>
+        </div><!-- End Top Selling -->
+
+      </div>
+    </div><!-- End Left side columns -->
+
+    <!-- Right side columns -->
+    <!-- <div class="row">
+        <div class="col-sm-3">
+
+    Recent Activity 
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+              <div class="activity">
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">32 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content">
+                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                  </div>
+                </div> End activity item
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">56 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptatem blanditiis blanditiis eveniet
+                  </div>
+                </div> End activity item
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 hrs</div>
+                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptates corrupti molestias voluptatem
+                  </div>
+                </div> End activity item
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">1 day</div>
+                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                  <div class="activity-content">
+                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                  </div>
+                </div> End activity item
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 days</div>
+                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                  <div class="activity-content">
+                    Est sit eum reiciendis exercitationem
+                  </div>
+                </div>End activity item
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">4 weeks</div>
+                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                  <div class="activity-content">
+                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                  </div>
+                </div> End activity item
+
+              </div>
+
+            </div>
+          </div>
         </div>
-    </div>
-    <style>
-        .form-filter-right {
-            position: fixed;
-            top: 0;
-            right: -300px;
-            width: 300px;
-            height: 100%;
-            background: #fff;
-            color: #444;
-            z-index: 10;
-            transition: 400ms ease;
-            overflow-y: scroll;
-            transform: translateX(0px);
-            z-index: 10000;
-        }
+     End Recent Activity -
 
-        .form-filter-right.open {
-            display: unset;
-            height: 100%;
-            transform: translateX(-300px);
-        }
+      Budget Report 
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
 
-        #togger-filter {
-            visibility: hidden;
-            background-color: #000000bf;
-            z-index: 1;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            top: 0;
-            overflow: hidden;
-            position: fixed;
-            z-index: 9999;
-        }
+            </div>
 
-        #togger-filter.active {
-            transition: 0.4s;
-            visibility: visible;
-            cursor: pointer;
-        }
+            <div class="card-body pb-0">
+              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
 
-        .form-filter-content-mobile {
-            padding: 15px;
-        }
+              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
 
-        .close-popup {
-            color: #818e9a;
-            font-size: 36px;
-            left: 11px;
-            top: 7px;
-            position: absolute;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-    </style>
-    <script>
-        $('.filter-right').click(function() {
-            $('.form-filter-right').toggleClass('open');
-            $("#togger-filter").toggleClass("active");
-        });
-        $('#togger-filter').click(function(e) {
-            $("#togger-filter").removeClass("active");
-            $('.form-filter-right').removeClass('open');
-        });
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                      data: ['Allocated Budget', 'Actual Spending']
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [{
+                        name: 'Sales',
+                        max: 6500
+                      },
+                      {
+                        name: 'Administration',
+                        max: 16000
+                      },
+                      {
+                        name: 'Information Technology',
+                        max: 30000
+                      },
+                      {
+                        name: 'Customer Support',
+                        max: 38000
+                      },
+                      {
+                        name: 'Development',
+                        max: 52000
+                      },
+                      {
+                        name: 'Marketing',
+                        max: 25000
+                      }
+                      ]
+                    },
+                    series: [{
+                      name: 'Budget vs spending',
+                      type: 'radar',
+                      data: [{
+                        value: [4200, 3000, 20000, 35000, 50000, 18000],
+                        name: 'Allocated Budget'
+                      },
+                      {
+                        value: [5000, 14000, 28000, 26000, 42000, 21000],
+                        name: 'Actual Spending'
+                      }
+                      ]
+                    }]
+                  });
+                });
+              </script>
 
-        $('#togger-filter').click(function(e) {
-            $("#togger-filter").removeClass("active");
-            $('.form-filter-right').removeClass('open');
-        });
-        $('.form-filter-right .close-popup').click(function(e) {
-            $("#togger-filter").removeClass("active");
-            $('.form-filter-right').removeClass('open');
-        });
-    </script>
-    <?= $thongbao ?>
-
-
-
-    <div class="table-title">
-        <div class="row">
-
+            </div>
+          </div>
         </div>
-        <style>
-            th {
-                color: #fff !important;
-            }
+ End Budget Report
 
-            td {
-                font-size: 14px;
-            }
-        </style>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped table-module" id="myTable">
-            <thead>
-                <tr class="ex">
-                    <th width="auto">Mã sản phẩm</th>
-                    <th width="auto">Hình</th>
-                    <th width="auto"> Giá</th>
+- Website Traffic 
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
 
-                    <th width="auto"> Trạng thái</th>
-                    <th width="auto">Giảm giá</th>
-                    <!-- <th width="auto">Mô tả</th> -->
-                    <th width="auto">ngày nhập </th>
-                    <!-- <th width="auto">tài khoản </th>
-                    <th width="auto">mật khẩu</th> -->
-                    <th width="auto">Danh mục</th>
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
 
-                    <th width="5px; !important">Tính Năng</th>
-                </tr>
-            </thead>
+            <div class="card-body pb-0">
+              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
 
-            <tbody>
-                <?php
-                if (isset($page) && sizeof($page)) {
-                    foreach ($page as $row) {
+              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
 
-                        if ($_SESSION['ma_user'] == $row['ma_kh'] && $row['ma_kh'] == $row['ma_user']) {
-                            $trang_thai = ($row['trang_thai_sp'] == 0) ? "Chưa bán" : "Đã bán";
-                            echo ' <tr>
-                    <td>' . $row['ma_sp'] . '</td>
-                    <td><img src="/assets/upload/' . $row['hinh'] . '" width="100%" heght="auto"></td>
-                    <td> ' . number_format(($row['giasp'] - ($row['giasp'] * ($row['giam_gia'] * 0.01))), 0, ',', '.') . 'VNĐ</td>
-
-                    <td>' . $trang_thai . '</td>
-                    <td>' . ($row['giam_gia']) . '%</td>
-
-                    <td>' . $row['ngay_nhap'] . '</td>
-                    <td>' . $row['ten_loai'] . '</td>
-                    <td>';
-                            $check_pro = true;
-
-                            foreach ($check_product as $check) {
-                                if ($check['ma_sp'] == $row['ma_sp']) {
-                                    $check_pro = false;
-                                }
-                            }
-                            if ($check_pro == true) {
-                                echo '
-                        <a class="edit" href="/wp-admin/change-product?change=' . $row['ma_sp'] . '" title="" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="delete" href="?de=' . $row['ma_sp'] . '" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
-                            } else {
-                                echo ' <a class="delete" href="?de=' . $row['ma_sp'] . '" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
-                            }
-                            echo ' 
-                    </td>
-                </tr>';
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
                         }
-                    }
-                }
-                ?>
-            </tbody>
-            <tfoot></tfoot>
-        </table>
-        <tfoot></tfoot>
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                        value: 1048,
+                        name: 'Search Engine'
+                      },
+                      {
+                        value: 735,
+                        name: 'Direct'
+                      },
+                      {
+                        value: 580,
+                        name: 'Email'
+                      },
+                      {
+                        value: 484,
+                        name: 'Union Ads'
+                      },
+                      {
+                        value: 300,
+                        name: 'Video Ads'
+                      }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div>
+        </div>
+       End Website Traffic 
+
+   News & Updates Traffic 
+   <div class="col-sm-3">
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+
+              <div class="news">
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-1.jpg" alt="">
+                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
+                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-2.jpg" alt="">
+                  <h4><a href="#">Quidem autem et impedit</a></h4>
+                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-3.jpg" alt="">
+                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
+                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-4.jpg" alt="">
+                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
+                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-5.jpg" alt="">
+                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
+                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                </div>
+
+              </div>
+            </div> 
+   End sidebar recent posts
+
     </div>
-    <div id="pageNavPosition" class="text-right"></div>
-    <script type="text/javascript">
-        var pager = new Pager('myTable', 10);
-        pager.init();
-        pager.showPageNav('pager', 'pageNavPosition');
-        pager.showPage(1);
-    </script>
-</div>
-<hr class="hr1">
+    </div> -->
+    <!-- End News & Updates -->
+
+    <!-- End Right side columns -->
+    </div>
+
+  </section>
+
+</main><!-- End #main -->
 <?php
-require_once __DIR__ . '/wit/footer.php';
+require_once __DIR__ . '/footer.php';
 ?>
